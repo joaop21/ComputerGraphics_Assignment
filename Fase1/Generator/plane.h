@@ -2,6 +2,32 @@
 #define PLANE_H
 #endif
 
+/**
+*  @brief Função que gera o pontos para a realização dos devidos triângulos, e
+* conseguentemente gravação em ficheiro.
+*
+*  @param side - parâmetro que é o tamanho do lado do plano.
+*  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
+* pontos e triangulos gerados.
+*
+*/
 int generatePlane(float side, string file_name){
+	vector<Point> points;
+
+	float parcial_side = side/2;
+
+	// primeiro triangulo
+	points.push_back(Point(parcial_side, 0.0, -parcial_side));
+	points.push_back(Point(-parcial_side, 0.0, -parcial_side));
+	points.push_back(Point(-parcial_side, 0.0, parcial_side));
+
+	// segundo triangulo
+	points.push_back(Point(parcial_side, 0.0, -parcial_side));
+	points.push_back(Point(-parcial_side, 0.0, parcial_side));
+	points.push_back(Point(parcial_side, 0.0, parcial_side));
+
+	// necessário operações sobre ficheiros
+	// ...
+
 	return 0;
 }
