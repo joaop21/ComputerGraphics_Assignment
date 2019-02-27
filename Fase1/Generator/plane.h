@@ -30,7 +30,7 @@ int generatePlane(float side, string file_name){
 	points.push_back(Point(parcial_side, 0.0, parcial_side));
 
 	// necessário operações sobre ficheiros
-	ofstream file ("../Genarated_Models/" + file_name);
+	ofstream file ("../Generated_Models/" + file_name);
   	if (file.is_open()){
 
 		// no inicio escrevem-se o numero de triangulos existente no ficheiro

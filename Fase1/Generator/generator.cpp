@@ -19,7 +19,19 @@ int main(int argc, char* argv[]) {
 		string file_name = argv[3];
 		res = generatePlane(side,file_name);
 	} else if(primitive == "box"){
-		// fazer cenas
+		float xdim = atof(argv[2]);
+		float ydim = atof(argv[3]);
+		float zdim = atof(argv[4]);
+		if(argc==6){
+			int divisions = 1;
+			string file_name = argv[5];
+			res = generateBox(xdim,ydim,zdim,divisions,file_name);
+		}
+		else if(argc==7){
+			int divisions = atoi(argv[5]);
+			string file_name = argv[6];
+			res = generateBox(xdim,ydim,zdim,divisions,file_name);
+		}
 	} else if(primitive == "sphere"){
 		// fazer cenas
 	} else if(primitive == "cone"){
