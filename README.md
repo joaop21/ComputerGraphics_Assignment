@@ -1,6 +1,8 @@
 # ComputerGraphics_Assignment-
 Assignment for Computer Graphics class
 
-Hi!
+Repositórios de referência:
 
-How you doin'?
+https://github.com/jcp19/computer_graphics_assignment
+https://github.com/hugocarvalho9/cg-1617
+
