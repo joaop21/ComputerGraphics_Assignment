@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 #include "point.h"
 #include "plane.h"
 #include "box.h"
@@ -12,13 +13,11 @@ int main(int argc, char* argv[]) {
 	}
 
 	string primitive = argv[1];
-
+	int res = 0;
 	if(primitive == "plane"){
-		int side = atoi(argv[2]);
+		float side = atof(argv[2]);
 		string file_name = argv[3];
-		int res = generatePlane(side,file_name);
-		// testar o res
-		return 0;
+		res = generatePlane(side,file_name);
 	} else if(primitive == "box"){
 		// fazer cenas
 	} else if(primitive == "sphere"){
@@ -27,6 +26,14 @@ int main(int argc, char* argv[]) {
 		// fazer cenas
 	} else{
 		printf("Parâmetros inválidos!!!\n");
+		return 0;
+	}
+
+	if(res == 1){
+		printf("Tudo gerado corretamente.\n" );
+		return 1;
+	}else{
+		printf("Algo correu mal.\n" );
 		return 0;
 	}
 
