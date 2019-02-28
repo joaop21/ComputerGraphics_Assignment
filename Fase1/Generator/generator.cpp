@@ -35,7 +35,12 @@ int main(int argc, char* argv[]) {
 	} else if(primitive == "sphere"){
 		// fazer cenas
 	} else if(primitive == "cone"){
-		// fazer cenas
+		float bottom_radius = atof(argv[2]);
+		float height = atof(argv[3]);
+		int slices = atoi(argv[4]);
+		int stacks = atoi(argv[5]);
+		string file_name = argv[6];
+		res = generateCone(bottom_radius, height, slices, stacks, file_name);
 	} else{
 		printf("Parâmetros inválidos!!!\n");
 		return 0;

@@ -82,6 +82,7 @@ int generateBox(float xdim, float ydim, float zdim, int div, string file_name){
 	points.push_back(Point(-xdim, 0.0, -zdim));
 	points.push_back(Point(-xdim, 0.0, zdim));
 
+
 	// necessário operações sobre ficheiros
 	ofstream file ("../Generated_Models/" + file_name);
 		if (file.is_open()){
@@ -100,4 +101,4 @@ int generateBox(float xdim, float ydim, float zdim, int div, string file_name){
 			file.close();
 		return 1;
 		} else return 0;
-	}
+}
