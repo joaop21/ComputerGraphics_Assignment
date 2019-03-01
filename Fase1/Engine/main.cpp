@@ -15,11 +15,20 @@
 #include <sstream>
 #include <vector>
 #include "tinyxml2.h"
+#include "point.h"
+#include "figure.h"
 
 using namespace tinyxml2;
 using namespace std;
 
+vector<Figure> figures; // estrutura que armazen todas as figuras carregadas de ficheiros
 
+
+/**
+* @brief Função que lê o ficheiro XML que contêm os modelos a carregar,
+*     posteriormente lê os modelos e armazena os pontos e as figuras necessárias
+*     para mais à frente poderem ser desenhadas.
+*/
 void load_generated_files(){
 	XMLDocument doc;
 	doc.LoadFile("../Scenes/scene.xml");
@@ -36,6 +45,7 @@ void load_generated_files(){
 
 	vector<string> files; // nomes de ficheiros que contêm as figuras
 
+	// filtra os nomes dos ficheiros
 	XMLElement *file_names = pRoot->FirstChildElement("model");
 	while(file_names) {
 		string new_file = file_names->Attribute("file"); // retira o nome do ficheiro
@@ -43,8 +53,50 @@ void load_generated_files(){
 		file_names = file_names->NextSiblingElement("model"); // passa para o proximo filho
 	}
 
-	// falta carregar os ficheiros uma vez que ja temos o nome
+	// filtra os pontos e figuras
+	for(int i = 0 ; i < files.size() ; i++){
+		string current_file = files[i];
+		ifstream file;
+		file.open("../Generated_Models/" + current_file);
 
+		Figure fig;
+		file >> fig.num_triangles;
+		while (!file.eof()) {
+			Point new_point;
+			file >> new_point.x >> new_point.y >> new_point.z;
+			fig.points.push_back(new_point);
+		}
+		figures.push_back(fig);
+	}
+
+}
+
+
+/**
+* @brief Função que vai à variável global figures buscar as Figuras anteriormente
+*    carregadas de ficheiros e as desenha.
+*/
+void load_figures(){
+	for(int i = 0 ; i < figures.size() ; i++){
+		Figure current_fig = figures[0];
+		vector<Point> current_points = current_fig.points;
+
+		glBegin(GL_TRIANGLES);
+		int color;
+		glColor3f(0, 0, 0.2);
+
+		for(int j = 0, color = 0 ; j < current_points.size() ; j++,color++){
+
+			if (color % 3 == 0) {
+				glColor3f(0, 0, 0.4);
+				if (color%6 == 0) glColor3f(0, 0, 0.2);
+			}
+
+			Point current_point = current_points[j];
+			glVertex3f(current_point.x, current_point.y, current_point.z);
+		}
+		glEnd();
+	}
 }
 
 void changeSize(int w, int h) {
@@ -84,6 +136,7 @@ void renderScene(void) {
 			  0.0f,1.0f,0.0f);
 
 	load_generated_files();
+	load_figures();
 
 	// End of frame
 	glutSwapBuffers();
