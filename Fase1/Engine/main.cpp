@@ -8,6 +8,17 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include <vector>
+#include "tinyxml2.h"x
+
+using namespace tinyxml2;
+using namespace std;
+
+
+void load_generated_files(){
+	XMLDocument doc;
+	//XMLError load = doc.LoadFile("../Scenes/scene.xml"); //abre ficheiro XML
+}
 
 void changeSize(int w, int h) {
 
@@ -49,6 +60,14 @@ void renderScene(void) {
 	glutSwapBuffers();
 }
 
+void processKeys(unsigned char c, int xx, int yy) {
+	// fazer cenas
+}
+
+
+void processSpecialKeys(int key_code, int xx, int yy) {
+	// fazer cenas
+}
 
 int main(int argc, char **argv) {
 
@@ -64,8 +83,8 @@ int main(int argc, char **argv) {
 	glutReshapeFunc(changeSize);
 
 // put here the registration of the keyboard callbacks
-	glutSpecialFunc(keyboard_special);
-	glutKeyboardFunc(keyboard);
+	glutKeyboardFunc(processKeys);
+	glutSpecialFunc(processSpecialKeys);
 
 //  OpenGL settings
 	glEnable(GL_DEPTH_TEST);
