@@ -8,6 +8,11 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include <stdlib.h>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include <vector>
 #include "tinyxml2.h"
 
@@ -17,7 +22,29 @@ using namespace std;
 
 void load_generated_files(){
 	XMLDocument doc;
-	//XMLError load = doc.LoadFile("../Scenes/scene.xml"); //abre ficheiro XML
+	doc.LoadFile("../Scenes/scene.xml");
+
+	// testa se ficheiro XML abriu sem erros
+	if(doc.ErrorID() != 0) {
+		cout << "Erro ao abrir o ficheiro xml.\n";
+		return;
+	}
+
+	XMLElement *pRoot = doc.FirstChildElement("scene");
+	if (pRoot == nullptr) return; // testa se obteve a raiz da arvore xml
+
+
+	vector<string> files; // nomes de ficheiros que contêm as figuras
+
+	XMLElement *file_names = pRoot->FirstChildElement("model");
+	while(file_names) {
+		string new_file = file_names->Attribute("file"); // retira o nome do ficheiro
+		files.push_back(new_file); // coloca o nome no vetor
+		file_names = file_names->NextSiblingElement("model"); // passa para o proximo filho
+	}
+
+	// falta carregar os ficheiros uma vez que ja temos o nome
+
 }
 
 void changeSize(int w, int h) {
@@ -55,6 +82,8 @@ void renderScene(void) {
 	gluLookAt(5.0,5.0,5.0,
 		      0.0,0.0,0.0,
 			  0.0f,1.0f,0.0f);
+
+	load_generated_files();
 
 	// End of frame
 	glutSwapBuffers();
