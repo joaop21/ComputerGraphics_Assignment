@@ -5,7 +5,7 @@ PROJECT(Engine)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} main.cpp tinyxml2.cpp)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS})
@@ -23,11 +23,11 @@ if  (WIN32)
 	set(GLUT_DIR "" CACHE PATH "Path to GLUT folder")
 	if (NOT EXISTS "${GLUT_DIR}/GL/glut.h" OR NOT EXISTS "${GLUT_DIR}/glut32.lib")
 		message(ERROR ": GLUT not found")
-	endif (NOT EXISTS "${GLUT_DIR}/GL/glut.h" OR NOT EXISTS "${GLUT_DIR}/glut32.lib")	
+	endif (NOT EXISTS "${GLUT_DIR}/GL/glut.h" OR NOT EXISTS "${GLUT_DIR}/glut32.lib")
 	include_directories(${GLUT_DIR})
 	link_directories(${GLUT_DIR})
 	target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_DIR}/glut32.lib )
-	
+
 else (WIN32) #Linux and Mac
 
 	find_package(GLUT REQUIRED)
@@ -38,11 +38,5 @@ else (WIN32) #Linux and Mac
 	if(NOT GLUT_FOUND)
 	   message(ERROR ": GLUT not found!")
 	endif(NOT GLUT_FOUND)
-	
+
 endif(WIN32)
-
-
-
-
-
-

@@ -9,7 +9,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <vector>
-#include "tinyxml2.h"x
+#include "tinyxml2.h"
 
 using namespace tinyxml2;
 using namespace std;
