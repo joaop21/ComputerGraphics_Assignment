@@ -99,6 +99,41 @@ void load_figures(){
 	}
 }
 
+// camera angles
+float alfa = M_PI/4;
+float beta = M_PI/4;
+
+// radius
+float camera_radius = 10.0;
+float camera_radius_line;
+
+// camera posicion
+float px;
+float py;
+float pz;
+
+// look at point
+float dx = 0.0;
+float dy = 0.0;
+float dz = 0.0;
+
+void desenha_coordenadas_camara(float radiusn, float alfan, float betan, float dxn, float dyn, float dzn){
+	alfa = alfan;
+	beta = betan;
+
+	camera_radius = radiusn;
+	camera_radius_line = camera_radius * cos(beta);
+
+	px = camera_radius_line * cos(alfa);
+	py = camera_radius * sin(beta);
+	pz = camera_radius_line * sin(alfa);
+
+	dx = dxn;
+	dy = dyn;
+	dz = dzn;
+
+}
+
 void changeSize(int w, int h) {
 
 	// Prevent a divide by zero, when window is too short
@@ -130,9 +165,10 @@ void renderScene(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// set the camera
+	desenha_coordenadas_camara(camera_radius,alfa,beta,dx,dy,dz);
 	glLoadIdentity();
-	gluLookAt(5.0,5.0,5.0,
-		      0.0,0.0,0.0,
+	gluLookAt(px,py,pz,
+		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
 	load_generated_files();
@@ -143,12 +179,49 @@ void renderScene(void) {
 }
 
 void processKeys(unsigned char c, int xx, int yy) {
-	// fazer cenas
+	switch (c)
+	{
+	case 'd':
+		dx -= 0.1;
+		break;
+	case 'a':
+		dx += 0.1;
+		break;
+	case 'w':
+		dy -= 0.1;
+		break;
+	case 's':
+		dy += 0.1;
+		break;
+	case 'q':
+		dz -= 0.1;
+		break;
+	case 'e':
+		dz += 0.1;
+		break;
+	}
+	glutPostRedisplay();
 }
 
 
 void processSpecialKeys(int key_code, int xx, int yy) {
-	// fazer cenas
+	switch(key_code){
+		case GLUT_KEY_UP:
+			if(beta < (M_PI/2)-0.1)
+				beta += 0.1;
+			break;
+		case GLUT_KEY_DOWN:
+			if(beta > -(M_PI/2)+0.1)
+				beta -= 0.1;
+			break;
+		case GLUT_KEY_LEFT:
+			alfa += 0.1;
+			break;
+		case GLUT_KEY_RIGHT:
+			alfa -= 0.1;
+			break;
+	}
+	glutPostRedisplay();
 }
 
 int main(int argc, char **argv) {
