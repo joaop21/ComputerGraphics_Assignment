@@ -85,8 +85,22 @@ A função \textit{generateBox} recebe como parâmetro três float que represent
 \subsection{\textit{Cone}}
 \label{sec:cone}
 
+\newpage
+
 \section{Engine}
 \label{sec:engine}
+De forma a representar as figuras de uma determinada cena, usou-se XML para referenciar os ficheiros “.3d” construídos pelo gerador. Esses ficheiros contêm várias pontos que dão resultado a vários triângulos, que resultam em figuras.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.70]{scene_xml.png}
+\caption{Exemplo "scene.xml"}
+\label{img:scene}
+\end{figure}
+
+\section{Câmera}
+\label{sec:camera}
+De forma a poder visualizar as figuras de diferentes ângulos criamos uma câmera que se encontra fixa enquanto as figuras se movem. Tem tambem a utilidade de ajudar na deteção de erros na criação da figura, caso estes existam. Com recurso às teclas D, A, W, S, Q e E é possível mover a figura para ...
 
 \section{Conclusão}
 \label{sec:conclusao}
