@@ -9,20 +9,41 @@ int generateCone(float bottom_radius, float height, int slices, int stacks, stri
 
 	std::vector<Point> points;
 
-	// base
-	float alfa = 2*M_PI/slices;
 	for(int i = 0; i < slices; i++){
-		points.push_back(Point(0.0, 0.0, 0.0));
-		points.push_back(Point(bottom_radius*cos(alfa*(i)), 0.0, bottom_radius*sin(alfa*(i))));
-		points.push_back(Point(bottom_radius*cos(alfa*(i+1)), 0.0, bottom_radius*sin(alfa*(i+1))));
-	}
+		float alfa = (i)*2*M_PI/slices;
+		float next_alfa = (i+1)*2*M_PI/slices;
 
-	// cone (dúvidas na regra da mão direita)
-	float beta = 2*M_PI/stacks;
-	for(int j = 0; j < stacks; j++){
-		points.push_back(Point(bottom_radius*cos(beta*(j)), 0.0, bottom_radius*sin(beta*(j))));
+		// base
+		points.push_back(Point(0.0, 0.0, 0.0));
+		points.push_back(Point(bottom_radius*cos(alfa), 0.0, bottom_radius*sin(alfa)));
+		points.push_back(Point(bottom_radius*cos(next_alfa), 0.0, bottom_radius*sin(next_alfa)));
+
+		// lado (exceto o topo)
+		// nr = new radius (stack)
+		// pr = previous radius (stack)
+		// nh = new height (stack)
+		// ph = previous height (stack)
+		float ph = 0, pr = bottom_radius;
+		for (int j = 0 ; j < stacks-1; j++) {
+			float nh = height / stacks * j;
+			float nr = (height - nh) * bottom_radius / height;
+
+			points.push_back(Point(nr * cos(alfa), nh, nr * sin(alfa)));
+			points.push_back(Point(pr * cos(next_alfa), ph, pr * sin(next_alfa)));
+			points.push_back(Point(pr * cos(alfa), ph, pr * sin(alfa)));
+
+			points.push_back(Point(nr * cos(alfa), nh, nr * sin(alfa)));
+			points.push_back(Point(nr * cos(next_alfa), nh, nr * sin(next_alfa)));
+			points.push_back(Point(pr * cos(next_alfa), ph, pr * sin(next_alfa)));
+
+			ph = nh;
+			pr = nr;
+		}
+
+		// topo
 		points.push_back(Point(0.0, height, 0.0));
-		points.push_back(Point(bottom_radius*cos(beta*(j+1)), 0.0, bottom_radius*sin(beta*(j+1))));
+		points.push_back(Point(pr * cos(next_alfa), ph, pr * sin(next_alfa)));
+		points.push_back(Point(pr * cos(alfa), ph, pr * sin(alfa)));
 	}
 
 
