@@ -78,18 +78,18 @@ void load_generated_files(){
 */
 void load_figures(){
 	for(int i = 0 ; i < figures.size() ; i++){
-		Figure current_fig = figures[0];
+		Figure current_fig = figures[i];
 		vector<Point> current_points = current_fig.points;
 
 		glBegin(GL_TRIANGLES);
 		int color;
-		glColor3f(0, 0, 0.2);
+		glColor3f(0.2, 0.2, 0.2);
 
 		for(int j = 0, color = 0 ; j < current_points.size() ; j++,color++){
 
 			if (color % 3 == 0) {
-				glColor3f(0, 0, 0.4);
-				if (color%6 == 0) glColor3f(0, 0, 0.2);
+				glColor3f(0.4, 0.4, 0.4);
+				if (color%6 == 0) glColor3f(0.2, 0.2, 0.2);
 			}
 
 			Point current_point = current_points[j];
@@ -171,7 +171,6 @@ void renderScene(void) {
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
-	load_generated_files();
 	load_figures();
 
 	// End of frame
@@ -198,6 +197,15 @@ void processKeys(unsigned char c, int xx, int yy) {
 		break;
 	case 'e':
 		dz += 0.1;
+		break;
+	case 'z':
+		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		break;
+	case 'x':
+		glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+		break;
+	case 'c':
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		break;
 	}
 	glutPostRedisplay();
@@ -232,6 +240,9 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(100,100);
 	glutInitWindowSize(800,800);
 	glutCreateWindow("Engine");
+
+// file load
+	load_generated_files();
 
 // Required callback registry
 	glutDisplayFunc(renderScene);
