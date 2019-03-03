@@ -21,14 +21,14 @@ int generateBox(float xdim, float ydim, float zdim, int div, string file_name){
 	std::vector<Point> points;
 
 	// primeiro triangulo base (não se pode ver)
-	points.push_back(Point(-xdim, 0.0, zdim));
-	points.push_back(Point(-xdim, 0.0, -zdim));
-	points.push_back(Point(xdim, 0.0, -zdim));
+	points.push_back(Point(-xdim, -ydim, zdim));
+	points.push_back(Point(-xdim, -ydim, -zdim));
+	points.push_back(Point(xdim, -ydim, -zdim));
 
 	// segundo triangulo base (não se pode ver)
-	points.push_back(Point(xdim, 0.0, -zdim));
-	points.push_back(Point(xdim, 0.0, zdim));
-	points.push_back(Point(-xdim, 0.0, zdim));
+	points.push_back(Point(xdim, -ydim, -zdim));
+	points.push_back(Point(xdim, -ydim, zdim));
+	points.push_back(Point(-xdim, -ydim, zdim));
 
 	// primeiro triangulo topo
 	points.push_back(Point(xdim, ydim, -zdim));
@@ -42,45 +42,45 @@ int generateBox(float xdim, float ydim, float zdim, int div, string file_name){
 
 
 	// primeiro triangulo eixo OZ
-	points.push_back(Point(xdim, 0.0, zdim));
+	points.push_back(Point(xdim, -ydim, zdim));
 	points.push_back(Point(xdim, ydim, zdim));
-	points.push_back(Point(-xdim, 0.0, zdim));
+	points.push_back(Point(-xdim, -ydim, zdim));
 
 	// segundo triangulo eixo OZ
 	points.push_back(Point(xdim, ydim, zdim));
 	points.push_back(Point(-xdim, ydim, zdim));
-	points.push_back(Point(-xdim, 0.0, zdim));
+	points.push_back(Point(-xdim, -ydim, zdim));
 
 	// primeiro triangulo eixo OZ negativo (não se pode ver)
 	points.push_back(Point(-xdim, ydim, -zdim));
 	points.push_back(Point(xdim, ydim, -zdim));
-	points.push_back(Point(xdim, 0.0, -zdim));
+	points.push_back(Point(xdim, -ydim, -zdim));
 
 	// segundo triangulo eixo OZ negativo (não se pode ver)
-	points.push_back(Point(xdim, 0.0, -zdim));
-	points.push_back(Point(-xdim, 0.0, -zdim));
+	points.push_back(Point(xdim, -ydim, -zdim));
+	points.push_back(Point(-xdim, -ydim, -zdim));
 	points.push_back(Point(-xdim, ydim, -zdim));
 
 
 	// primeiro triangulo eixo OX
-	points.push_back(Point(xdim, 0.0, -zdim));
+	points.push_back(Point(xdim, -ydim, -zdim));
 	points.push_back(Point(xdim, ydim, -zdim));
 	points.push_back(Point(xdim, ydim, zdim));
 
 	// segundo triangulo eixo OX
-	points.push_back(Point(xdim, 0.0, -zdim));
+	points.push_back(Point(xdim, -ydim, -zdim));
 	points.push_back(Point(xdim, ydim, zdim));
-	points.push_back(Point(xdim, 0.0, zdim));
+	points.push_back(Point(xdim, -ydim, zdim));
 
 	// primeiro triangulo eixo OX negativo (não se pode ver)
 	points.push_back(Point(-xdim, ydim, zdim));
 	points.push_back(Point(-xdim, ydim, -zdim));
-	points.push_back(Point(-xdim, 0.0, -zdim));
+	points.push_back(Point(-xdim, -ydim, -zdim));
 
 	// segundo triangulo eixo OX negativo (não se pode ver)
 	points.push_back(Point(-xdim, ydim, zdim));
-	points.push_back(Point(-xdim, 0.0, -zdim));
-	points.push_back(Point(-xdim, 0.0, zdim));
+	points.push_back(Point(-xdim, -ydim, -zdim));
+	points.push_back(Point(-xdim, -ydim, zdim));
 
 
 	// necessário operações sobre ficheiros
