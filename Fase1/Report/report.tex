@@ -77,15 +77,138 @@ A função \textit{generatePlane} recebe como parâmetro um float que representa
 
 \subsection{\textit{Box}}
 \label{sec:box}
-A função \textit{generateBox} recebe como parâmetro três float que representam as dimensões de cada eixo da caixa (X, Y e Z), e um inteiro que representa o número de divisões que a caixa tem. (???????????????)
+A função \textit{generateBox} recebe como parâmetro três floats que representam as dimensões de cada eixo da caixa (X, Y e Z), e um inteiro que representa o número de divisões que a caixa tem. (???????????????)
 
 (...)
 
 \subsection{\textit{Sphere}}
 \label{sec:sphere}
 
+\newpage
+
 \subsection{\textit{Cone}}
 \label{sec:cone}
+A função \textit{generateCone} recebe como parâmetro um float que representa o raio da base do cone, um float que representa a altura do cone, um inteiro que representa o número de triângulos que queremos que constituam a base, e ainda outro inteiro que representa o número de \textit{stacks} que constituem o lado do cone.
+
+
+% figura
+
+\ttfamily
+$$\alpha_{1} = slice\_atual \times \frac{2\pi}{numero\_slices} $$
+
+\vspace{0.5cm}
+
+$$\alpha_{2} = (slice\_atual+1) \times \frac{2\pi}{numero\_slices} $$
+
+\vspace{0.5cm}
+
+        \hspace{1.5cm} P1 $\Rightarrow$ (raio $\times$ cos($\alpha_{1}$) , 0.0, raio $\times$ sin($\alpha_{1}$))
+
+\vspace{0.2cm}
+
+        \hspace{1.5cm} P2 $\Rightarrow$ (raio $\times$ cos($\alpha_{2}$) , 0.0, raio $\times$ sin($\alpha_{2}$))
+
+\vspace{0.2cm}
+
+        \hspace{1cm} P1' $\Rightarrow$ (raio' $\times$ cos($\alpha_{1}$) , height, raio' $\times$ sin($\alpha_{1}$))
+
+\vspace{0.2cm}
+
+        \hspace{1cm} P2' $\Rightarrow$ (raio' $\times$ cos($\alpha_{2}$) , height, raio' $\times$ sin($\alpha_{2}$))
+
+\rmfamily
+
+\newpage
+
+\subsubsection{Algoritmo:}
+
+\ttfamily
+\begin{enumerate}
+  \item Iterar sobre o número de slides:
+  \begin{enumerate}
+    \item Calcular o ângulo $\alpha$ para o slice atual $\Rightarrow$ \underline{$\alpha_{atual}$}
+    \item Calcular o ângulo $\alpha$ para o slice seguinte $\Rightarrow$ \underline{$\alpha_{seguinte}$}
+    \item Construir os pontos do triângulo formado pelas duas slices atuais:
+
+    \vspace{0.5cm}
+
+        \hspace{3cm} P1 $\Rightarrow$ (0.0, 0.0, 0.0)
+
+    \vspace{0.2cm}
+
+        \hspace{1cm} P2 $\Rightarrow$ (raio $\times$ cos($\alpha_{atual}$) , 0.0, raio $\times$ sin($\alpha_{atual}$))
+
+    \vspace{0.2cm}
+
+        \hspace{0.5cm} P3 $\Rightarrow$ (raio $\times$ cos($\alpha_{seguinte}$) , 0.0, raio $\times$ sin($\alpha_{seguinte}$))
+
+    \vspace{0.3cm}
+
+    \item Guardar altura atual para usar na seguinte iteração $\Rightarrow$ \underline{ph}
+    \item Guardar raio atual para usar na seguinte iteração $\Rightarrow$ \underline{pr}
+
+    \item Iterar sobre o número de stacks exceto a última:
+    \begin{enumerate}
+      \item Calcular a altura da stack atual $\Rightarrow$ \underline{nh}
+      \item Calcular o raio da stack atual $\Rightarrow$ \underline{nr}
+      \item Construir os dois triângulos da stack atual:
+
+      \vspace{0.5cm}
+
+      \underline{Primeiro triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{0.5cm} P1 $\Rightarrow$ (nr $\times$ cos($\alpha_{atual}$) , nh, nr $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P2 $\Rightarrow$ (pr $\times$ cos($\alpha_{seguinte}$) , ph, pr $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P3 $\Rightarrow$ (pr $\times$ cos($\alpha_{atual}$) , ph, pr $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.5cm}
+
+      \underline{Segundo triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{0.5cm} P1 $\Rightarrow$ (nr $\times$ cos($\alpha_{atual}$) , nh, nr $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P2 $\Rightarrow$ (nr $\times$ cos($\alpha_{seguinte}$) , nh, nr $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P3 $\Rightarrow$ (pr $\times$ cos($\alpha_{seguinte}$) , ph, pr $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.3cm}
+    \end{enumerate}
+
+    \item Construir o triângulo da ponta do cone (última stack), formado pelos pontos:
+
+    \vspace{0.5cm}
+
+        \hspace{3cm} P1 $\Rightarrow$ (0.0, height, 0.0)
+
+    \vspace{0.2cm}
+
+        \hspace{0.5cm} P2 $\Rightarrow$ (pr $\times$ cos($\alpha_{seguinte}$) , ph, pr $\times$ sin($\alpha_{seguinte}$))
+
+    \vspace{0.2cm}
+
+        \hspace{1cm} P3 $\Rightarrow$ (pr $\times$ cos($\alpha_{atual}$) , ph, pr $\times$ sin($\alpha_{atual}$))
+
+    \vspace{0.3cm}
+
+  \end{enumerate}
+
+  \item Fim
+\end{enumerate}
+\rmfamily
 
 \newpage
 

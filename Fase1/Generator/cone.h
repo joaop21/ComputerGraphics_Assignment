@@ -24,7 +24,7 @@ int generateCone(float bottom_radius, float height, int slices, int stacks, stri
 		// nh = new height (stack)
 		// ph = previous height (stack)
 		float ph = 0, pr = bottom_radius;
-		for (int j = 0 ; j < stacks-1; j++) {
+		for (int j = 0; j < stacks-1; j++) {
 			float nh = height / stacks * j;
 			float nr = (height - nh) * bottom_radius / height;
 
