@@ -20,67 +20,83 @@
 int generateBox(float xdim, float ydim, float zdim, int div, string file_name){
 	std::vector<Point> points;
 
-	// primeiro triangulo base (não se pode ver)
-	points.push_back(Point(-xdim, -ydim, zdim));
-	points.push_back(Point(-xdim, -ydim, -zdim));
-	points.push_back(Point(xdim, -ydim, -zdim));
+	float tam_x = xdim / div;
+	float tam_y = ydim / div;
+	float tam_z = zdim / div;
 
-	// segundo triangulo base (não se pode ver)
-	points.push_back(Point(xdim, -ydim, -zdim));
-	points.push_back(Point(xdim, -ydim, zdim));
-	points.push_back(Point(-xdim, -ydim, zdim));
+	float z = zdim/2;
+	// faces paralelas a XY
+	for(int i = 0; i < div ; i++){
+		float x = -(xdim/2);
+		for(int j = 0 ; j < div ; j++){
+			points.push_back(Point((x+tam_x),(i+1)*tam_y,z));
+			points.push_back(Point(x,i*tam_y,z));
+			points.push_back(Point((x+tam_x),i*tam_y,z));
 
-	// primeiro triangulo topo
-	points.push_back(Point(xdim, ydim, -zdim));
-	points.push_back(Point(-xdim, ydim, -zdim));
-	points.push_back(Point(-xdim, ydim, zdim));
+			points.push_back(Point(x,(i+1)*tam_y,z));
+			points.push_back(Point(x,i*tam_y,z));
+			points.push_back(Point((x+tam_x),(i+1)*tam_y,z));
 
-	// segundo triangulo topo
-	points.push_back(Point(xdim, ydim, -zdim));
-	points.push_back(Point(-xdim, ydim, zdim));
-	points.push_back(Point(xdim, ydim, zdim));
+			points.push_back(Point((x+tam_x),(i+1)*tam_y,-z));
+			points.push_back(Point((x+tam_x),i*tam_y,-z));
+			points.push_back(Point(x,i*tam_y,-z));
 
+			points.push_back(Point(x,(i+1)*tam_y,-z));
+			points.push_back(Point((x+tam_x),(i+1)*tam_y,-z));
+			points.push_back(Point(x,i*tam_y,-z));
+			x+=tam_x;
+		}
+	}
 
-	// primeiro triangulo eixo OZ
-	points.push_back(Point(xdim, -ydim, zdim));
-	points.push_back(Point(xdim, ydim, zdim));
-	points.push_back(Point(-xdim, -ydim, zdim));
+	float x = xdim/2;
+	// faces paralelas a ZY
+	for(int i = 0; i < div ; i++){
+		float z = zdim/2;
+		for(int j = 0 ; j < div ; j++){
+			points.push_back(Point(x,(i+1)*tam_y,(z-tam_z)));
+			points.push_back(Point(x,i*tam_y,z));
+			points.push_back(Point(x,i*tam_y,(z-tam_z)));
 
-	// segundo triangulo eixo OZ
-	points.push_back(Point(xdim, ydim, zdim));
-	points.push_back(Point(-xdim, ydim, zdim));
-	points.push_back(Point(-xdim, -ydim, zdim));
+			points.push_back(Point(x,(i+1)*tam_y,z));
+			points.push_back(Point(x,i*tam_y,z));
+			points.push_back(Point(x,(i+1)*tam_y,(z-tam_z)));
 
-	// primeiro triangulo eixo OZ negativo (não se pode ver)
-	points.push_back(Point(-xdim, ydim, -zdim));
-	points.push_back(Point(xdim, ydim, -zdim));
-	points.push_back(Point(xdim, -ydim, -zdim));
+			points.push_back(Point(-x,(i+1)*tam_y,(z-tam_z)));
+			points.push_back(Point(-x,i*tam_y,(z-tam_z)));
+			points.push_back(Point(-x,i*tam_y,z));
 
-	// segundo triangulo eixo OZ negativo (não se pode ver)
-	points.push_back(Point(xdim, -ydim, -zdim));
-	points.push_back(Point(-xdim, -ydim, -zdim));
-	points.push_back(Point(-xdim, ydim, -zdim));
+			points.push_back(Point(-x,(i+1)*tam_y,z));
+			points.push_back(Point(-x,(i+1)*tam_y,(z-tam_z)));
+			points.push_back(Point(-x,i*tam_y,z));
+			z-=tam_z;
+		}
+	}
 
+	z = zdim/2;
+	// faces paralelas a ZX
+	for(int i = 0; i < div ; i++){
+		x = -(xdim/2);
+		float y = ydim;
+		for(int j = 0 ; j < div ; j++){
+			points.push_back(Point((x+tam_x),y,(z-tam_z)));
+			points.push_back(Point(x,y,z));
+			points.push_back(Point((x+tam_x),y,z));
 
-	// primeiro triangulo eixo OX
-	points.push_back(Point(xdim, -ydim, -zdim));
-	points.push_back(Point(xdim, ydim, -zdim));
-	points.push_back(Point(xdim, ydim, zdim));
+			points.push_back(Point(x,y,(z-tam_z)));
+			points.push_back(Point(x,y,z));
+			points.push_back(Point((x+tam_x),y,(z-tam_z)));
 
-	// segundo triangulo eixo OX
-	points.push_back(Point(xdim, -ydim, -zdim));
-	points.push_back(Point(xdim, ydim, zdim));
-	points.push_back(Point(xdim, -ydim, zdim));
+			points.push_back(Point((x+tam_x),0,(z-tam_z)));
+			points.push_back(Point((x+tam_x),0,z));
+			points.push_back(Point(x,0,z));
 
-	// primeiro triangulo eixo OX negativo (não se pode ver)
-	points.push_back(Point(-xdim, ydim, zdim));
-	points.push_back(Point(-xdim, ydim, -zdim));
-	points.push_back(Point(-xdim, -ydim, -zdim));
-
-	// segundo triangulo eixo OX negativo (não se pode ver)
-	points.push_back(Point(-xdim, ydim, zdim));
-	points.push_back(Point(-xdim, -ydim, -zdim));
-	points.push_back(Point(-xdim, -ydim, zdim));
+			points.push_back(Point(x,0,(z-tam_z)));
+			points.push_back(Point((x+tam_x),0,(z-tam_z)));
+			points.push_back(Point(x,0,z));
+			x+=tam_x;
+		}
+		z-=tam_z;
+	}
 
 
 	// necessário operações sobre ficheiros
