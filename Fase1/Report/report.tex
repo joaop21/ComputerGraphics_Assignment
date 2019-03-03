@@ -110,13 +110,33 @@ $$\alpha_{2} = (slice\_atual+1) \times \frac{2\pi}{numero\_slices} $$
 
 \vspace{0.2cm}
 
-        \hspace{1cm} P1' $\Rightarrow$ (raio' $\times$ cos($\alpha_{1}$) , height, raio' $\times$ sin($\alpha_{1}$))
+        \hspace{0.5cm} P1' $\Rightarrow$ (raio' $\times$ cos($\alpha_{1}$) , altura\_stack, raio' $\times$ sin($\alpha_{1}$))
 
 \vspace{0.2cm}
 
-        \hspace{1cm} P2' $\Rightarrow$ (raio' $\times$ cos($\alpha_{2}$) , height, raio' $\times$ sin($\alpha_{2}$))
+        \hspace{0.5cm} P2' $\Rightarrow$ (raio' $\times$ cos($\alpha_{2}$) , altura\_stack, raio' $\times$ sin($\alpha_{2}$))
 
 \rmfamily
+
+\vspace{1cm}
+
+% figura
+
+\ttfamily
+$$ \frac{HA}{HO} = \frac{AB}{OC} \Leftrightarrow $$
+
+\vspace{0.5cm}
+
+$$ \Leftrightarrow \frac{altura - altura\_stack}{altura} = \frac{raio\_stack}{raio} \Leftrightarrow $$
+
+\vspace{0.5cm}
+
+$$ \Leftrightarrow raio\_stack = \frac{(altura - altura\_stack) \times raio}{altura} $$
+
+\vspace{1cm}
+
+$$ altura\_stack = \frac{altura}{stacks} \times numero\_stacks $$
+
 
 \newpage
 
@@ -209,6 +229,8 @@ $$\alpha_{2} = (slice\_atual+1) \times \frac{2\pi}{numero\_slices} $$
   \item Fim
 \end{enumerate}
 \rmfamily
+
+% figura
 
 \newpage
 
