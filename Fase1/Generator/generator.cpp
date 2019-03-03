@@ -33,7 +33,16 @@ int main(int argc, char* argv[]) {
 			res = generateBox(xdim,ydim,zdim,divisions,file_name);
 		}
 	} else if(primitive == "sphere"){
-		// fazer cenas
+		float radius = atof(argv[2]);
+		int slices = atoi(argv[3]);
+		int stacks = atoi(argv[4]);
+		string file_name = argv[5];
+		if(slices < 3)
+			printf("O mínimo de slices possível é 3.\n");
+		else if(stacks < 2)
+			printf("O mínimo de stacks possível é 2.\n");
+		else
+			res = generateSphere(radius,slices,stacks,file_name);
 	} else if(primitive == "cone"){
 		float bottom_radius = atof(argv[2]);
 		float height = atof(argv[3]);
