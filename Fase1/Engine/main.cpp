@@ -198,6 +198,12 @@ void processKeys(unsigned char c, int xx, int yy) {
 	case 'e':
 		dz += 0.1;
 		break;
+	case '+':
+		camera_radius -= 0.1;
+		break;
+	case '-':
+		camera_radius += 0.1;
+		break;
 	case 'z':
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		break;

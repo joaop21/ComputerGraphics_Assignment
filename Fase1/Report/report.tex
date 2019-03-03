@@ -9,6 +9,8 @@
 \usepackage{subcaption}
 \usepackage[T1]{fontenc}
 \usepackage{listings}
+\usepackage{amsmath}
+\usepackage{mathtools}
 \renewcommand{\familydefault}{\sfdefault}
 
 \title{Projeto de Computação Gráfica - Fase 1}
@@ -100,7 +102,34 @@ De forma a representar as figuras de uma determinada cena, usou-se XML para refe
 
 \section{Câmera}
 \label{sec:camera}
-De forma a poder visualizar as figuras de diferentes ângulos criamos uma câmera que se encontra fixa enquanto as figuras se movem. Tem tambem a utilidade de ajudar na deteção de erros na criação da figura, caso estes existam. Com recurso às teclas D, A, W, S, Q e E é possível mover a figura para ...
+De forma a poder visualizar as figuras de diferentes ângulos criamos uma câmera que pode variar a sua posição e o ponto para que está a olhar, mantendo-se portanto todas as figuras geradas fixas.
+
+Por forma a mover a posição da câmera usamos as teclas UP, DOWN, LEFT e RIGHT. Desta forma a câmera altera a sua posição consoante um ângulo $\alpha$ que varia no plano XZ, e um ângulo $\beta$ que varia no plano XY. Inicialmente é ainda definido um raio, que em conjunto com os ângulos falados faz com que a câmera varie a sua posição como se estivesse assente numa superfície esférica. Este raio pode ainda ser mudado por forma a aproximar ou afastar a câmera do ponto para o qual está a olhar. Tal é feito através das teclas '+' e '-'.
+
+É também possível alterar o ponto para o qual a câmera está a olhar. Esta ação pode ser feita através das teclas A,S,D,Q,W e E que alteram as coordenadas de X, Y e Z do ponto para o qual a câmera deve olhar.
+
+Por forma ainda de visualizar as figuras de diferentes modos utilizamos as teclas Z, X e C, que alteram a forma de visualização para linhas, pontos, e preenchido.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.40]{funcao_desenha.png}
+\caption{Função encarregue dos parâmetros da câmara.}
+\label{img:desenha}
+\end{figure}
+
+Como é descrito na figura \ref{img:desenha}, realizamos uma função que está encarregue de atualizar e gerir todos os parâmetros referentes à câmera. Esta função é realizada consoante qualquer alteração num destes parâmetros.
+
+Por forma a envolver diretamente estes parâmetros com a câmera, inserimo-los na função \emph{gluLookAt()}, como é possível visualizar na figura \ref{img:glulookat}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.70]{gluLookAt.png}
+\caption{Função que contém a matriz da câmera.}
+\label{img:glulookat}
+\end{figure}
+
+A câmera é também um mecanismo muito forte de deteção de erros, uma vez que nos permite visualizar as figuras de várias formas e perspetivas.
+
 
 \section{Conclusão}
 \label{sec:conclusao}
