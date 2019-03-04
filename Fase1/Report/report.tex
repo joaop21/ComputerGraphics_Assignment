@@ -40,7 +40,7 @@ O \textit{generator} cria um ficheiro (do tipo .3d) que contém todos os vértic
 
 No caso do \textit{engine} é necessário que este leia um ficheiro do tipo XML onde se encontra a referência para o ficheiro .3d que queremos ler para depois ser gerada a figura pretendida.
 
-De seguida, iremos apresentar todos os algoritmos e equações, bem como as suas respetivas explicações, que foram utilizados para a realização das duas aplicações. Também serão apresentadas figuras que contém código e figuras ilustrativas dos algoritmos/equações.   
+De seguida, iremos apresentar todos os algoritmos e equações, bem como as suas respetivas explicações, que foram utilizados para a realização das duas aplicações. Também serão apresentadas figuras que contém código e figuras ilustrativas dos algoritmos/equações.
 
 \section{Generator}
 \label{sec:generator}
@@ -48,11 +48,9 @@ De seguida, iremos apresentar todos os algoritmos e equações, bem como as suas
 \subsection{Explicação dos ficheiros criados}
 \label{sec:ficheiros}
 
-Cada função recebe como último parâmetro uma string com o nome do ficheiro que vai guardar os pontos que constituem os triângulos necessários para a criação de cada figura, bem como o número de triângulos presentes no ficheiro.
+Cada função recebe como último parâmetro uma string com o nome do ficheiro que vai guardar os pontos que constituem os triângulos necessários para a criação de cada figura.
 
-Sendo assim, a primeira linha contém o número de triângulos presentes e todas as linhas seguintes correspondem a um ponto (com as três coordenadas x,y,z). A junção de três linhas corresponde a um triângulo isto porque um triângulo é definido através de três pontos.
-
-Este processo é feito pelo \textit{generator} que após ser compilado cria um executável que terá como argumentos a figura pretendida, os componentes necessários para execução da figura pretendida (por exemplo o raio, as \textit{slices} e as \textit{stacks} no caso da esfera) e o nome do ficheiro a ser criado. Se o ficheiro já existir é reescrito com os novos dados.
+(...)
 
 \newpage
 
@@ -102,6 +100,65 @@ A função \textit{generateBox} recebe como parâmetro três floats que represen
 
 \subsection{\textit{Sphere}}
 \label{sec:sphere}
+
+\subsubsection{Algoritmo:}
+
+\ttfamily
+\begin{enumerate}
+  \item Iterar sobre o número de stacks:
+  \begin{enumerate}
+    \item Calcular o ângulo $\beta$ para a stack atual $\Rightarrow$ \underline{$\beta_{atual}$}
+    \item Calcular o ângulo $\beta$ para a stack seguinte $\Rightarrow$ \underline{$\beta_{seguinte}$}
+    \item Calcular o raio da stack atual $\Rightarrow$ \underline{rs} (radius stack)
+    \item Calcular o raio da stack seguinte $\Rightarrow$ \underline{rsn} (radius stack new)
+
+    \item Iterar sobre o número de slices:
+    \begin{enumerate}
+      \item Calcular o ângulo $\alpha$ para o slice atual $\Rightarrow$ \underline{$\alpha_{atual}$}
+      \item Calcular o ângulo $\alpha$ para o slice seguinte $\Rightarrow$ \underline{$\alpha_{seguinte}$}
+      \item Construir os dois triângulos da stack atual:
+
+      \vspace{0.5cm}
+
+      \underline{Primeiro triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{0.0cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ cos($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+          \hspace{-0.5cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.0cm} P3 $\Rightarrow$ (rsn $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.5cm}
+
+      \underline{Segundo triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{-0.25cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{-0.75cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.0cm} P3 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rs $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+    \end{enumerate}
+
+    \end{enumerate}
+
+    \item Fim
+    \end{enumerate}
+    \rmfamily
 
 \newpage
 

@@ -16,20 +16,24 @@ rsn - raio da stack seguinte
 int generateSphere(float r, int slices, int stacks, string file_name){
 	std::vector<Point> points;
 
-	float sls = 2*M_PI / slices; // sliceStep
-	float sts = M_PI / stacks; //
+	float sls = 2*M_PI / slices;
+	float sts = M_PI / stacks;
 
 	for(int i = 0 ; i < stacks ; i++ ){
-		float rs = r*sin(i*sts); // raio da stack atual
-		float rsn = r*sin((i+1)*sts); // raio da stack seguinte
+		float beta = i*sts;
+		float next_beta = (i+1)*sts;
+		float rs = r*sin(beta); // radius stack (atual)
+		float rsn = r*sin(next_beta); // radius stack next
 		for(int j = 0 ; j < slices ; j++){
-			points.push_back(Point(rs*cos(j*sls), r*cos(i*sts), rs*sin(j*sls)));
-			points.push_back(Point(rsn*cos((j+1)*sls), r*cos((i+1)*sts), rsn*sin((j+1)*sls)));
-			points.push_back(Point(rsn*cos(j*sls), r*cos((i+1)*sts), rsn*sin(j*sls)));
+				float alfa = j*sls; // alfa anda no plano XZ
+				float next_alfa = (j+1)*sls;
+			points.push_back(Point(rs*cos(alfa), r*cos(beta), rs*sin(alfa)));
+			points.push_back(Point(rsn*cos(next_alfa), r*cos(next_beta), rsn*sin(next_alfa)));
+			points.push_back(Point(rsn*cos(alfa), r*cos(next_beta), rsn*sin(alfa)));
 
-			points.push_back(Point(rs*cos((j+1)*sls), r*cos(i*sts), rs*sin((j+1)*sls)));
-			points.push_back(Point(rsn*cos((j+1)*sls), r*cos((i+1)*sts), rsn*sin((j+1)*sls)));
-			points.push_back(Point(rs*cos(j*sls), r*cos(i*sts), rs*sin(j*sls)));
+			points.push_back(Point(rs*cos(next_alfa), r*cos(beta), rs*sin(next_alfa)));
+			points.push_back(Point(rsn*cos(next_alfa), r*cos(next_beta), rsn*sin(next_alfa)));
+			points.push_back(Point(rs*cos(alfa), r*cos(beta), rs*sin(alfa)));
 		}
 	}
 
