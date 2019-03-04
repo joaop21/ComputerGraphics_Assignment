@@ -13,6 +13,7 @@
 *  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
 * pontos e triangulos gerados.
 *
+*  @returns Integer que dita se a geração foi um sucesso ou não
 */
 int generatePlane(float side, string file_name){
 	std::vector<Point> points;
