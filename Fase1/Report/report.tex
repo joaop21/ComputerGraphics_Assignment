@@ -48,9 +48,12 @@ De seguida, iremos apresentar todos os algoritmos e equações, bem como as suas
 \subsection{Explicação dos ficheiros criados}
 \label{sec:ficheiros}
 
-Cada função recebe como último parâmetro uma string com o nome do ficheiro que vai guardar os pontos que constituem os triângulos necessários para a criação de cada figura.
+Cada função recebe como último parâmetro uma string com o nome do ficheiro que vai guardar os pontos que constituem os triângulos necessários para a criação de cada figura, bem como o número de triângulos presentes no ficheiro.
 
-(...)
+Sendo assim, a primeira linha contém o número de triângulos presentes e todas as linhas seguintes correspondem a um ponto (com as três coordenadas x,y,z). A junção de três linhas corresponde a um triângulo isto porque um triângulo é definido através de três pontos.
+
+Este processo é feito pelo \textit{generator} que após ser compilado cria um executável que terá como argumentos a figura pretendida, os componentes necessários para execução da figura pretendida (por exemplo o raio, as \textit{slices} e as \textit{stacks} no caso da esfera) e o nome do ficheiro a ser criado. Se o ficheiro já existir é reescrito com os novos dados.
+
 
 \newpage
 
