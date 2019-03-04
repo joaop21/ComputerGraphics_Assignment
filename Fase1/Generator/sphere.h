@@ -5,23 +5,31 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-int generateSphere(float radius, int slices, int stacks, string file_name){
+/**
+r - radius
+sls - SliceStep
+sts - StackStep
+rs - raio da stack atual
+rsn - raio da stack seguinte
+*/
+
+int generateSphere(float r, int slices, int stacks, string file_name){
 	std::vector<Point> points;
 
-	float sliceStep = 2*M_PI / slices;
-	float stackStep = M_PI / stacks;
+	float sls = 2*M_PI / slices; // sliceStep
+	float sts = M_PI / stacks; //
 
 	for(int i = 0 ; i < stacks ; i++ ){
-		float rstack = radius*sin(i*stackStep); // raio da stack atual
-		float rstack_next = radius*sin((i+1)*stackStep); // raio da stack seguinte
+		float rs = r*sin(i*sts); // raio da stack atual
+		float rsn = r*sin((i+1)*sts); // raio da stack seguinte
 		for(int j = 0 ; j < slices ; j++){
-			points.push_back(Point(rstack*cos(j*sliceStep), radius*cos(i*stackStep), rstack*sin(j*sliceStep)));
-			points.push_back(Point(rstack_next*cos((j+1)*sliceStep), radius*cos((i+1)*stackStep), rstack_next*sin((j+1)*sliceStep)));
-			points.push_back(Point(rstack_next*cos(j*sliceStep), radius*cos((i+1)*stackStep), rstack_next*sin(j*sliceStep)));
+			points.push_back(Point(rs*cos(j*sls), r*cos(i*sts), rs*sin(j*sls)));
+			points.push_back(Point(rsn*cos((j+1)*sls), r*cos((i+1)*sts), rsn*sin((j+1)*sls)));
+			points.push_back(Point(rsn*cos(j*sls), r*cos((i+1)*sts), rsn*sin(j*sls)));
 
-			points.push_back(Point(rstack*cos((j+1)*sliceStep), radius*cos(i*stackStep), rstack*sin((j+1)*sliceStep)));
-			points.push_back(Point(rstack_next*cos((j+1)*sliceStep), radius*cos((i+1)*stackStep), rstack_next*sin((j+1)*sliceStep)));
-			points.push_back(Point(rstack*cos(j*sliceStep), radius*cos(i*stackStep), rstack*sin(j*sliceStep)));
+			points.push_back(Point(rs*cos((j+1)*sls), r*cos(i*sts), rs*sin((j+1)*sls)));
+			points.push_back(Point(rsn*cos((j+1)*sls), r*cos((i+1)*sts), rsn*sin((j+1)*sls)));
+			points.push_back(Point(rs*cos(j*sls), r*cos(i*sts), rs*sin(j*sls)));
 		}
 	}
 
