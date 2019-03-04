@@ -1,6 +1,9 @@
 #include <string>
 #include <vector>
+#include <iostream>
+#include <fstream>
 #include "point.h"
+#include "writeFile.h"
 #include "plane.h"
 #include "box.h"
 #include "sphere.h"

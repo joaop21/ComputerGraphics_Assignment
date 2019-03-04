@@ -47,22 +47,6 @@ int generateCone(float bottom_radius, float height, int slices, int stacks, stri
 	}
 
 
-	// necessário operações sobre ficheiros
-	ofstream file ("../Generated_Models/" + file_name);
-		if (file.is_open()){
-
-		// no inicio escrevem-se o numero de triangulos existente no ficheiro
-		int num_points = points.size();
-			file << to_string(num_points / 3) + "\n";
-
-		// escrita dos pontos no ficheiro
-		for(int i = 0 ; i < num_points ; i++){
-			Point temp = points[i];
-			file << to_string(temp.getX()) + " " +
-					to_string(temp.getY()) + " " +
-					to_string(temp.getZ()) + "\n";
-		}
-			file.close();
-		return 1;
-		} else return 0;
+	int res = write_in_file(points, file_name);
+	return res;
 }
