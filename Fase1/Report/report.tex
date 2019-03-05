@@ -170,7 +170,12 @@ A função \textit{generateBox} recebe como parâmetro três floats que represen
 A função \textit{generateCone} recebe como parâmetro um float que representa o raio da base do cone, um float que representa a altura do cone, um inteiro que representa o número de triângulos que queremos que constituam a base, e ainda outro inteiro que representa o número de \textit{stacks} que constituem o lado do cone.
 
 
-% figura
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{cone_pontos.png}
+\caption{Calcular as coordenadas de um ponto na superfície do cone}
+\label{img:cone_pontos}
+\end{figure}
 
 \ttfamily
 $$\alpha_{1} = slice\_atual \times \frac{2\pi}{numero\_slices} $$
@@ -199,7 +204,12 @@ $$\alpha_{2} = (slice\_atual+1) \times \frac{2\pi}{numero\_slices} $$
 
 \vspace{1cm}
 
-% figura
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{cone_raio_altura.png}
+\caption{Calcular o raio e a altura de uma stack}
+\label{img:cone_raio_altura}
+\end{figure}
 
 \ttfamily
 $$ \frac{HA}{HO} = \frac{AB}{OC} \Leftrightarrow $$
@@ -214,8 +224,7 @@ $$ \Leftrightarrow raio\_stack = \frac{(altura - altura\_stack) \times raio}{alt
 
 \vspace{1cm}
 
-$$ altura\_stack = \frac{altura}{stacks} \times numero\_stacks $$
-
+$$ altura\_stack = \frac{altura}{stacks} \times numero\_stack $$
 
 \newpage
 
@@ -229,7 +238,7 @@ $$ altura\_stack = \frac{altura}{stacks} \times numero\_stacks $$
     \item Calcular o ângulo $\alpha$ para o slice seguinte $\Rightarrow$ \underline{$\alpha_{seguinte}$}
     \item Construir os pontos do triângulo formado pelas duas slices atuais:
 
-    \vspace{0.5cm}
+    \vspace{0.2cm}
 
         \hspace{3cm} P1 $\Rightarrow$ (0.0, 0.0, 0.0)
 
@@ -312,7 +321,12 @@ $$ altura\_stack = \frac{altura}{stacks} \times numero\_stacks $$
 \end{enumerate}
 \rmfamily
 
-% figura
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{cone_triangulos.png}
+\caption{Triângulos das stacks}
+\label{img:cone_triangulos}
+\end{figure}
 
 \newpage
 
