@@ -341,6 +341,66 @@ De forma a representar as figuras de uma determinada cena, usou-se XML para refe
 \label{img:scene}
 \end{figure}
 
+Na aplicação criada, foram criadas duas classes:
+
+\hspace{1cm} \texttt{Point}
+
+\hspace{1cm} Contém três \texttt{float (x,y,z)} que representam as coordenadas do ponto.
+
+\hspace{1cm} \texttt{Figure}
+
+\hspace{1cm} Contém o número de triângulos e um \texttt{vector} com vários \texttt{Point}.  
+
+\subsection{Ficheiro XML}
+Para o parsing do documento XML utilizamos a API do tinyXML2.
+
+A função \texttt{load\_generated\_files()} é responsável pela leitura do ficheiro XML e gravar os pontos lidos em memória para que depois sejam utilizados para a criação das figuras.
+
+\begin{enumerate}
+	\item Abre o ficheiro "scene.xml" (em caso de erro, termina execução e envia mensagem de erro);
+	\item Procura primeiro elemento "scene" e em caso de erro, termina a execução;
+	\item Cria um vetor onde serão armazenadas as figuras que queremos carregar para posteriormente desenhar - \texttt{vector<string> files};
+	\item Itera sobre todas as linhas com o elemento model:
+	
+	\begin{enumerate}
+		\item Cria uma string "new\_file" que contém o nome da figura a carregar
+		\item Insere a string "new\_file" no vetor \texttt{files}
+	\end{enumerate}
+
+	\item Itera sobre o vetor files:
+
+	\begin{enumerate}
+		\item Abre o ficheiro correspondente ao nome da string;
+		\item Cria uma \texttt{Figure} fig:
+
+		\begin{enumerate}
+			\item Lê o numero de triângulos do ficheiro e guarda em fig.
+			\item Até ao final do ficheiro cria um \texttt{Point} new\_point onde irá ser gravado os componentes x,y e z e coloca este em fig.
+		\end{enumerate}
+		\item Coloca fig em figures que é a estrutura utilizada para gravar as figuras a desenhar.
+	\end{enumerate}
+\end{enumerate}
+
+Todo este processo resulta na presença de todas as figuras a desenhar em memória.
+
+\subsection{Desenho das figuras}
+
+Após a realização do processo anterior, vamos proceder ao desenho das figuras gravadas em memória.
+
+\begin{enumerate}
+	\item Iteramos sobre o vetor figures:
+	 \begin{enumerate}
+	 	\item Guarda no vetor \texttt{current\_point} os pontos da figura a desenhar.
+	 	\item Inicia o desenho da figura (através da função \texttt{glBegin(GL\_TRIANGLES)});
+	 	\item Iteramos sobre o vetor \texttt{current\_point}:
+	 	\begin{enumerate}
+	 		\item Definimos que a cada três pontos a cor é alterada (ou seja, por triângulo).
+	 		\item Representa o ponto utilizando a função \texttt{glVertex3f} dando como argumentos as componentes x,y e z do \texttt{current\_point};
+	 	\end{enumerate}
+	 	\item Terminar o desenho da figura com \texttt{glEnd()}.
+	 \end{enumerate}
+\end{enumerate}
+
 \section{Câmera}
 \label{sec:camera}
 De forma a poder visualizar as figuras de diferentes ângulos criamos uma câmera que pode variar a sua posição e o ponto para que está a olhar, mantendo-se portanto todas as figuras geradas fixas.
