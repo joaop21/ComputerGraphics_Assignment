@@ -162,7 +162,7 @@ A função \textit{generateBox} recebe como parâmetro três floats que represen
     \item Fim
     \end{enumerate}
     \rmfamily
-    
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.50]{stacks_sphere.png}
@@ -221,6 +221,9 @@ $$\alpha_{2} = (slice\_atual+1) \times \frac{2\pi}{numero\_slices} $$
 \end{figure}
 
 \ttfamily
+
+Pela Regra dos Triângulos Semelhantes:
+
 $$ \frac{HA}{HO} = \frac{AB}{OC} \Leftrightarrow $$
 
 \vspace{0.5cm}
@@ -358,7 +361,7 @@ Na aplicação criada, foram criadas duas classes:
 
 \hspace{1cm} \texttt{Figure}
 
-\hspace{1cm} Contém o número de triângulos e um \texttt{vector} com vários \texttt{Point}.  
+\hspace{1cm} Contém o número de triângulos e um \texttt{vector} com vários \texttt{Point}.
 
 \subsection{Ficheiro XML}
 Para o parsing do documento XML utilizamos a API do tinyXML2.
@@ -370,7 +373,7 @@ A função \texttt{load\_generated\_files()} é responsável pela leitura do fic
 	\item Procura primeiro elemento "scene" e em caso de erro, termina a execução;
 	\item Cria um vetor onde serão armazenadas as figuras que queremos carregar para posteriormente desenhar - \texttt{vector<string> files};
 	\item Itera sobre todas as linhas com o elemento model:
-	
+
 	\begin{enumerate}
 		\item Cria uma string "new\_file" que contém o nome da figura a carregar
 		\item Insere a string "new\_file" no vetor \texttt{files}
