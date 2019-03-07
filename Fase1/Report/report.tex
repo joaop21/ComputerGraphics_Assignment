@@ -104,6 +104,12 @@ A função \textit{generateBox} recebe como parâmetro três floats que represen
 \subsection{\textit{Sphere}}
 \label{sec:sphere}
 
+Para calcular os pontos necessários para o desenho da esfera, utilizamos o o raio, o número de slices, o números de stacks. Para o calcular coordenadas utilizamos coordenadas esféricas.
+
+Para o cálculo das várias stacks usamos um ângulo $\beta$ que varia entre 0 e $\pi$ com o eixo do Y. O ângulo de stack em stack avança: $$\frac{\pi}{numero\_stacks}$$
+
+Para o cálculo das várias slices usamos um ângulo $\alpha$ que varia entre 0 e $2*\pi$ com o eixo do X. O ângulo de slice em slice avança: $$\frac{2*\pi}{numero\_slices}$$
+
 \subsubsection{Algoritmo:}
 
 \ttfamily
