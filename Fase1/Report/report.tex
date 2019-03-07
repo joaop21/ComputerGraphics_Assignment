@@ -104,11 +104,20 @@ A função \textit{generateBox} recebe como parâmetro três floats que represen
 \subsection{\textit{Sphere}}
 \label{sec:sphere}
 
-Para calcular os pontos necessários para o desenho da esfera, utilizamos o o raio, o número de slices, o números de stacks. Para o calcular coordenadas utilizamos coordenadas esféricas.
+Para calcular os pontos necessários para o desenho da esfera, utilizamos o o raio, o número de slices e o números de stacks. Para o calcular coordenadas utilizamos coordenadas esféricas.
 
-Para o cálculo das várias stacks usamos um ângulo $\beta$ que varia entre 0 e $\pi$ com o eixo do Y. O ângulo de stack em stack avança: $$\frac{\pi}{numero\_stacks}$$
+Para o cálculo das várias stacks usamos um ângulo $\beta$ que varia entre 0 e $\pi$ com o eixo do Y. Considerando o ângulo $\beta$ desta forma (figura \ref{img:sphere_angles}), podemos resolver todo o algoritmo apenas com um ciclo \emph{for} aninhado. O ângulo de stack em stack avança: $$StackStep = \frac{\pi}{numero\_stacks}\ rads$$
 
-Para o cálculo das várias slices usamos um ângulo $\alpha$ que varia entre 0 e $2*\pi$ com o eixo do X. O ângulo de slice em slice avança: $$\frac{2*\pi}{numero\_slices}$$
+Para o cálculo das várias slices usamos um ângulo $\alpha$ que varia entre 0 e $2*\pi$ com o eixo do X. O ângulo de slice em slice avança: $$ SliceStep = \frac{2*\pi}{numero\_slices}\ rads$$ 
+
+Na seguinte figura é possível analisar o descrito.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.2]{sphere_angles.png}
+\caption{Ângulos considerados para a geração de pontos da esfera.}
+\label{img:sphere_angles}
+\end{figure}
 
 \subsubsection{Algoritmo:}
 
@@ -119,7 +128,7 @@ Para o cálculo das várias slices usamos um ângulo $\alpha$ que varia entre 0 
     \item Calcular o ângulo $\beta$ para a stack atual $\Rightarrow$ \underline{$\beta_{atual}$}
     \item Calcular o ângulo $\beta$ para a stack seguinte $\Rightarrow$ \underline{$\beta_{seguinte}$}
     \item Calcular o raio da stack atual $\Rightarrow$ \underline{rs} (radius stack)
-    \item Calcular o raio da stack seguinte $\Rightarrow$ \underline{rsn} (radius stack new)
+    \item Calcular o raio da stack seguinte $\Rightarrow$ \underline{rsn} (radius stack next)
 
     \item Iterar sobre o número de slices:
     \begin{enumerate}
@@ -176,7 +185,7 @@ Para o cálculo das várias slices usamos um ângulo $\alpha$ que varia entre 0 
 \label{img:stack_sphere}
 \end{figure}
 
-Ao percorrer todas as slices em cada iteração do algoritmo, desenham-se as stacks recorrendo a dois triângulos como descrito no algoritmo acima. Na figura \ref{img:stack_sphere} o triângulo a vermelho corresponde ao primeiro triângulo que é calculado, consequentemente, o triângulo a verde é o segundo a ser calculado.
+Ao percorrer todas as slices em cada iteração do algoritmo, desenha-se cada quadrilátero recorrendo a dois triângulos como descrito no algoritmo acima. Na figura \ref{img:stack_sphere} o triângulo a vermelho corresponde ao primeiro triângulo que é calculado, consequentemente, o triângulo a verde é o segundo a ser calculado.
 
 \newpage
 
