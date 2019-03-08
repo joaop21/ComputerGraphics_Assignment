@@ -99,7 +99,71 @@ Com base no valor do lado, são gerados os quatro pontos que formam os vértices
 \label{sec:box}
 A função \textit{generateBox} recebe como parâmetro três floats que representam as dimensões de cada eixo da caixa (X, Y e Z), e um inteiro que representa o número de divisões que a caixa tem. (???????????????)
 
-(...)
+\ttfamily
+\begin{enumerate}
+  \item Calcular o lado de cada triângulo das divisões, para a dimensão:
+
+  \vspace{0.2cm}
+  \hspace{5.0cm}X $\Rightarrow$ \underline{$tam_{x}$}
+
+  \hspace{5.0cm}Y $\Rightarrow$ \underline{$tam_{y}$}
+
+  \hspace{5.0cm}Z $\Rightarrow$ \underline{$tam_{z}$}
+
+  \item Iterar sobre o número de divisões:
+  \begin{enumerate}
+    \item Calcular o ângulo $\beta$ para a stack atual $\Rightarrow$ \underline{$\beta_{atual}$}
+    \item Calcular o ângulo $\beta$ para a stack seguinte $\Rightarrow$ \underline{$\beta_{seguinte}$}
+    \item Calcular o raio da stack atual $\Rightarrow$ \underline{rs} (radius stack)
+    \item Calcular o raio da stack seguinte $\Rightarrow$ \underline{rsn} (radius stack next)
+
+    \item Iterar sobre o número de slices:
+    \begin{enumerate}
+      \item Calcular o ângulo $\alpha$ para o slice atual $\Rightarrow$ \underline{$\alpha_{atual}$}
+      \item Calcular o ângulo $\alpha$ para o slice seguinte $\Rightarrow$ \underline{$\alpha_{seguinte}$}
+      \item Construir os dois triângulos da stack atual:
+
+      \vspace{0.5cm}
+
+      \underline{Primeiro triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{0.0cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ cos($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+          \hspace{-0.5cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.0cm} P3 $\Rightarrow$ (rsn $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.5cm}
+
+      \underline{Segundo triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{-0.25cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{-0.75cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.0cm} P3 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rs $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+    \end{enumerate}
+
+    \end{enumerate}
+
+    \item Fim
+    \end{enumerate}
+    \rmfamily
 
 \subsection{\textit{Sphere}}
 \label{sec:sphere}
@@ -108,7 +172,7 @@ Para calcular os pontos necessários para o desenho da esfera, utilizamos o o ra
 
 Para o cálculo das várias stacks usamos um ângulo $\beta$ que varia entre 0 e $\pi$ com o eixo do Y. Considerando o ângulo $\beta$ desta forma (figura \ref{img:sphere_angles}), podemos resolver todo o algoritmo apenas com um ciclo \emph{for} aninhado. O ângulo de stack em stack avança: $$StackStep = \frac{\pi}{numero\_stacks}\ rads$$
 
-Para o cálculo das várias slices usamos um ângulo $\alpha$ que varia entre 0 e $2*\pi$ com o eixo do X. O ângulo de slice em slice avança: $$ SliceStep = \frac{2*\pi}{numero\_slices}\ rads$$ 
+Para o cálculo das várias slices usamos um ângulo $\alpha$ que varia entre 0 e $2\times\pi$ com o eixo do X. O ângulo de slice em slice avança: $$ SliceStep = \frac{2\times\pi}{numero\_slices}\ rads$$
 
 Na seguinte figura é possível analisar o descrito.
 
