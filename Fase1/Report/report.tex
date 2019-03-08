@@ -23,7 +23,7 @@
 \maketitle
 
 \begin{abstract}
-Neste relatório é apresentada a primeira fase dum projeto no qual a intenção é desenvolver um mecanismo 3D baseado em gráficos de cenas e fornecer exemplos de uso que mostrem o seu potencial, desenvolvido no âmbito da unidade curricular de Computação Gráfica.
+Neste relatório é apresentada a primeira fase dum projeto no qual a intenção é desenvolver um mecanismo baseado em gráficos 3D e fornecer exemplos de uso que mostrem o seu potencial. Este projeto é desenvolvido no âmbito da unidade curricular de Computação Gráfica.
 \end{abstract}
 
 \tableofcontents
@@ -36,9 +36,9 @@ Neste relatório é apresentada a primeira fase dum projeto no qual a intenção
 
 Esta primeira fase tem como objetivo a criação de duas aplicacões: \textit{generator} e \textit{engine}.
 
-O \textit{generator} cria um ficheiro (do tipo .3d) que contém todos os vértices necessários para o desenho de uma determinada superfície, bem como o número de triângulos.
+O \textit{generator} cria/reescreve um ficheiro (passado como parâmetro) que contém todos os vértices necessários para o desenho de uma determinada superfície, bem como o número de triângulos no início desse mesmo ficheiro.
 
-No caso do \textit{engine} é necessário que este leia um ficheiro do tipo XML onde se encontra a referência para o ficheiro .3d que queremos ler para depois ser gerada a figura pretendida.
+No caso do \textit{engine} é necessário que este leia um ficheiro do tipo XML onde se encontra a referência para o ficheiro criado/reescrito, que queremos ler para depois ser gerada a figura pretendida.
 
 De seguida, iremos apresentar todos os algoritmos e equações, bem como as suas respetivas explicações, que foram utilizados para a realização das duas aplicações. Também serão apresentadas figuras que contém código e figuras ilustrativas dos algoritmos/equações.
 
@@ -72,11 +72,11 @@ Na pasta \textbf{Scenes} reside o ficheiro \emph{XML} que contém os nomes dos f
 \subsection{Explicação dos ficheiros criados}
 \label{sec:ficheiros}
 
-Cada função recebe como último parâmetro uma string com o nome do ficheiro que vai guardar os pontos que constituem os triângulos necessários para a criação de cada figura, bem como o número de triângulos presentes no ficheiro.
+Cada função recebe como último parâmetro uma string com o nome do ficheiro que vai guardar os pontos que constituem os triângulos necessários para a criação de cada figura, bem como o número total de triângulos presentes no modelo.
 
-Sendo assim, a primeira linha contém o número de triângulos presentes e todas as linhas seguintes correspondem a um ponto (com as três coordenadas x,y,z). A junção de três linhas corresponde a um triângulo isto porque um triângulo é definido através de três pontos.
+Sendo assim, a primeira linha contém o número de triângulos e todas as linhas seguintes correspondem a um ponto (com as três coordenadas x,y,z separados por um espaço). A junção de três linhas corresponde a um triângulo isto porque um triângulo é definido através de três pontos.
 
-Este processo é feito pelo \textit{generator} que após ser compilado cria um executável que terá como argumentos a figura pretendida, os componentes necessários para execução da figura pretendida (por exemplo o raio, as \textit{slices} e as \textit{stacks} no caso da esfera) e o nome do ficheiro a ser criado. Se o ficheiro já existir é reescrito com os novos dados.
+Este processo é feito pelo \textit{generator.cpp} que após ser compilado cria um executável (\textit{Generator}) que terá como argumentos a figura pretendida, os componentes necessários para execução da figura pretendida (por exemplo o raio, as \textit{slices} e as \textit{stacks} no caso da esfera) e o nome do ficheiro a ser criado. Se o ficheiro já existir é reescrito com os novos dados.
 
 
 \newpage
@@ -194,7 +194,7 @@ A função \textit{generateBox} recebe como parâmetro três floats que represen
 \subsection{\textit{Sphere}}
 \label{sec:sphere}
 
-Para calcular os pontos necessários para o desenho da esfera, utilizamos o o raio, o número de slices e o números de stacks. Para o calcular coordenadas utilizamos coordenadas esféricas.
+Para calcular os pontos necessários para o desenho da esfera, utilizamos o o raio, o número de slices e o números de stacks. Para calcular coordenadas utilizamos coordenadas esféricas.
 
 Para o cálculo das várias stacks usamos um ângulo $\beta$ que varia entre 0 e $\pi$ com o eixo do Y. Considerando o ângulo $\beta$ desta forma (figura \ref{img:sphere_angles}), podemos resolver todo o algoritmo apenas com um ciclo \emph{for} aninhado. O ângulo de stack em stack avança: $$StackStep = \frac{\pi}{numero\_stacks}\ rads$$
 
@@ -449,7 +449,9 @@ $$ altura\_stack = \frac{altura}{stacks} \times numero\_stack $$
 
 \section{Engine}
 \label{sec:engine}
-De forma a representar as figuras de uma determinada cena, usou-se XML para referenciar os ficheiros “.3d” construídos pelo gerador. Esses ficheiros contêm várias pontos que dão resultado a vários triângulos, que resultam em figuras.
+De forma a representar as figuras de uma determinada cena, usou-se XML para referenciar os ficheiros construídos pelo \emph{generator}. Esses ficheiros contêm vários pontos que dão resultado a vários triângulos, que resultam em figuras.
+
+No caso de exitir mais do que um modelo a ser carregado, as figuras encontrar-se-ão sobrepostas aquando o seu desenho no ecrã.
 
 \begin{figure}[H]
 \centering
@@ -472,6 +474,8 @@ Na aplicação criada, foram criadas duas classes:
 Para o parsing do documento XML utilizamos a API do tinyXML2.
 
 A função \texttt{load\_generated\_files()} é responsável pela leitura do ficheiro XML e gravar os pontos lidos em memória para que depois sejam utilizados para a criação das figuras.
+
+O algoritmo para esta função é descrito de seguida.
 
 \begin{enumerate}
 	\item Abre o ficheiro "scene.xml" (em caso de erro, termina execução e envia mensagem de erro);
@@ -498,11 +502,11 @@ A função \texttt{load\_generated\_files()} é responsável pela leitura do fic
 	\end{enumerate}
 \end{enumerate}
 
-Todo este processo resulta na presença de todas as figuras a desenhar em memória.
+Todo este processo resulta na presença de todas as figuras a desenhar, estarem em memória.
 
 \subsection{Desenho das figuras}
 
-Após a realização do processo anterior, vamos proceder ao desenho das figuras gravadas em memória.
+Após a realização do processo anterior, vamos proceder ao desenho das figuras gravadas em memória. Para tal desenvolvemos uma função \textbf{load\_figures()} cujo o algoritmo é apresentado de seguida.
 
 \begin{enumerate}
 	\item Iteramos sobre o vetor figures:
