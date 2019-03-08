@@ -42,6 +42,30 @@ No caso do \textit{engine} é necessário que este leia um ficheiro do tipo XML 
 
 De seguida, iremos apresentar todos os algoritmos e equações, bem como as suas respetivas explicações, que foram utilizados para a realização das duas aplicações. Também serão apresentadas figuras que contém código e figuras ilustrativas dos algoritmos/equações.
 
+\section{Estrutura da Pasta do Projeto}
+\label{sec:estrutura}
+
+Para um entendimento mais claro da estrutura do projeto, achamos por bem referenciar a estrutura da pasta do projeto.
+O projeto entregue contêm para além do relatório, 4 pastas como é possível verificar na seguinte figura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{estrutura.png}
+\caption{Estrutura da pasta.}
+\label{img:estrutura}
+\end{figure}
+
+Na pasta \textbf{Engine} residem os ficheiros relativos ao programa \emph{engine}, bem como ficheiros relativos à biblioteca \emph{tinyxml2}. Contém ainda um ficheiro de configuração \emph{cmake}.
+
+Na pasta \textbf{Generator} residem os ficheiros relativos ao programa \emph{generator}. Contém ainda um ficheiro de configuração \emph{cmake}.
+
+Na pasta \textbf{Generated\_Models} residem os ficheiros que contêm os pontos gerados para cada figura, criados pelo programa \emph{generator}.
+
+Na pasta \textbf{Scenes} reside o ficheiro \emph{XML} que contém os nomes dos ficheiros que o programa \emph{engine} tem que carregar posteriormente.
+
+
+\newpage
+
 \section{Generator}
 \label{sec:generator}
 
