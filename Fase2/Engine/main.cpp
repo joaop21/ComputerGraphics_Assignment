@@ -15,64 +15,14 @@
 #include <sstream>
 #include <vector>
 #include "tinyxml2.h"
-#include "point.h"
-#include "translation.h"
-#include "rotation.h"
-#include "scale.h"
-#include "figure.h"
+#include "geometry.h"
+#include "parser.h"
 
 using namespace tinyxml2;
 using namespace std;
+using namespace geometry;
 
 vector<Figure> figures; // estrutura que armazen todas as figuras carregadas de ficheiros
-
-
-/**
-* @brief Função que lê o ficheiro XML que contêm os modelos a carregar,
-*     posteriormente lê os modelos e armazena os pontos e as figuras necessárias
-*     para mais à frente poderem ser desenhadas.
-*/
-void load_generated_files(){
-	XMLDocument doc;
-	doc.LoadFile("../Scenes/scene.xml");
-
-	// testa se ficheiro XML abriu sem erros
-	if(doc.ErrorID() != 0) {
-		cout << "Erro ao abrir o ficheiro xml.\n";
-		return;
-	}
-
-	XMLElement *pRoot = doc.FirstChildElement("scene");
-	if (pRoot == nullptr) return; // testa se obteve a raiz da arvore xml
-
-
-	vector<string> files; // nomes de ficheiros que contêm as figuras
-
-	// filtra os nomes dos ficheiros
-	XMLElement *file_names = pRoot->FirstChildElement("model");
-	while(file_names) {
-		string new_file = file_names->Attribute("file"); // retira o nome do ficheiro
-		files.push_back(new_file); // coloca o nome no vetor
-		file_names = file_names->NextSiblingElement("model"); // passa para o proximo filho
-	}
-
-	// filtra os pontos e figuras
-	for(int i = 0 ; i < files.size() ; i++){
-		string current_file = files[i];
-		ifstream file;
-		file.open("../Generated_Models/" + current_file);
-
-		Figure fig;
-		file >> fig.num_triangles;
-		while (!file.eof()) {
-			Point new_point;
-			file >> new_point.x >> new_point.y >> new_point.z;
-			fig.points.push_back(new_point);
-		}
-		figures.push_back(fig);
-	}
-
-}
 
 
 /**
@@ -274,7 +224,7 @@ int main(int argc, char **argv) {
 	glutCreateWindow("Engine");
 
 // file load
-	load_generated_files();
+	load_generated_files(figures);
 
 // Required callback registry
 	glutDisplayFunc(renderScene);
