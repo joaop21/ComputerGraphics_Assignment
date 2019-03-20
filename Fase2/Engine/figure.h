@@ -10,4 +10,7 @@ class Figure{
     public:
         int num_triangles;
         vector<Point> points;
+        vector<Translation> translations;
+        vector<Rotation> rotations;
+        vector<Scale> scales;
 };

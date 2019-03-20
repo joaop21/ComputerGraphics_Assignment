@@ -16,6 +16,9 @@
 #include <vector>
 #include "tinyxml2.h"
 #include "point.h"
+#include "translation.h"
+#include "rotation.h"
+#include "scale.h"
 #include "figure.h"
 
 using namespace tinyxml2;
