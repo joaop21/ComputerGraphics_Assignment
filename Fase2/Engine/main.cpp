@@ -18,31 +18,43 @@ using namespace geometry;
 
 Tree tree_struct;
 
-/**
-* @brief Função que vai à variável global figures buscar as Figuras anteriormente
-*    carregadas de ficheiros e as desenha.
-*/
-void draw_figures(){
-	for(int i = 0 ; i < figures.size() ; i++){
-		Figure current_fig = figures[i];
-		vector<Point> current_points = current_fig.points;
+void draw_figure(vector<Point> points) {
 
-		glBegin(GL_TRIANGLES);
-		int color;
-		glColor3f(0.2, 0.2, 0.2);
+	glBegin(GL_TRIANGLES);
+	int color;
+	glColor3f(0.2, 0.2, 0.2);
 
-		for(int j = 0, color = 0 ; j < current_points.size() ; j++,color++){
-
-			if (color % 3 == 0) {
-				glColor3f(0.4, 0.4, 0.4);
-				if (color%6 == 0) glColor3f(0.2, 0.2, 0.2);
-			}
-
-			Point current_point = current_points[j];
-			glVertex3f(current_point.x, current_point.y, current_point.z);
+	for(int j = 0, color = 0 ; j < points.size() ; j++,color++){
+		if (color % 3 == 0) {
+			glColor3f(0.4, 0.4, 0.4);
+			if (color%6 == 0) glColor3f(0.2, 0.2, 0.2);
 		}
-		glEnd();
+
+		Point current_point = points[j];
+		glVertex3f(current_point.x, current_point.y, current_point.z);
 	}
+	glEnd();
+}
+
+void draw_tree(Tree t) {
+
+	glPushMatrix();
+
+	if (!t.head_figure.translation.empty)
+		glTranslatef(t.head_figure.translation.x, t.head_figure.translation.y, t.head_figure.translation.z);
+	if (!t.head_figure.rotation.empty)
+		glRotatef(t.head_figure.rotation.angle, t.head_figure.rotation.x, t.head_figure.rotation.y, t.head_figure.rotation.z);
+	if (!t.head_figure.scale.empty)
+		glScalef(t.head_figure.scale.x, t.head_figure.scale.y, t.head_figure.scale.z);
+
+	draw_figure(t.head_figure.points);
+
+	vector<Tree>::iterator it;
+
+	for (it = t.children.begin(); it != t.children.end(); it++)
+		draw_tree(*it);
+
+	glPopMatrix();
 }
 
 void draw_axis(){
@@ -138,9 +150,9 @@ void renderScene(void) {
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
-	load_figures();
-
 	draw_axis();
+
+	draw_tree(tree_struct);
 
 	// End of frame
 	glutSwapBuffers();
@@ -213,11 +225,11 @@ int main(int argc, char **argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
 	glutInitWindowPosition(100,100);
-	glutInitWindowSize(800,800);
+	glutInitWindowSize(1000,800);
 	glutCreateWindow("Engine");
 
-// file load
-	parser_XML(tree_struct);
+// struct load
+	tree_struct = parser_XML();
 
 // Required callback registry
 	glutDisplayFunc(renderScene);

@@ -21,6 +21,8 @@ namespace geometry{
     */
     class Translation{
         public:
+            Translation() :empty(true) {}
+            bool empty;
             float x,y,z;
     };
 
@@ -29,6 +31,8 @@ namespace geometry{
     */
     class Rotation{
         public:
+            Rotation() :empty(true) {}
+            bool empty;
             float angle,x,y,z;
     };
 
@@ -37,6 +41,8 @@ namespace geometry{
     */
     class Scale{
         public:
+            Scale() :empty(true) {}
+            bool empty;
             float x,y,z;
     };
 

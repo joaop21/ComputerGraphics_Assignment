@@ -14,4 +14,4 @@ using namespace geometry;
 *
 * @param figures , vector onde se armazenará o necessário a carregar
 */
-void parser_XML(Tree tree);
+Tree parser_XML();
