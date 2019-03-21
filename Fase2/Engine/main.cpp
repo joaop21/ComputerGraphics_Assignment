@@ -18,18 +18,14 @@ using namespace geometry;
 
 Tree tree_struct;
 
-void draw_figure(vector<Point> points) {
+void draw_figure(Figure fig) {
+	vector<Point> points = fig.points;
+	Color color = fig.color;
 
 	glBegin(GL_TRIANGLES);
-	int color;
-	glColor3f(0.2, 0.2, 0.2);
+	glColor3f(color.r, color.g, color.b);
 
-	for(int j = 0, color = 0 ; j < points.size() ; j++,color++){
-		if (color % 3 == 0) {
-			glColor3f(0.4, 0.4, 0.4);
-			if (color%6 == 0) glColor3f(0.2, 0.2, 0.2);
-		}
-
+	for(int j = 0 ; j < points.size() ; j++){
 		Point current_point = points[j];
 		glVertex3f(current_point.x, current_point.y, current_point.z);
 	}
@@ -47,7 +43,7 @@ void draw_tree(Tree t) {
 	if (!t.head_figure.scale.empty)
 		glScalef(t.head_figure.scale.x, t.head_figure.scale.y, t.head_figure.scale.z);
 
-	draw_figure(t.head_figure.points);
+	draw_figure(t.head_figure);
 
 	vector<Tree>::iterator it;
 
@@ -78,41 +74,6 @@ void draw_axis(){
 	glEnd();
 }
 
-// camera angles
-float alfa = M_PI/4;
-float beta = M_PI/4;
-
-// radius
-float camera_radius = 10.0;
-float camera_radius_line;
-
-// camera posicion
-float px;
-float py;
-float pz;
-
-// look at point
-float dx = 0.0;
-float dy = 0.0;
-float dz = 0.0;
-
-void desenha_coordenadas_camara(float radiusn, float alfan, float betan, float dxn, float dyn, float dzn){
-	alfa = alfan;
-	beta = betan;
-
-	camera_radius = radiusn;
-	camera_radius_line = camera_radius * cos(beta);
-
-	px = camera_radius_line * cos(alfa);
-	py = camera_radius * sin(beta);
-	pz = camera_radius_line * sin(alfa);
-
-	dx = dxn;
-	dy = dyn;
-	dz = dzn;
-
-}
-
 void changeSize(int w, int h) {
 
 	// Prevent a divide by zero, when window is too short
@@ -138,15 +99,25 @@ void changeSize(int w, int h) {
 	glMatrixMode(GL_MODELVIEW);
 }
 
+
+float alfa = 0.0f, beta = 0.5f, radius = 20.0f;
+float camx, camy, camz, dx, dy, dz;
+
+
+void spherical2Cartesian() {
+	camx = radius * cos(beta) * sin(alfa);
+	camy = radius * sin(beta);
+	camz = radius * cos(beta) * cos(alfa);
+}
+
 void renderScene(void) {
 
 	// clear buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// set the camera
-	desenha_coordenadas_camara(camera_radius,alfa,beta,dx,dy,dz);
 	glLoadIdentity();
-	gluLookAt(px,py,pz,
+	gluLookAt(camx,camy,camz,
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
@@ -180,10 +151,10 @@ void processKeys(unsigned char c, int xx, int yy) {
 		dz += 0.1;
 		break;
 	case '+':
-		camera_radius -= 0.1;
+		radius -= 0.5;
 		break;
 	case '-':
-		camera_radius += 0.1;
+		radius += 0.5;
 		break;
 	case 'z':
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -195,6 +166,7 @@ void processKeys(unsigned char c, int xx, int yy) {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		break;
 	}
+	spherical2Cartesian();
 	glutPostRedisplay();
 }
 
@@ -216,6 +188,7 @@ void processSpecialKeys(int key_code, int xx, int yy) {
 			alfa -= 0.1;
 			break;
 	}
+	spherical2Cartesian();
 	glutPostRedisplay();
 }
 
@@ -242,6 +215,8 @@ int main(int argc, char **argv) {
 //  OpenGL settings
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
+
+	spherical2Cartesian();
 
 // enter GLUT's main cycle
 	glutMainLoop();

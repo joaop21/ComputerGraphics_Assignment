@@ -59,6 +59,9 @@ Tree parseGroup(XMLElement* father){
             		for(XMLElement* m_node = child->FirstChildElement("model"); m_node != NULL; m_node = m_node->NextSiblingElement()){
             			string file_name = m_node->Attribute("file");
             			t.head_figure = loadFigure(t.head_figure,file_name);
+                        t.head_figure.color.r = m_node->FloatAttribute("R");
+                        t.head_figure.color.g = m_node->FloatAttribute("G");
+                        t.head_figure.color.b = m_node->FloatAttribute("B");
             		}
                     break;
             case str2int("group"):

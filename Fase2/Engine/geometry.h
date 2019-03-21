@@ -47,6 +47,14 @@ namespace geometry{
     };
 
     /**
+    * @brief classe que define intancias de Cor
+    */
+    class Color{
+        public:
+            float r,g,b;
+    };
+
+    /**
     * @brief classe que define intancias de Figura
     */
     class Figure{
@@ -56,6 +64,7 @@ namespace geometry{
             Translation translation;
             Rotation rotation;
             Scale scale;
+            Color color;
     };
 
     /**
