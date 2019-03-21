@@ -47,9 +47,9 @@ namespace geometry{
         public:
             int num_triangles;
             vector<Point> points;
-            vector<Translation> translations;
-            vector<Rotation> rotations;
-            vector<Scale> scales;
+            Translation translation;
+            Rotation rotation;
+            Scale scale;
     };
 
     /**

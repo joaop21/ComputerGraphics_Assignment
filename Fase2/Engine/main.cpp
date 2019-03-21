@@ -17,14 +17,12 @@ using namespace std;
 using namespace geometry;
 
 Tree tree_struct;
-vector<Figure> figures; // estrutura que armazen todas as figuras carregadas de ficheiros
-
 
 /**
 * @brief Função que vai à variável global figures buscar as Figuras anteriormente
 *    carregadas de ficheiros e as desenha.
 */
-void load_figures(){
+void draw_figures(){
 	for(int i = 0 ; i < figures.size() ; i++){
 		Figure current_fig = figures[i];
 		vector<Point> current_points = current_fig.points;
@@ -219,7 +217,7 @@ int main(int argc, char **argv) {
 	glutCreateWindow("Engine");
 
 // file load
-	load_generated_files(figures);
+	parser_XML(tree_struct);
 
 // Required callback registry
 	glutDisplayFunc(renderScene);

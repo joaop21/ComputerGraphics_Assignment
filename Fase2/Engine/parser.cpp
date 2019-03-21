@@ -14,6 +14,20 @@ constexpr unsigned int str2int(const char* str, int h = 0)
     return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
 }
 
+void loadFigure(Figure fig,string current_file){
+
+	ifstream file;
+	file.open("../Generated_Models/" + current_file);
+
+	file >> fig.num_triangles;
+	while (!file.eof()) {
+		Point new_point;
+		file >> new_point.x >> new_point.y >> new_point.z;
+		fig.points.push_back(new_point);
+	}
+
+}
+
 Tree parseGroup(XMLElement* father){
     Tree t;
 
@@ -22,15 +36,30 @@ Tree parseGroup(XMLElement* father){
 
         switch(str2int(option)){
             case str2int("translate"):
+            		t.head_figure.translation.x = child->FloatAttribute("X");
+            		t.head_figure.translation.y = child->FloatAttribute("Y");
+            		t.head_figure.translation.z = child->FloatAttribute("Z");
                     break;
             case str2int("rotate"):
+            		t.head_figure.rotation.angle = child->FloatAttribute("angle");
+            		t.head_figure.rotation.x = child->FloatAttribute("axisX");
+            		t.head_figure.rotation.y = child->FloatAttribute("axisY");
+            		t.head_figure.rotation.z = child->FloatAttribute("axisZ");
                     break;
             case str2int("scale"):
+					t.head_figure.scale.x = child->FloatAttribute("X");
+            		t.head_figure.scale.y = child->FloatAttribute("Y");
+            		t.head_figure.scale.z = child->FloatAttribute("Z");            		
                     break;
             case str2int("models"):
+            		for(XMLElement* m_node = child->FirstChildElement("model"); m_node != NULL; m_node = m_node->NextSiblingElement()){
+            			string file_name = m_node->Attribute("file");
+            			loadFigure(t.head_figure,file_name);
+            		}
                     break;
             case str2int("group"):
                     Tree newTree = parseGroup(child);
+                    t.children.push_back(newTree);
                     break;
         }
 	}
@@ -38,7 +67,7 @@ Tree parseGroup(XMLElement* father){
 	return t;
 }
 
-void load_generated_files(vector<Figure> figures){
+void parser_XML(Tree tree){
 	XMLDocument doc;
 	doc.LoadFile("../Scenes/scene.xml");
 
@@ -51,31 +80,5 @@ void load_generated_files(vector<Figure> figures){
 	XMLElement *pRoot = doc.FirstChildElement("scene");
 	if (pRoot == nullptr) return; // testa se obteve a raiz da arvore xml
 
-
-	vector<string> files; // nomes de ficheiros que contêm as figuras
-
-	// filtra os nomes dos ficheiros
-	XMLElement *file_names = pRoot->FirstChildElement("model");
-	while(file_names) {
-		string new_file = file_names->Attribute("file"); // retira o nome do ficheiro
-		files.push_back(new_file); // coloca o nome no vetor
-		file_names = file_names->NextSiblingElement("model"); // passa para o proximo filho
-	}
-
-	// filtra os pontos e figuras
-	for(int i = 0 ; i < files.size() ; i++){
-		string current_file = files[i];
-		ifstream file;
-		file.open("../Generated_Models/" + current_file);
-
-		Figure fig;
-		file >> fig.num_triangles;
-		while (!file.eof()) {
-			Point new_point;
-			file >> new_point.x >> new_point.y >> new_point.z;
-			fig.points.push_back(new_point);
-		}
-		figures.push_back(fig);
-	}
-
+	tree = parseGroup(pRoot);
 }
