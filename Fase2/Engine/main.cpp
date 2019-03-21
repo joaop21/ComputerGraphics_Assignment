@@ -8,12 +8,6 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-#include <stdlib.h>
-#include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
 #include "tinyxml2.h"
 #include "geometry.h"
 #include "parser.h"
@@ -22,6 +16,7 @@ using namespace tinyxml2;
 using namespace std;
 using namespace geometry;
 
+Tree tree_struct;
 vector<Figure> figures; // estrutura que armazen todas as figuras carregadas de ficheiros
 
 

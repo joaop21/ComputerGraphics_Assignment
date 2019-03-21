@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <stdexcept>
 #include "geometry.h"
 #include "parser.h"
 #include "tinyxml2.h"
@@ -7,6 +8,35 @@
 using namespace tinyxml2;
 using namespace std;
 using namespace geometry;
+
+constexpr unsigned int str2int(const char* str, int h = 0)
+{
+    return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
+}
+
+Tree parseGroup(XMLElement* father){
+    Tree t;
+
+	for (XMLElement* child = father->FirstChildElement(); child != nullptr; child = child->NextSiblingElement()) {
+		const char* option = child->Value();
+
+        switch(str2int(option)){
+            case str2int("translate"):
+                    break;
+            case str2int("rotate"):
+                    break;
+            case str2int("scale"):
+                    break;
+            case str2int("models"):
+                    break;
+            case str2int("group"):
+                    Tree newTree = parseGroup(child);
+                    break;
+        }
+	}
+
+	return t;
+}
 
 void load_generated_files(vector<Figure> figures){
 	XMLDocument doc;

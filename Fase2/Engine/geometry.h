@@ -16,26 +16,28 @@ namespace geometry{
             float x,y,z;
     };
 
+    /**
+    * @brief classe que define intancias de Translações
+    */
     class Translation{
         public:
-            float x;
-            float y;
-            float z;
+            float x,y,z;
     };
 
+    /**
+    * @brief classe que define intancias de Rotaçoes
+    */
     class Rotation{
         public:
-            float angle;
-            float x;
-            float y;
-            float z;
+            float angle,x,y,z;
     };
 
+    /**
+    * @brief classe que define intancias de Escalas
+    */
     class Scale{
         public:
-            float x;
-            float y;
-            float z;
+            float x,y,z;
     };
 
     /**
@@ -48,6 +50,15 @@ namespace geometry{
             vector<Translation> translations;
             vector<Rotation> rotations;
             vector<Scale> scales;
+    };
+
+    /**
+    * @brief classe que define intancias de Arvores
+    */
+    class Tree{
+        public:
+            Figure head_figure;
+            vector<Tree> children;
     };
 
 }

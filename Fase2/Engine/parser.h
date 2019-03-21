@@ -4,6 +4,8 @@
 
 #include <vector>
 
+using namespace std;
+using namespace geometry;
 
 /**
 * @brief Função que lê o ficheiro XML que contêm os modelos a carregar,
@@ -12,4 +14,4 @@
 *
 * @param figures , vector onde se armazenará o necessário a carregar
 */
-void load_generated_files(std::vector<geometry::Figure> figures);
+void load_generated_files(vector<Figure> figures);
