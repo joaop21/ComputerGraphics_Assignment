@@ -102,27 +102,105 @@ Na figura \ref{img:ficheiro_parser} é possível visualizar um excerto do fichei
 
 \section{Estruturas de Dados}
 \label{sec:estruturas}
+Quanto à estrutura de dados, o grupo considerou que a mais adequade seria a de representar o sistema solar como uma árvore, sendo que, analogamente ao primeiro nodo da árvore estaria o Sol e os planetas seriam os "filhos" do Sol nessa árvore. Em consequência, as luas seriam filhos dos planetas e netos do Sol.  Para esta representação ser efetiva foram criadas varias estruturas que serão apresentadas a seguir neste relatório.
 
 \subsection{Tree}
 \label{sec:tree}
 
+
+A classe Tree será usada para representar uma Árvore. Uma instância de Árvore tem uma \textbf{Figure} principal e um \textbf{vector} com os filhos que tem.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{tree.png}
+\caption{Estrutura que define instâncias de uma Árvore}
+\label{img:Tree}
+\end{figure}
+
+
+
 \subsection{Figure}
 \label{sec:figure}
+
+A classe Figure é composta por um inteiro com o número de triângulos que constitui essa figura, um vector com os pontos todos da figura. Possui também as 3 transformações geométricas que são feitas sobre a mesma - Translation, Rotation, Scale. Contém ainda uma Color, para definir a cor da figura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{figure.png}
+\caption{Estrutura que define instâncias de uma Figura}
+\label{img:Figure}
+\end{figure}
+
+
 
 \subsection{Color}
 \label{sec:color}
 
+A classe Color é composta por 3 floats - r,g e b. Estes floats definem uma cor para usar numa figura.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{color.png}
+\caption{Estrutura que define instâncias de Cor.}
+\label{img:Color}
+\end{figure}
+
+A classe Color é composta por 3 floats - r,g e b. Estes floats definem uma cor para usar numa figura.
+
 \subsection{Scale}
 \label{sec:scale}
+
+A classe Scale contém 3 floats - x,y e z que são os parâmetros de redimensionamento da figura que queremos. Contém ainda um bool para verificar se a figura existe.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{scale.png}
+\caption{Estrutura que define instâncias de Scale}
+\label{img:Scale}
+\end{figure}
+
+
+
 
 \subsection{Rotation}
 \label{sec:rotation}
 
+A classe Rotation é composta por 4 floats - as coordenadas dos eixos e o ângulo que queremos rodar a figura. Tem também um bool empty que apenas permite a leitura caso o seu valor seja true.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{rotation.png}
+\caption{Estrutura que define instâncias de Rotation}
+\label{img:Rotation}
+\end{figure}
+
+
 \subsection{Translation}
 \label{sec:translation}
 
+A classe Translation é também composta pelas 3 coordenadas dos eixos e pela verificação de que a figura existe mesmo e queremos lê-la.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{translation.png}
+\caption{Estrutura que define instâncias de Translation}
+\label{img:Tree}
+\end{figure}
+
+
 \subsection{Point}
 \label{sec:point}
+
+A classe Point, como o nome indica, é um ponto no sistema, ou seja, é composta por 3 floats - x, y e z
+
+.\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{point.png}
+\caption{Estrutura que define instâncias de Point}
+\label{img:Point}
+\end{figure}
+
 
 
 \newpage
