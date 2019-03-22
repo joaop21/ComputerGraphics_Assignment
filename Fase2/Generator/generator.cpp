@@ -51,7 +51,14 @@ int main(int argc, char* argv[]) {
 		int stacks = atoi(argv[5]);
 		string file_name = argv[6];
 		res = generateCone(bottom_radius, height, slices, stacks, file_name);
-	} else{
+	} else if(primitive == "asteroid_belt"){
+		int num_asteroids = atoi(argv[2]);
+		int min_radius = atoi(argv[3]);
+		int max_radius = atoi(argv[4]);
+		string file_name = argv[5];
+		res = generateAsteroids(num_asteroids,min_radius,max_radius,file_name);
+
+	}else{
 		printf("Parâmetros inválidos!!!\n");
 		return 0;
 	}

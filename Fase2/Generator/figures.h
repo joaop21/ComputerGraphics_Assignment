@@ -93,6 +93,8 @@ namespace figures{
 
     int generateCone(float bottom_radius, float height, int slices, int stacks, std::string file_name);
 
+    int generateAsteroids(int num_asteroids, int min_radius, int max_radius, std::string file_name);
+
     int write_in_file(std::vector<Point> points, std::string file_name);
 
 }
