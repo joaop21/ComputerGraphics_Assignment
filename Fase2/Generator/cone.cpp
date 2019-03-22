@@ -1,25 +1,12 @@
-#ifndef CONE_H
-#define CONE_H
-#endif
+#include "figures.h"
+#include <vector>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/**
-*  @brief Função que gera o pontos para a realização dos devidos triângulos, e
-* conseguentemente gravação em ficheiro.
-*
-*  @param bottom_radius - parâmetro que é o raio da base do cone.
-*  @param height - parâmetro que é o tamanho do cone.
-*  @param slices - parâmetro que é o número de fatias em que o cone se deve dividir.
-*  @param stacks - parâmetro que é o números de divisões de cada slice.
-*  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
-* pontos e triangulos gerados.
-*
-*  @returns Integer que dita se a geração foi um sucesso ou não
-*/
+using namespace figures;
 
-int generateCone(float bottom_radius, float height, int slices, int stacks, string file_name){
+int figures::generateCone(float bottom_radius, float height, int slices, int stacks, std::string file_name){
 
 	std::vector<Point> points;
 

@@ -2,12 +2,10 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include "point.h"
-#include "writeFile.h"
-#include "plane.h"
-#include "box.h"
-#include "sphere.h"
-#include "cone.h"
+#include "figures.h"
+
+using namespace figures;
+using namespace std;
 
 int main(int argc, char* argv[]) {
 	if (argc < 2) {

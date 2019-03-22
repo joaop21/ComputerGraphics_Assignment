@@ -1,11 +1,14 @@
-#ifndef WRITEFILE_H
-#define WRITEFILE_H
-#endif
+#include "figures.h"
+#include <vector>
+#include <fstream>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-int write_in_file(vector<Point> points, string file_name){
+using namespace figures;
+using namespace std;
+
+int figures::write_in_file(std::vector<Point> points, std::string file_name){
 	// necessário operações sobre ficheiros
 	ofstream file ("../Generated_Models/" + file_name);
   	if (file.is_open()){

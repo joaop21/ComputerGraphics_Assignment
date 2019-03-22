@@ -1,32 +1,12 @@
-#ifndef SPHERE_H
-#define SPHERE_H
-#endif
+#include "figures.h"
+#include <vector>
 
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-/**
-*  @brief Função que gera o pontos para a realização dos devidos triângulos, e
-* conseguentemente gravação em ficheiro.
-*
-*  @param r - parâmetro que é o raio da esfera
-*  @param slices - parâmetro que é o numero de fatias da esfera
-*  @param stacks - parâmetro que é o número de partições de cada slice
-*  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
-* pontos e triangulos gerados.
-*
-*  Para que o algoritmo ficasse mais percetível e mais curto usamos abreviações
-* nas variáveis, tal correspondência é feita de seguida:
-*   - r : radius
-*   - sls : SliceStep
-*   - sts : StackStep
-*   - rs : raio da stack atual
-*   - rsn : raio da stack seguinte
-*
-*  @returns Integer que dita se a geração foi um sucesso ou não
-*/
+using namespace figures;
 
-int generateSphere(float r, int slices, int stacks, string file_name){
+int figures::generateSphere(float r, int slices, int stacks, std::string file_name){
 	std::vector<Point> points;
 
 	float sls = 2*M_PI / slices; // algulo entre cada slice (sliceStep)

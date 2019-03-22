@@ -1,21 +1,11 @@
-#ifndef PLANE_H
-#define PLANE_H
-#endif
-
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include "figures.h"
 
-/**
-*  @brief Função que gera o pontos para a realização dos devidos triângulos, e
-* conseguentemente gravação em ficheiro.
-*
-*  @param side - parâmetro que é o tamanho do lado do plano.
-*  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
-* pontos e triangulos gerados.
-*
-*  @returns Integer que dita se a geração foi um sucesso ou não
-*/
-int generatePlane(float side, string file_name){
+using namespace figures;
+
+int figures::generatePlane(float side, std::string file_name){
 	std::vector<Point> points;
 
 	float parcial_side = side/2;

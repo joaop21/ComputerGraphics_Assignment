@@ -1,21 +1,9 @@
-#ifndef BOX_H
-#define BOX_H
-#endif
+#include "figures.h"
+#include <vector>
 
-/**
-*  @brief Função que gera o pontos para a realização dos devidos triângulos, e
-* conseguentemente gravação em ficheiro.
-*
-*  @param xdim - parâmetro que é o tamanho da dimensão X.
-*  @param ydim - parâmetro que é o tamanho da dimensão Y.
-*  @param zdim - parâmetro que é o tamanho da dimensão Z.
-*  @param div - parâmetro que é o números de divisões na box.
-*  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
-* pontos e triangulos gerados.
-*
-*  @returns Integer que dita se a geração foi um sucesso ou não
-*/
-int generateBox(float xdim, float ydim, float zdim, int div, string file_name){
+using namespace figures;
+
+int figures::generateBox(float xdim, float ydim, float zdim, int div, std::string file_name){
 	std::vector<Point> points;
 
 	float tam_x = xdim / div;
