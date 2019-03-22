@@ -35,8 +35,8 @@ Neste relatório é apresentada a segunda fase dum projeto no qual a intenção 
 \section{Introdução}
 \label{sec:intro}
 
-Esta segunda fase tem como objetivo a realização de algumas etapas, nomeadamente: 
-\begin{enumerate}  
+Esta segunda fase tem como objetivo a realização de algumas etapas, nomeadamente:
+\begin{enumerate}
 \item A criação dum parser \emph{XML} mais conciso;
 \item A alteração/evolução da estrutura dos ficheiros \emph{XML};
 \item A criação de estruturas capazes de armazenar as figuras necessárias;
@@ -44,7 +44,7 @@ Esta segunda fase tem como objetivo a realização de algumas etapas, nomeadamen
 \item A criação dum modelo estático do sistema solar.
 \end{enumerate}
 
-De seguida iremos apresentar todos os algoritmos e decisões relativos à realização destas etapas, bem como as respetivas explicações de cada passo. 
+De seguida iremos apresentar todos os algoritmos e decisões relativos à realização destas etapas, bem como as respetivas explicações de cada passo.
 Serão ainda apresentadas figuras e esquemas que ilustrem os passos do processo desenvolvido.
 
 
@@ -68,7 +68,7 @@ Na pasta \textbf{Generator} residem os ficheiros relativos ao programa \emph{gen
 
 Na pasta \textbf{Generated\_Models} residem os ficheiros que contêm os pontos gerados para cada figura, criados pelo programa \emph{generator}.
 
-Na pasta \textbf{Scenes} residem os ficheiros \emph{XML} que contêm as estruturas do sistemas solares desenvolvidos para esta fase do projeto. Construímos dois ficheiros deste tipo, um que contém os raios relativos de cada planeta e do sol baseados na realidade (grande disparidade entre as figuras criadas), e o outro que é mais elucidativo e percetível. 
+Na pasta \textbf{Scenes} residem os ficheiros \emph{XML} que contêm as estruturas do sistemas solares desenvolvidos para esta fase do projeto. Construímos dois ficheiros deste tipo, um que contém os raios relativos de cada planeta e do sol baseados na realidade (grande disparidade entre as figuras criadas), e o outro que é mais elucidativo e percetível.
 
 
 \newpage
@@ -78,6 +78,21 @@ Na pasta \textbf{Scenes} residem os ficheiros \emph{XML} que contêm as estrutur
 
 \subsection{Ficheiro}
 \label{sec:ficheiro}
+
+Devido aos requerimentos desta fase, foi necessário criar um novo ficheiro XML com o intuito de representar o sistema solar, que inclui: o sol, os planetas, e as luas destes mesmos.
+
+Esta nova cena é encabeçada pelo grupo que faz referencia ao sol, e possui vários sub-grupos. Estes sub-grupos são referentes aos planetas, e possuem também sub-grupos. Estes sub-grupos dos planetas são referentes às luas que cada um possui.
+
+Todos os sub-grupos herdam as transformações geométricas presentes no grupo ao qual pertencem. Nesta fase, estas transformações são: translações, rotações e escalas.
+
+Na figura \ref{img:ficheiro_parser} é possível visualizar um excerto do ficheiro XML por nós usado no qual constam o Sol, a Terra e a Lua.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{ficheiro_parser.png}
+\caption{Exemplo dum ficheiro usado no Parser.}
+\label{img:ficheiro_parser}
+\end{figure}
 
 \subsection{Funcionamento}
 \label{sec:funcionamento}
