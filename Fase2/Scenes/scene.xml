@@ -1,5 +1,5 @@
 <scene>
-	<group>
+	<group> <!-- Sun -->
         <rotate axisX="0" axisY="1" axisZ="0" angle="90"/>
 		<models>
 			<model file="sun.3d" R="0.945" G="0.412" B="0.082" />
