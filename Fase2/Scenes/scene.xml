@@ -1,17 +1,17 @@
 <scene>
 	<group> <!-- Sun -->
-        <rotate axisX="0" axisY="1" axisZ="0" angle="90"/>
+    <rotate axisX="0" axisY="1" axisZ="0" angle="90"/>
 		<models>
 			<model file="sun.3d" R="0.945" G="0.412" B="0.082" />
 		</models>
-        <group> <!-- Mercury -->
+    <group> <!-- Mercury -->
 			<translate X="116" Y="0.0" Z="0.0" />
 			<scale X="0.38" Y="0.38" Z="0.38" />
 			<models>
 				<model file="planet.3d" R="0.412" G="0.388" B="0.376" />
 			</models>
 		</group>
-        <group> <!-- Venus -->
+    <group> <!-- Venus -->
 			<rotate axisX="0" axisY="1" axisZ="0" angle="90"/>
 			<translate X="120.5" Y="0.0" Z="0.0" />
 			<scale X="0.95" Y="0.95" Z="0.95" />
@@ -19,29 +19,41 @@
 				<model file="planet.3d" R="0.816" G="0.533" B="0.208" />
 			</models>
 		</group>
-        <group> <!-- Earth -->
+    <group> <!-- Earth -->
 			<translate X="125" Y="0.0" Z="0.0" />
 			<models>
 				<model file="planet.3d" R="0.145" G="0.192" B="0.388" />
 			</models>
-            <group> <!-- Moon -->
+    	<group> <!-- Moon -->
 				<translate X="0" Y="1.5" Z="2.0" />
 				<models>
 					<model file="moon.3d" R="0.412" G="0.388" B="0.376" />
 				</models>
 			</group>
-        </group>
-        <group> <!-- Mars -->
+    </group>
+    <group> <!-- Mars -->
 			<rotate axisX="0" axisY="1" axisZ="0" angle="270"/>
 			<translate X="132.5" Y="0.0" Z="0.0" />
 			<scale X="0.53" Y="0.53" Z="0.53" />
 			<models>
 				<model file="planet.3d" R="0.788" G="0.243" B="0.020" />
 			</models>
+			<group> <!-- Fobos (Mars) -->
+				<translate X="1.0" Y="1.5" Z="1.2" />
+				<models>
+					<model file="moon.3d" R="0.662" G="0.662" B="0.662" />
+				</models>
+			</group>
+			<group> <!-- Deimos (Mars) -->
+				<translate X="0" Y="-1.5" Z="-1.0" />
+				<models>
+					<model file="moon.3d" R="0.984" G="0.965" B="0.901" />
+				</models>
+			</group>
 		</group>
-        <group> <!-- Jupiter -->
-		    <rotate axisX="0" axisY="1" axisZ="0" angle="45"/>
-		    <translate X="185" Y="0.0" Z="0.0" />
+    <group> <!-- Jupiter -->
+		  <rotate axisX="0" axisY="1" axisZ="0" angle="45"/>
+		  <translate X="185" Y="0.0" Z="0.0" />
 			<scale X="11.21" Y="11.21" Z="11.21" />
 			<models>
 				<model file="planet.3d" R="0.984" G="0.808" B="0.573" />
