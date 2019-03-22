@@ -35,20 +35,22 @@ Neste relatório é apresentada a segunda fase dum projeto no qual a intenção 
 \section{Introdução}
 \label{sec:intro}
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! POR FAZER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Esta segunda fase tem como objetivo a realização de algumas etapas, nomeadamente: 
+\begin{enumerate}  
+\item A criação dum parser \emph{XML} mais conciso;
+\item A alteração/evolução da estrutura dos ficheiros \emph{XML};
+\item A criação de estruturas capazes de armazenar as figuras necessárias;
+\item A criação de funções que leiam as estruturas e as desenhem;
+\item A criação dum modelo estático do sistema solar.
+\end{enumerate}
 
-Esta primeira fase tem como objetivo a criação de duas aplicacões: \textit{generator} e \textit{engine}.
+De seguida iremos apresentar todos os algoritmos e decisões relativos à realização destas etapas, bem como as respetivas explicações de cada passo. 
+Serão ainda apresentadas figuras e esquemas que ilustrem os passos do processo desenvolvido.
 
-O \textit{generator} cria/reescreve um ficheiro (passado como parâmetro) que contém todos os vértices necessários para o desenho de uma determinada superfície, bem como o número de triângulos no início desse mesmo ficheiro.
 
-No caso do \textit{engine} é necessário que este leia um ficheiro do tipo XML onde se encontra a referência para o ficheiro criado/reescrito, que queremos ler para depois ser gerada a figura pretendida.
-
-De seguida, iremos apresentar todos os algoritmos e equações, bem como as suas respetivas explicações, que foram utilizados para a realização das duas aplicações. Também serão apresentadas figuras que contém código e figuras ilustrativas dos algoritmos/equações.
 
 \section{Estrutura da Pasta do Projeto}
 \label{sec:estrutura}
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! POR FAZER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Para um entendimento mais claro da estrutura do projeto, achamos por bem referenciar a estrutura da pasta do projeto.
 O projeto entregue contêm para além do relatório, 4 pastas como é possível verificar na seguinte figura.
@@ -60,13 +62,13 @@ O projeto entregue contêm para além do relatório, 4 pastas como é possível 
 \label{img:estrutura}
 \end{figure}
 
-Na pasta \textbf{Engine} residem os ficheiros relativos ao programa \emph{engine}, bem como ficheiros relativos à biblioteca \emph{tinyxml2}. Contém ainda um ficheiro de configuração \emph{cmake}.
+Na pasta \textbf{Engine} residem os ficheiros relativos ao programa \emph{engine}, bem como as bibliotecas (.h) criadas para o efeito. Contém ainda um ficheiro de configuração \emph{cmake} e os ficheiros relativos à biblioteca \emph{tinyxml2}.
 
-Na pasta \textbf{Generator} residem os ficheiros relativos ao programa \emph{generator}. Contém ainda um ficheiro de configuração \emph{cmake}.
+Na pasta \textbf{Generator} residem os ficheiros relativos ao programa \emph{generator}. Contém também um ficheiro de configuração \emph{cmake}.
 
 Na pasta \textbf{Generated\_Models} residem os ficheiros que contêm os pontos gerados para cada figura, criados pelo programa \emph{generator}.
 
-Na pasta \textbf{Scenes} reside o ficheiro \emph{XML} que contém os nomes dos ficheiros que o programa \emph{engine} tem que carregar posteriormente.
+Na pasta \textbf{Scenes} residem os ficheiros \emph{XML} que contêm as estruturas do sistemas solares desenvolvidos para esta fase do projeto. Construímos dois ficheiros deste tipo, um que contém os raios relativos de cada planeta e do sol baseados na realidade (grande disparidade entre as figuras criadas), e o outro que é mais elucidativo e percetível. 
 
 
 \newpage
@@ -112,6 +114,34 @@ Na pasta \textbf{Scenes} reside o ficheiro \emph{XML} que contém os nomes dos f
 
 \section{\textit{Render Scene}}
 
+\newpage
+
+\section{\textit{Upgrades da Fase Anterior}}
+
+Em relação à fase anterior houve alguns pontos que foram sujeitos a mudanças e otimizações pelo que estas serão relatadas nesta secção.
+
+Uma das partes que foi sujeita a otimização foi o cálculo das coordenadas da câmera que na fase anterior continha demasiado código e algumas variáveis que não tinham nexo em ser usadas.
+Desta forma decidimos que esta parte deveria ser reescrita utilizando uma abordagem mais objetiva. O resultado é descrito na seguinte figura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.9]{camara.png}
+\caption{Código referente às coordenadas da câmara.}
+\label{img:camara}
+\end{figure}
+
+Não só a função que calcula as coordenadas para câmara mas também a própria função da câmara foi melhorada. Passou a poder mover-se consoante o ponto para o qual está a olhar. Desta forma possibilitou-nos a facilidade de podermos deslocarmo-nos para qualquer sítio que nos convenha. Tal alteração é descrita na seguinte figura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.9]{mat_camara.png}
+\caption{Função que contém a matriz da câmara.}
+\label{img:mat_camara}
+\end{figure}
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FALTA ACABAR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+FALAR DOS .H
 
 \newpage
 
@@ -129,6 +159,6 @@ No geral não sentimos muitas dificuldades em nenhuma das primitivas gráficas p
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! POR FAZER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-https://www.suapesquisa.com/astronomia/distancia_sol_planetas.htm
+https://www.suapesquisa.com/astronomia/distancia\_sol\_planetas.htm
 
 \end{document}

@@ -103,7 +103,6 @@ void changeSize(int w, int h) {
 float alfa = 0.5f, beta = 0.5f, radius = 500.0f;
 float camx, camy, camz, dx = 0.0, dy = 0.0, dz = 0.0;
 
-
 void spherical2Cartesian() {
 	camx = radius * cos(beta) * sin(alfa);
 	camy = radius * sin(beta);
@@ -117,7 +116,7 @@ void renderScene(void) {
 
 	// set the camera
 	glLoadIdentity();
-	gluLookAt(camx + dx,camy + dy,camz + dz,
+	gluLookAt(camx+dx, camy+dy, camz+dz,
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
