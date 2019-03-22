@@ -1,29 +1,28 @@
 <scene>
 	<group>
-		<translate X="1" />
 		<models>
 			<model file="sphere.3d" R="0.816" G="0.533" B="0.208" />
 		</models>
 		<group>
 			<!-- Mercury -->
 			<rotate axisX="0" axisY="1" axisZ="0" angle="180"/>
-			<translate X="26" Y="0.0" Z="0.0" />
+			<translate X="116" Y="0.0" Z="0.0" />
 			<scale X="0.535" Y="0.535" Z="0.535" />
 			<models>
 				<model file="sphere.3d" R="0.816" G="0.533" B="0.208" />
 			</models>
 		</group>
 		<group>
-			<!-- Venus -->
+<!-- Venus -->
 			<rotate axisX="0" axisY="1" axisZ="0" angle="90"/>
-			<translate X="31" Y="0.0" Z="0.0" />
+			<translate X="120.5" Y="0.0" Z="0.0" />
 			<scale X="1.326" Y="1.326" Z="1.326" />
 			<models>
 				<model file="sphere.3d" R="0.816" G="0.533" B="0.208" />
 			</models>
 		</group>
 		<group>
-			<translate X="38" Y="0.0" Z="0.0" />
+			<translate X="125" Y="0.0" Z="0.0" />
 			<group>
 				<!-- Earth -->
 				<scale X="1.396" Y="1.396" Z="1.396" />

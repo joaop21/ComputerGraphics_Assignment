@@ -57,20 +57,20 @@ void draw_axis(){
 
 	glColor3f(0.0f, 1.0f, 0.0f); // green
 	glBegin(GL_LINE_STRIP); // yy axis
-	glVertex3f(0.0f, 20.0f, 0.0f);
-	glVertex3f(0.0f, -20.0f, 0.0f);
+	glVertex3f(0.0f, 300.0f, 0.0f);
+	glVertex3f(0.0f, -300.0f, 0.0f);
 	glEnd();
 
 	glColor3f(0.0f, 0.0f, 1.0f); //blue
 	glBegin(GL_LINE_STRIP); // zz axis
-	glVertex3f(0.0f, 0.0f, 20.0f);
-	glVertex3f(0.0f, 0.0f, -20.0f);
+	glVertex3f(0.0f, 0.0f, 300.0f);
+	glVertex3f(0.0f, 0.0f, -300.0f);
 	glEnd();
 
 	glColor3f(1.0f, 0.0f, 0.0f); // red
 	glBegin(GL_LINE_STRIP); // xx axis
-	glVertex3f(20.0f, 0.0f, 0.0f);
-	glVertex3f(-20.0f, 0.0f, 0.0f);
+	glVertex3f(300.0f, 0.0f, 0.0f);
+	glVertex3f(-300.0f, 0.0f, 0.0f);
 	glEnd();
 }
 
@@ -100,8 +100,8 @@ void changeSize(int w, int h) {
 }
 
 
-float alfa = 0.0f, beta = 0.5f, radius = 20.0f;
-float camx, camy, camz, dx, dy, dz;
+float alfa = 0.5f, beta = 0.5f, radius = 500.0f;
+float camx, camy, camz, dx = 0.0, dy = 0.0, dz = 0.0;
 
 
 void spherical2Cartesian() {
@@ -117,7 +117,7 @@ void renderScene(void) {
 
 	// set the camera
 	glLoadIdentity();
-	gluLookAt(camx,camy,camz,
+	gluLookAt(camx + dx,camy + dy,camz + dz,
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
@@ -133,28 +133,28 @@ void processKeys(unsigned char c, int xx, int yy) {
 	switch (c)
 	{
 	case 'd':
-		dx -= 0.1;
+		dx -= 20;
 		break;
 	case 'a':
-		dx += 0.1;
+		dx += 20;
 		break;
 	case 'w':
-		dy -= 0.1;
+		dy -= 20;
 		break;
 	case 's':
-		dy += 0.1;
+		dy += 20;
 		break;
 	case 'q':
-		dz -= 0.1;
+		dz -= 20;
 		break;
 	case 'e':
-		dz += 0.1;
+		dz += 20;
 		break;
 	case '+':
-		radius -= 0.5;
+		radius -= 20;
 		break;
 	case '-':
-		radius += 0.5;
+		radius += 20;
 		break;
 	case 'z':
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
