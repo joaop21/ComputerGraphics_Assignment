@@ -33,7 +33,7 @@
         </group>
         <group> <!-- Mars -->
 			<rotate axisX="0" axisY="1" axisZ="0" angle="270"/>
-			<translate X="135.5" Y="0.0" Z="0.0" />
+			<translate X="132.5" Y="0.0" Z="0.0" />
 			<scale X="0.53" Y="0.53" Z="0.53" />
 			<models>
 				<model file="planet.3d" R="0.788" G="0.243" B="0.020" />
@@ -45,6 +45,30 @@
 			<scale X="11.21" Y="11.21" Z="11.21" />
 			<models>
 				<model file="sphere.3d" R="0.984" G="0.808" B="0.573" />
+			</models>
+		</group>
+		<group> <!-- Saturn -->
+			<translate X="252.5" Y="0.0" Z="0.0" />
+			<rotate axisX="0" axisY="1" axisZ="1" angle="50" />
+			<scale X="9.54" Y="9.54" Z="9.54" />
+			<models>
+				<model file="sphere.3d" R="0.835" G="0.694" B="0.467" />
+			</models>
+		</group>
+		<group> <!-- Uranus -->
+			<rotate axisX="0" axisY="1" axisZ="0" angle="135"/>
+			<translate X="395" Y="0.0" Z="0.0" />
+			<scale X="4.06" Y="4.06" Z="4.06" />
+			<models>
+				<model file="sphere.3d" R="0.757" G="0.906" B="0.918" />
+			</models>
+		</group>
+		<group> <!-- Neptune -->
+			<rotate axisX="0" axisY="1" axisZ="0" angle="215"/>
+			<translate X="560" Y="0.0" Z="0.0" />
+			<scale X="3.94" Y="3.94" Z="3.94" />
+			<models>
+				<model file="sphere.3d" R="0.251" G="0.416" B="0.988" />
 			</models>
 		</group>
     </group>

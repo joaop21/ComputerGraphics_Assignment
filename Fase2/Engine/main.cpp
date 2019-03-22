@@ -57,20 +57,20 @@ void draw_axis(){
 
 	glColor3f(0.0f, 1.0f, 0.0f); // green
 	glBegin(GL_LINE_STRIP); // yy axis
-	glVertex3f(0.0f, 300.0f, 0.0f);
-	glVertex3f(0.0f, -300.0f, 0.0f);
+	glVertex3f(0.0f, 1000.0f, 0.0f);
+	glVertex3f(0.0f, -1000.0f, 0.0f);
 	glEnd();
 
 	glColor3f(0.0f, 0.0f, 1.0f); //blue
 	glBegin(GL_LINE_STRIP); // zz axis
-	glVertex3f(0.0f, 0.0f, 300.0f);
-	glVertex3f(0.0f, 0.0f, -300.0f);
+	glVertex3f(0.0f, 0.0f, 1000.0f);
+	glVertex3f(0.0f, 0.0f, -1000.0f);
 	glEnd();
 
 	glColor3f(1.0f, 0.0f, 0.0f); // red
 	glBegin(GL_LINE_STRIP); // xx axis
-	glVertex3f(300.0f, 0.0f, 0.0f);
-	glVertex3f(-300.0f, 0.0f, 0.0f);
+	glVertex3f(1000.0f, 0.0f, 0.0f);
+	glVertex3f(-1000.0f, 0.0f, 0.0f);
 	glEnd();
 }
 
