@@ -147,7 +147,7 @@ A classe Color é composta por 3 floats - r,g e b. Estes floats juntos definem a
 \subsection{Scale}
 \label{sec:scale}
 
-A classe Scale contém 3 floats - x,y e z, que são os parâmetros de redimensionamento da figura que queremos. Contém ainda um bool para verificar se a figura existe.
+A classe Scale contém 3 floats - x,y e z, que são os parâmetros de redimensionamento da figura que queremos. Contém ainda um bool para verificar se a transformação existe.
 
 \begin{figure}[H]
 \centering
@@ -202,6 +202,89 @@ A classe Point, como o nome indica, é um ponto no sistema, ou seja, é composta
 
 \newpage
 
+\section{\textit{Generator}}
+
+Nesta segunda fase do projeto usamos o programa criado na primeira fase (\textbf{Generator}) para criar todas as figuras com o intuito de alimentar os ficheiros \emph{XML} e consequentemente o programa \textbf{Engine}.
+
+Para além da sua funcionalidade inicial, achamos que seria benéfico para o nosso modelo estático do sistema solar ter uma cintura de asteróides. Tal tarefa era bastante difícil de realizar, asteróide a asteróide, pelo que decidimos adicionar uma nova funcionalidade ao \textbf{Generator}. Esta funcionalidade passa por gerar um ficheiro \emph{XML} com o formato definido na secção \textbf{\ref{sec:ficheiro}} e que contém todos os asteróides pertencentes à cintura de asteróides entre Marte e Júpiter.
+
+O algoritmo utilizado é descrito a seguir.
+
+\subsection{Algoritmo}
+A função \textit{generateAsteroids} recebe como parâmetro três inteiros que representam respetivamente, o número de asteróides a criar, o raio mínimo e o raio máximo a que estão do sol. Por último recebe o nome do ficheiro onde irá guradar o \emph{XML} criado.
+
+De seguida apresentamos uma imagem de um cubo gerado pela nossa aplicação e a sua explicação através do algoritmo criado pelo grupo.
+
+ \vspace{0.5cm}
+
+      \underline{Primeiro triângulo:} (face frontal)
+
+      \vspace{0.5cm}
+
+          \hspace{0.5cm} P1 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P2 $\Rightarrow$ (x, i $\times$ $tam_{y}$, z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P3 $\Rightarrow$ (x + $tam_{x}$, i $\times$ $tam_{y}$, z)
+
+      \vspace{0.5cm}
+
+      \underline{Segundo triângulo:} (face frontal)
+
+      \vspace{0.5cm}
+
+          \hspace{0.5cm} P4 $\Rightarrow$ (x, (i+1) $\times$ $tam_{y}$, z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P2 $\Rightarrow$ (x, i $\times$ $tam_{y}$, z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P1 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, z)
+
+      \vspace{0.5cm}
+
+      \underline{Terceiro triângulo:} (face traseira)
+
+      \vspace{0.5cm}
+
+          \hspace{0.5cm} P5 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, -z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P6 $\Rightarrow$ (x + $tam_{x}$, i $\times$ $tam_{y}$, -z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P7 $\Rightarrow$ (x, i $\times$ $tam_{y}$, -z)
+
+      \vspace{0.5cm}
+
+      \underline{Quarto triângulo:} (face traseira)
+
+      \vspace{0.5cm}
+
+          \hspace{0.5cm} P8 $\Rightarrow$ (x, (i+1) $\times$ $tam_{y}$, -z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P5 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, -z)
+
+      \vspace{0.2cm}
+
+          \hspace{0.5cm} P7 $\Rightarrow$ (x, i $\times$ $tam_{y}$, -z)
+
+      \vspace{0.5cm}
+
+
+
+\newpage
+
 \section{\textit{Upgrades da Fase Anterior}}
 
 Em relação à fase anterior houve alguns pontos que foram sujeitos a mudanças e otimizações pelo que estas serão relatadas nesta secção.
@@ -225,9 +308,7 @@ Não só a função que calcula as coordenadas para câmara mas também a própr
 \label{img:mat_camara}
 \end{figure}
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! FALTA ACABAR !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-FALAR DOS .H
+Outra das partes que sofreu algumas alterações foi a organização do código na pasta \textbf{Generator} que estava definido em ficheiros \emph{.h} (plane, box, sphere e cone). Não devendo então código ser escrito em ficheiros deste género, excetuando apenas as definições e documentação, criamos um ficheiro \emph{.h} que alberga todas as definições e documentação necessária e criamos ficheiros \emph{.cpp} para cada figura. Desta forma todo o código ficou perfeitamente organizado.
 
 \newpage
 
