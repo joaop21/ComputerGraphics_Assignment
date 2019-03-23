@@ -94,6 +94,8 @@ Na figura \ref{img:ficheiro_parser} é possível visualizar um excerto do fichei
 \label{img:ficheiro_parser}
 \end{figure}
 
+De referenciar que para facilitar a parte de coloração de cada corpo do sistema solar, acrescentamos ao \textbf{model} 3 novos valores que se referem à cor que determinado objeto terá. Estes campos são nomeadamente \textbf{R}, \textbf{G} e \textbf{B}.
+
 \subsection{Funcionamento}
 \label{sec:funcionamento}
 
@@ -206,81 +208,80 @@ A classe Point, como o nome indica, é um ponto no sistema, ou seja, é composta
 
 Nesta segunda fase do projeto usamos o programa criado na primeira fase (\textbf{Generator}) para criar todas as figuras com o intuito de alimentar os ficheiros \emph{XML} e consequentemente o programa \textbf{Engine}.
 
-Para além da sua funcionalidade inicial, achamos que seria benéfico para o nosso modelo estático do sistema solar ter uma cintura de asteróides. Tal tarefa era bastante difícil de realizar, asteróide a asteróide, pelo que decidimos adicionar uma nova funcionalidade ao \textbf{Generator}. Esta funcionalidade passa por gerar um ficheiro \emph{XML} com o formato definido na secção \textbf{\ref{sec:ficheiro}} e que contém todos os asteróides pertencentes à cintura de asteróides entre Marte e Júpiter.
+Para além da sua funcionalidade inicial, achamos que seria benéfico para o nosso modelo estático do sistema solar ter uma cintura de asteróides. Tal tarefa era bastante difícil de realizar, asteróide a asteróide, pelo que decidimos adicionar uma nova funcionalidade ao \textbf{Generator}. Esta funcionalidade passa por gerar um ficheiro \emph{XML} com o formato definido na secção \textbf{\ref{sec:ficheiro}} que contém todos os asteróides pertencentes à cintura de asteróides entre Marte e Júpiter.
+
+Depois de ter o ficheiro com a cintura de asteróides gerada, temos que copiar o conteúdo deste ficheiro e colocá-lo corretamente no ficheiro \emph{scene.xml} que é onde reside todo o modelo do sistema solar.
+
+Um exemplo de como invocar esta função é:
+
+ \vspace{0.5cm}
+ 
+$\Rightarrow$ ./Generator asteroid\_belt 1000 150 160 asteroids.xml
+
+ \vspace{0.5cm}
+ 
+ Neste caso vamos gerar \emph{XML} que será escrito no ficheiro \textbf{\emph{asteroids.xml}}, que irá conter \textbf{1000} asteróides a uma distância do sol compreendida entre \textbf{150} e \textbf{160}.
 
 O algoritmo utilizado é descrito a seguir.
 
 \subsection{Algoritmo}
-A função \textit{generateAsteroids} recebe como parâmetro três inteiros que representam respetivamente, o número de asteróides a criar, o raio mínimo e o raio máximo a que estão do sol. Por último recebe o nome do ficheiro onde irá guradar o \emph{XML} criado.
+A função \textit{generateAsteroids} recebe como parâmetro três inteiros que representam respetivamente, o número de asteróides a criar, o raio mínimo e o raio máximo a que estão do sol. Por último recebe o nome do ficheiro onde irá guardar o \emph{XML} criado.
 
-De seguida apresentamos uma imagem de um cubo gerado pela nossa aplicação e a sua explicação através do algoritmo criado pelo grupo.
+De seguida apresentamos uma imagem duma cintura de asteróides gerada pela nossa aplicação e a sua explicação através do algoritmo criado pelo grupo.
 
- \vspace{0.5cm}
+ \ttfamily
+\begin{enumerate}
+  \item Inicializa-se um gerador de números pseudo-aleatórios, usando 1 como \emph{seed} $\Rightarrow$ srand(1).
+  \item Iterar sobre o número de asteróides:
+  \begin{enumerate}
+    \item Enquanto não for gerado um ponto válido:
+    \begin{enumerate}
+    	\item Calcula-se um número aleatório para X, baseando-se na fórmula:
+	
+	 \vspace{0.5cm}
+	
+	 \hspace{0.0cm} X $\Rightarrow$ rand() \% (2 $\times$ raio máximo) - raio máximo
+	 
+	 \vspace{0.5cm}
+	 
+	 \item Calcula-se um número aleatório para Z, baseando-se na fórmula:
+	 
+	 \vspace{0.5cm}
+	
+	 \hspace{0.0cm} Z $\Rightarrow$ rand() \% (2 $\times$ raio máximo) - raio máximo
+	 
+	 \vspace{0.5cm}
+	 
+	 \item Calcula-se a distância ao centro, calculando a hipotenusa:
+	 
+	 \vspace{0.5cm}
+	
+	 \hspace{0.0cm} Hipotenusa $\Rightarrow$ $\sqrt{X^2 + Z^2}$
+	 
+	 \vspace{0.5cm}
+	 
+	 \item Testa-se se a hipotenusa está compreendida entre o raio mínimo e o raio máximo.
+	 \begin{enumerate}
+	 \item Se sim, escreve em ficheiro e passa à próxima iteração para um novo asteróide.
+	 \item Se não, entra no ciclo até tentar ter um ponto válido.
+	 \end{enumerate}
+	 
+    \end{enumerate}
 
-      \underline{Primeiro triângulo:} (face frontal)
+    \end{enumerate}
 
-      \vspace{0.5cm}
-
-          \hspace{0.5cm} P1 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P2 $\Rightarrow$ (x, i $\times$ $tam_{y}$, z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P3 $\Rightarrow$ (x + $tam_{x}$, i $\times$ $tam_{y}$, z)
-
-      \vspace{0.5cm}
-
-      \underline{Segundo triângulo:} (face frontal)
-
-      \vspace{0.5cm}
-
-          \hspace{0.5cm} P4 $\Rightarrow$ (x, (i+1) $\times$ $tam_{y}$, z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P2 $\Rightarrow$ (x, i $\times$ $tam_{y}$, z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P1 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, z)
-
-      \vspace{0.5cm}
-
-      \underline{Terceiro triângulo:} (face traseira)
-
-      \vspace{0.5cm}
-
-          \hspace{0.5cm} P5 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, -z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P6 $\Rightarrow$ (x + $tam_{x}$, i $\times$ $tam_{y}$, -z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P7 $\Rightarrow$ (x, i $\times$ $tam_{y}$, -z)
-
-      \vspace{0.5cm}
-
-      \underline{Quarto triângulo:} (face traseira)
-
-      \vspace{0.5cm}
-
-          \hspace{0.5cm} P8 $\Rightarrow$ (x, (i+1) $\times$ $tam_{y}$, -z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P5 $\Rightarrow$ (x + $tam_{x}$, (i+1) $\times$ $tam_{y}$, -z)
-
-      \vspace{0.2cm}
-
-          \hspace{0.5cm} P7 $\Rightarrow$ (x, i $\times$ $tam_{y}$, -z)
-
-      \vspace{0.5cm}
-
+    \item Fim
+    \end{enumerate}
+    \rmfamily
+    
+    
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{cintura.png}
+\caption{Imagem exemplificativa duma cintura de asteróides}
+\label{img:cintura}
+\end{figure}
+   
 
 
 \newpage

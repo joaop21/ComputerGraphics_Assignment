@@ -20,7 +20,7 @@ int figures::generateAsteroids(int num_asteroids, int min_radius, int max_radius
             while(true){
     			int x = rand()%(2*max_radius)-max_radius;
     			int z = rand()%(2*max_radius)-max_radius;
-    			float hipotenusa = sqrt(pow(abs(x),2) + pow(abs(z),2));
+    			float hipotenusa = sqrt(pow(x,2) + pow(z,2));
     			if((hipotenusa >= min_radius) && (hipotenusa <= max_radius)){
     				file << "    <translate X=\"" + to_string(x) + "\" Z=\"" + to_string(z) + "\" />\n";
                     file << "    <models>\n        <model file=\"asteroid.3d\" R=\"0.412\" G=\"0.388\" B=\"0.376\" />\n    </models>";
