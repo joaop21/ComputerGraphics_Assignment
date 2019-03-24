@@ -8,7 +8,7 @@
 			<translate X="116" Y="0.0" Z="0.0" />
 			<scale X="0.38" Y="0.38" Z="0.38" />
 			<models>
-				<model file="planet.3d" R="0.412" G="0.388" B="0.376" />
+				<model file="planet_real.3d" R="0.412" G="0.388" B="0.376" />
 			</models>
 		</group>
     <group> <!-- Venus -->
@@ -16,13 +16,13 @@
 			<translate X="120.5" Y="0.0" Z="0.0" />
 			<scale X="0.95" Y="0.95" Z="0.95" />
 			<models>
-				<model file="planet.3d" R="0.816" G="0.533" B="0.208" />
+				<model file="planet_real.3d" R="0.816" G="0.533" B="0.208" />
 			</models>
 		</group>
     <group> <!-- Earth -->
 			<translate X="125" Y="0.0" Z="0.0" />
 			<models>
-				<model file="planet.3d" R="0.145" G="0.192" B="0.388" />
+				<model file="planet_real.3d" R="0.145" G="0.192" B="0.388" />
 			</models>
     	<group> <!-- Moon -->
 				<translate X="0" Y="1.5" Z="2.0" />
@@ -36,7 +36,7 @@
 			<translate X="132.5" Y="0.0" Z="0.0" />
 			<scale X="0.53" Y="0.53" Z="0.53" />
 			<models>
-				<model file="planet.3d" R="0.788" G="0.243" B="0.020" />
+				<model file="planet_real.3d" R="0.788" G="0.243" B="0.020" />
 			</models>
 			<group> <!-- Fobos (Mars) -->
 				<translate X="1.0" Y="1.5" Z="1.2" />
@@ -56,7 +56,7 @@
 		  <translate X="185" Y="0.0" Z="0.0" />
 			<scale X="11.21" Y="11.21" Z="11.21" />
 			<models>
-				<model file="planet.3d" R="0.984" G="0.808" B="0.573" />
+				<model file="planet_real.3d" R="0.984" G="0.808" B="0.573" />
 			</models>
 		</group>
 		<group> <!-- Saturn -->
@@ -64,7 +64,7 @@
 			<rotate axisX="0" axisY="1" axisZ="1" angle="50" />
 			<scale X="9.54" Y="9.54" Z="9.54" />
 			<models>
-				<model file="planet.3d" R="0.835" G="0.694" B="0.467" />
+				<model file="planet_real.3d" R="0.835" G="0.694" B="0.467" />
 				<model file="torus.3d" R="0.945" G="0.412" B="0.082" />
 			</models>
 		</group>
@@ -73,7 +73,7 @@
 			<translate X="395" Y="0.0" Z="0.0" />
 			<scale X="4.06" Y="4.06" Z="4.06" />
 			<models>
-				<model file="planet.3d" R="0.757" G="0.906" B="0.918" />
+				<model file="planet_real.3d" R="0.757" G="0.906" B="0.918" />
 			</models>
 		</group>
 		<group> <!-- Neptune -->
@@ -81,7 +81,7 @@
 			<translate X="560" Y="0.0" Z="0.0" />
 			<scale X="3.94" Y="3.94" Z="3.94" />
 			<models>
-				<model file="planet.3d" R="0.251" G="0.416" B="0.988" />
+				<model file="planet_real.3d" R="0.251" G="0.416" B="0.988" />
 			</models>
 		</group>
 		<group>
