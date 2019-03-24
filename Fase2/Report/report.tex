@@ -291,6 +291,8 @@ A classe Point, como o nome indica, é um ponto no sistema, ou seja, é composta
 
 Nesta segunda fase do projeto usamos o programa criado na primeira fase (\textbf{Generator}) para criar todas as figuras com o intuito de alimentar os ficheiros \emph{XML} e consequentemente o programa \textbf{Engine}.
 
+\subsection{Cintura de Asteróides}
+
 Para além da sua funcionalidade inicial, achamos que seria benéfico para o nosso modelo estático do sistema solar ter uma cintura de asteróides. Tal tarefa era bastante difícil de realizar, asteróide a asteróide, pelo que decidimos adicionar uma nova funcionalidade ao \textbf{Generator}. Esta funcionalidade passa por gerar um ficheiro \emph{XML} com o formato definido na secção \textbf{\ref{sec:ficheiro}} que contém todos os asteróides pertencentes à cintura de asteróides entre Marte e Júpiter.
 
 Depois de ter o ficheiro com a cintura de asteróides gerada, temos que copiar o conteúdo deste ficheiro e colocá-lo corretamente no ficheiro \emph{scene.xml} que é onde reside todo o modelo do sistema solar.
@@ -307,7 +309,7 @@ $\Rightarrow$ ./Generator asteroid\_belt 1000 150 160 asteroids.xml
 
 O algoritmo utilizado é descrito a seguir.
 
-\subsection{Algoritmo}
+\subsubsection{Algoritmo}
 A função \textit{generateAsteroids} recebe como parâmetro três inteiros que representam respetivamente, o número de asteróides a criar, o raio mínimo e o raio máximo a que estão do sol. Por último recebe o nome do ficheiro onde irá guardar o \emph{XML} criado.
 
 De seguida apresentamos uma imagem duma cintura de asteróides gerada pela nossa aplicação e a sua explicação através do algoritmo criado pelo grupo.
@@ -364,6 +366,26 @@ De seguida apresentamos uma imagem duma cintura de asteróides gerada pela nossa
 \caption{Imagem exemplificativa duma cintura de asteróides}
 \label{img:cintura}
 \end{figure}
+
+
+\subsection{Torus}
+
+Como Saturno na sua verdadeira natureza possui um anel, achamos por bem que o nosso modelo do sistema solar deveria conter algo que o representasse, uma vez que esta é uma característica bem conhecida deste planeta. Para tal achamos que uma \emph{Torus} representaria bem o que pretendíamos.
+
+Desta forma, criamos uma nova funcionalidade para o \textbf{Generator} que possibilita a criação de todos os pontos necessários para a criação duma \emph{Torus}.
+
+Um exemplo de como invocar esta função é:
+
+ \vspace{0.5cm}
+
+$\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
+
+ \vspace{0.5cm}
+ 
+ Neste caso iremos os pontos para a figura que serão guardados no ficheiro \textbf{torus.3d}, o raio de cada anel será de \textbf{0.3}, a distância (raio) do centro da figura até à figura será \textbf{1.5}, o número de lados de cada anel será \textbf{20} e finalmente o número de anéis que compõe a figura será \textbf{30}.
+ 
+ \subsubsection{Algoritmo}
+
 
 
 
