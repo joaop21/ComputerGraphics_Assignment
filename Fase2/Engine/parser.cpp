@@ -83,7 +83,7 @@ Tree parser_XML(){
   cout << "Insira o número: ";
   cin >> i;
   if(i==1)
-	   doc.LoadFile("../Scenes/scene.xml");
+	   doc.LoadFile("../Scenes/scene_real.xml");
   else
      doc.LoadFile("../Scenes/scene_elucidativa.xml");
 
