@@ -99,6 +99,88 @@ De referenciar que para facilitar a parte de coloração de cada corpo do sistem
 \subsection{Funcionamento}
 \label{sec:funcionamento}
 
+O parser é inicializado na função \textbf{parser\_XML}. Esta função tem a principal funcionalidade de atualizar a variável global \textbf{Tree t}, sendo esta a estrutura que irá armazenar a informação retirada do ficheiro XML. O algoritmo deste processo é demonstrado a seguir:
+
+\vspace{0.5cm}
+
+\ttfamily
+\begin{enumerate}
+ \item Abre ficheiro $\Rightarrow$ "scene.xml"
+    \begin{enumerate}
+      \item Caso resulte em erro, termina execução.
+    \end{enumerate}
+ \item Filtra primeiro elemento $\Rightarrow$ scene
+    \begin{enumerate}
+      \item Caso não seja obtido, termina execução.
+    \end{enumerate}
+ \item A partir do nodo atual, procura o primeiro filho, $\Rightarrow$ group
+    \begin{enumerate}
+      \item Caso não seja obtido, termina execução.
+    \end{enumerate}
+ \item O nodo (group) obtido no passo anterior será usado como parâmetro na função parseGroup.
+\end{enumerate}
+
+  \vspace{0.3cm}
+
+ Função parseGroup:
+
+  \vspace{0.3cm}
+
+\begin{enumerate}
+ \item Iterar sobre todos os filhos do nodo passado como parâmetro, até algum ser null:
+
+   \begin{enumerate}
+     \item Caso seja translate:
+        \begin{enumerate}
+          \item Obtém-se os valores e atribuem-se à figura $\Rightarrow$ X,Y,Z
+        \end{enumerate}
+     \item Caso seja rotate:
+        \begin{enumerate}
+          \item Obtém-se os valores e atribuem-se à figura $\Rightarrow$ angle,X,Y,Z
+        \end{enumerate}
+     \item Caso seja scale:
+        \begin{enumerate}
+          \item Obtém-se os valores e atribuem-se à figura $\Rightarrow$ X,Y,Z
+        \end{enumerate}
+     \item Caso seja models:
+        \begin{enumerate}
+          \item Itera-se sobre os filhos existentes:
+              \begin{enumerate}
+                \item Obtém-se o nome do ficheiro da figura e invoca-se com esse parâmetro a função $\Rightarrow$ loadFigure
+                \item Obtém-se os valores das cores e atribuem-se à figura $\Rightarrow$ R,G,B
+              \end{enumerate}
+        \end{enumerate}
+
+    \vspace{0.3cm}
+
+  Função loadFigure:
+
+    \vspace{0.3cm}
+
+        \begin{enumerate}
+          \item A função recorre aos ficheiros do Generated Models.
+          \item Obtém do ficheiro enviado como parâmetro os pontos dos triângulos que vão criar a figura.
+          \item Atribui esses valores à figura da Tree.
+        \end{enumerate}
+
+    \vspace{0.3cm}
+
+    \item Caso seja group:
+      \begin{enumerate}
+        \item Executa-se recursivamente a função parseGroup sendo o parâmetro inicial o nodo atualmente a ser iterado.
+        \item As figuras possuem um vector de trees, que serão encaradas como subtrees $\Rightarrow$ children
+        \item Finalizada a recursão, o resultado é colocado na estrutura de dados referida no passo anterior.
+        \item Desta forma, todas as transformações dos nodos filhos vão ser influenciadas pelas dos seus precedentes.
+      \end{enumerate}
+
+  \item Retorna-se a Tree passada como parâmetro inicialmente, agora com as figuras e suas transformações já armazenadas.
+
+  \end{enumerate}
+
+  \item Fim
+  \end{enumerate}
+  \rmfamily
+
 
 \newpage
 
@@ -215,11 +297,11 @@ Depois de ter o ficheiro com a cintura de asteróides gerada, temos que copiar o
 Um exemplo de como invocar esta função é:
 
  \vspace{0.5cm}
- 
+
 $\Rightarrow$ ./Generator asteroid\_belt 1000 150 160 asteroids.xml
 
  \vspace{0.5cm}
- 
+
  Neste caso vamos gerar \emph{XML} que será escrito no ficheiro \textbf{\emph{asteroids.xml}}, que irá conter \textbf{1000} asteróides a uma distância do sol compreendida entre \textbf{150} e \textbf{160}.
 
 O algoritmo utilizado é descrito a seguir.
@@ -237,35 +319,35 @@ De seguida apresentamos uma imagem duma cintura de asteróides gerada pela nossa
     \item Enquanto não for gerado um ponto válido:
     \begin{enumerate}
     	\item Calcula-se um número aleatório para X, baseando-se na fórmula:
-	
+
 	 \vspace{0.5cm}
-	
+
 	 \hspace{0.0cm} X $\Rightarrow$ rand() \% (2 $\times$ raio máximo) - raio máximo
-	 
+
 	 \vspace{0.5cm}
-	 
+
 	 \item Calcula-se um número aleatório para Z, baseando-se na fórmula:
-	 
+
 	 \vspace{0.5cm}
-	
+
 	 \hspace{0.0cm} Z $\Rightarrow$ rand() \% (2 $\times$ raio máximo) - raio máximo
-	 
+
 	 \vspace{0.5cm}
-	 
+
 	 \item Calcula-se a distância ao centro, calculando a hipotenusa:
-	 
+
 	 \vspace{0.5cm}
-	
+
 	 \hspace{0.0cm} Hipotenusa $\Rightarrow$ $\sqrt{X^2 + Z^2}$
-	 
+
 	 \vspace{0.5cm}
-	 
+
 	 \item Testa-se se a hipotenusa está compreendida entre o raio mínimo e o raio máximo.
 	 \begin{enumerate}
 	 \item Se sim, escreve em ficheiro e passa à próxima iteração para um novo asteróide.
 	 \item Se não, entra no ciclo até tentar ter um ponto válido.
 	 \end{enumerate}
-	 
+
     \end{enumerate}
 
     \end{enumerate}
@@ -273,15 +355,15 @@ De seguida apresentamos uma imagem duma cintura de asteróides gerada pela nossa
     \item Fim
     \end{enumerate}
     \rmfamily
-    
-    
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{cintura.png}
 \caption{Imagem exemplificativa duma cintura de asteróides}
 \label{img:cintura}
 \end{figure}
-   
+
 
 
 \newpage

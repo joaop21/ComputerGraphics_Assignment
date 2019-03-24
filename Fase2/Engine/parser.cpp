@@ -37,21 +37,21 @@ Tree parseGroup(XMLElement* father){
 
         switch(str2int(option)){
             case str2int("translate"):
-                    t.head_figure.translation.empty = false;
+                t.head_figure.translation.empty = false;
             		t.head_figure.translation.x = child->FloatAttribute("X");
             		t.head_figure.translation.y = child->FloatAttribute("Y");
             		t.head_figure.translation.z = child->FloatAttribute("Z");
                     break;
             case str2int("rotate"):
-                    t.head_figure.rotation.empty = false;
+                t.head_figure.rotation.empty = false;
             		t.head_figure.rotation.angle = child->FloatAttribute("angle");
             		t.head_figure.rotation.x = child->FloatAttribute("axisX");
             		t.head_figure.rotation.y = child->FloatAttribute("axisY");
             		t.head_figure.rotation.z = child->FloatAttribute("axisZ");
                     break;
             case str2int("scale"):
-                    t.head_figure.scale.empty = false;
-					t.head_figure.scale.x = child->FloatAttribute("X");
+                t.head_figure.scale.empty = false;
+					      t.head_figure.scale.x = child->FloatAttribute("X");
             		t.head_figure.scale.y = child->FloatAttribute("Y");
             		t.head_figure.scale.z = child->FloatAttribute("Z");
                     break;
@@ -59,9 +59,9 @@ Tree parseGroup(XMLElement* father){
             		for(XMLElement* m_node = child->FirstChildElement("model"); m_node != NULL; m_node = m_node->NextSiblingElement()){
             			string file_name = m_node->Attribute("file");
             			t.head_figure = loadFigure(t.head_figure,file_name);
-                        t.head_figure.color.r = m_node->FloatAttribute("R");
-                        t.head_figure.color.g = m_node->FloatAttribute("G");
-                        t.head_figure.color.b = m_node->FloatAttribute("B");
+                  t.head_figure.color.r = m_node->FloatAttribute("R");
+                  t.head_figure.color.g = m_node->FloatAttribute("G");
+                  t.head_figure.color.b = m_node->FloatAttribute("B");
             		}
                     break;
             case str2int("group"):
