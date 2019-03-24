@@ -65,6 +65,7 @@
 			<scale X="9.54" Y="9.54" Z="9.54" />
 			<models>
 				<model file="planet.3d" R="0.835" G="0.694" B="0.467" />
+				<model file="torus.3d" R="0.945" G="0.412" B="0.082" />
 			</models>
 		</group>
 		<group> <!-- Uranus -->

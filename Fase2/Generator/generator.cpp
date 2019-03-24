@@ -57,7 +57,13 @@ int main(int argc, char* argv[]) {
 		int max_radius = atoi(argv[4]);
 		string file_name = argv[5];
 		res = generateAsteroids(num_asteroids,min_radius,max_radius,file_name);
-
+	} else if(primitive == "torus"){
+		float innerRadius = atof(argv[2]);
+		float outerRadius = atof(argv[3]);
+		int nsides = atoi(argv[4]);
+		int nrings = atoi(argv[5]);
+		string file_name = argv[6];
+		res = generateTorus(innerRadius,outerRadius,nsides,nrings,file_name);
 	}else{
 		printf("Parâmetros inválidos!!!\n");
 		return 0;
