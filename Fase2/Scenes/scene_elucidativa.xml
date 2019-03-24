@@ -40,16 +40,55 @@
 			</models>
 			<group> <!-- Fobos (Mars) -->
 				<translate X="10.0" Y="10.5" Z="15.2" />
+        <scale X="0.30" Y="0.30" Z="0.30" />
 				<models>
 					<model file="moon_elucidativo.3d" R="0.662" G="0.662" B="0.662" />
 				</models>
 			</group>
 			<group> <!-- Deimos (Mars) -->
 				<translate X="0" Y="-10.5" Z="-13.0" />
+        <scale X="0.30" Y="0.30" Z="0.30" />
 				<models>
 					<model file="moon_elucidativo.3d" R="0.984" G="0.965" B="0.901" />
 				</models>
 			</group>
+		</group>
+    <group> <!-- Jupiter -->
+		  <rotate axisX="0" axisY="1" axisZ="0" angle="45"/>
+		  <translate X="230" Y="0.0" Z="0.0" />
+			<scale X="2.0" Y="2.0" Z="2.0" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.984" G="0.808" B="0.573" />
+			</models>
+		</group>
+		<group> <!-- Saturn -->
+			<translate X="300" Y="0.0" Z="0.0" />
+			<rotate axisX="0" axisY="1" axisZ="1" angle="50" />
+			<scale X="1.50" Y="1.50" Z="1.50" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.835" G="0.694" B="0.467" />
+			</models>
+			<group>
+				<models>
+					<model file="torus_elucidativo.3d" R="0.945" G="0.412" B="0.082" />
+				</models>
+			</group>
+		</group>
+		<group> <!-- Uranus -->
+			<rotate axisX="0" axisY="1" axisZ="0" angle="135"/>
+			<translate X="350" Y="0.0" Z="0.0" />
+			<scale X="0.80" Y="0.80" Z="0.80" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.757" G="0.906" B="0.918" />
+			</models>
+		</group>
+		<group> <!-- Neptune -->
+			<rotate axisX="0" axisY="1" axisZ="0" angle="215"/>
+			<translate X="390" Y="0.0" Z="0.0" />
+			<scale X="0.75" Y="0.75" Z="0.75" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.251" G="0.416" B="0.988" />
+			</models>
 		</group>
   </group>
 </scene>

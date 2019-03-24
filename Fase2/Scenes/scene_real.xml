@@ -40,12 +40,14 @@
 			</models>
 			<group> <!-- Fobos (Mars) -->
 				<translate X="1.0" Y="1.5" Z="1.2" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
 				<models>
 					<model file="moon_real.3d" R="0.662" G="0.662" B="0.662" />
 				</models>
 			</group>
 			<group> <!-- Deimos (Mars) -->
 				<translate X="0" Y="-1.5" Z="-1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
 				<models>
 					<model file="moon_real.3d" R="0.984" G="0.965" B="0.901" />
 				</models>
@@ -68,7 +70,7 @@
 			</models>
 			<group>
 				<models>
-					<model file="torus.3d" R="0.945" G="0.412" B="0.082" />
+					<model file="torus_real.3d" R="0.945" G="0.412" B="0.082" />
 				</models>
 			</group>
 		</group>
