@@ -2,7 +2,7 @@
 	<group> <!-- Sun -->
     <rotate axisX="0" axisY="1" axisZ="0" angle="90"/>
 		<models>
-			<model file="sun.3d" R="0.945" G="0.412" B="0.082" />
+			<model file="sun_real.3d" R="0.945" G="0.412" B="0.082" />
 		</models>
     <group> <!-- Mercury -->
 			<translate X="116" Y="0.0" Z="0.0" />
