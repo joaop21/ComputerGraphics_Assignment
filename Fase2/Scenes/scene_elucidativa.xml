@@ -24,6 +24,12 @@
 			<models>
 				<model file="planet_elucidativo.3d" R="0.145" G="0.192" B="0.388" />
 			</models>
+      <group> <!-- Moon -->
+				<translate X="0" Y="17.0" Z="20.0" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.412" G="0.388" B="0.376" />
+				</models>
+			</group>
     </group>
   </group>
 </scene>
