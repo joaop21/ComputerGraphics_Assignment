@@ -76,9 +76,19 @@ Tree parseGroup(XMLElement* father){
 
 Tree parser_XML(){
 	XMLDocument doc;
-	doc.LoadFile("../Scenes/scene.xml");
 
-    Tree tree;
+  int i;
+  cout << "Qual a scene que pretende visualizar?\n";
+  cout << "1.Real      2.Elucidativa\n";
+  cout << "Insira o número: ";
+  cin >> i;
+  if(i==1)
+	   doc.LoadFile("../Scenes/scene.xml");
+  else
+     doc.LoadFile("../Scenes/scene_elucidativa.xml");
+
+
+  Tree tree;
 
 	// testa se ficheiro XML abriu sem erros
 	if(doc.ErrorID() != 0) {
