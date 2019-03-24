@@ -40,12 +40,14 @@
 			</models>
 			<group> <!-- Fobos (Mars) -->
 				<translate X="1.0" Y="1.5" Z="1.2" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
 				<models>
 					<model file="moon_real.3d" R="0.662" G="0.662" B="0.662" />
 				</models>
 			</group>
 			<group> <!-- Deimos (Mars) -->
 				<translate X="0" Y="-1.5" Z="-1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
 				<models>
 					<model file="moon_real.3d" R="0.984" G="0.965" B="0.901" />
 				</models>
@@ -58,6 +60,34 @@
 			<models>
 				<model file="planet_real.3d" R="0.984" G="0.808" B="0.573" />
 			</models>
+			<group> <!-- Io (Jupiter) -->
+				<translate X="1.0" Y="1.5" Z="1.2" />
+				<scale X="0.15" Y="0.15" Z="0.15" />
+				<models>
+					<model file="moon_real.3d" R="0.982" G="0.981" B="0.602" />
+				</models>
+			</group>
+			<group> <!-- Europa (Jupiter) -->
+				<translate X="-1.2" Y="-1.5" Z="-1.0" />
+				<scale X="0.15" Y="0.15" Z="0.15" />
+				<models>
+					<model file="moon_real.3d" R="0.984" G="0.965" B="0.403" />
+				</models>
+			</group>
+			<group> <!-- Ganímedes (Jupiter) -->
+				<translate X="0.5" Y="-1.5" Z="1.2" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_real.3d" R="0.662" G="0.662" B="0.662" />
+				</models>
+			</group>
+			<group> <!-- Calisto (Jupiter) -->
+				<translate X="0" Y="1.5" Z="1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_real.3d" R="0.984" G="0.965" B="0.901" />
+				</models>
+			</group>
 		</group>
 		<group> <!-- Saturn -->
 			<translate X="252.5" Y="0.0" Z="0.0" />
@@ -67,7 +97,7 @@
 			</models>
 			<group>
 				<models>
-					<model file="torus.3d" R="0.945" G="0.412" B="0.082" />
+					<model file="torus_real.3d" R="1.000" G="0.890" B="0.800" />
 				</models>
 			</group>
 		</group>
@@ -78,6 +108,41 @@
 			<models>
 				<model file="planet_real.3d" R="0.757" G="0.906" B="0.918" />
 			</models>
+			<group> <!-- Miranda (Urano) -->
+				<translate X="1.0" Y="1.5" Z="1.2" />
+				<scale X="0.15" Y="0.15" Z="0.15" />
+				<models>
+					<model file="moon_real.3d" R="0.762" G="0.762" B="0.762" />
+				</models>
+			</group>
+			<group> <!-- Ariel (Urano) -->
+				<translate X="-1.2" Y="-1.5" Z="-1.0" />
+				<scale X="0.15" Y="0.15" Z="0.15" />
+				<models>
+					<model file="moon_real.3d" R="0.662" G="0.662" B="0.662" />
+				</models>
+			</group>
+			<group> <!-- Umbriel (Urano) -->
+				<translate X="0.5" Y="-1.5" Z="1.2" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_real.3d" R="0.362" G="0.362" B="0.362" />
+				</models>
+			</group>
+			<group> <!-- Titânia (Urano) -->
+				<translate X="0" Y="1.5" Z="1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_real.3d" R="0.862" G="0.862" B="0.862" />
+				</models>
+			</group>
+			<group> <!-- Oberon (Urano) -->
+				<translate X="0" Y="1.5" Z="-1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_real.3d" R="0.984" G="0.965" B="0.901" />
+				</models>
+			</group>
 		</group>
 		<group> <!-- Neptune -->
 			<rotate axisX="0" axisY="1" axisZ="0" angle="215"/>
@@ -86,6 +151,20 @@
 			<models>
 				<model file="planet_real.3d" R="0.251" G="0.416" B="0.988" />
 			</models>
+			<group> <!-- Proteu (Neptuno) -->
+				<translate X="0" Y="1.5" Z="1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_real.3d" R="0.250" G="0.250" B="0.250" />
+				</models>
+			</group>
+			<group> <!-- Tritão (Neptnuno) -->
+				<translate X="0" Y="1.5" Z="-1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_real.3d" R="0.250" G="0.250" B="0.250" />
+				</models>
+			</group>
 		</group>
 		<group>
 		    <translate X="143" Z="49" />

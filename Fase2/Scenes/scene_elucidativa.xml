@@ -31,5 +31,6141 @@
 				</models>
 			</group>
     </group>
+    <group> <!-- Mars -->
+			<rotate axisX="0" axisY="1" axisZ="0" angle="270"/>
+			<translate X="180" Y="0.0" Z="0.0" />
+			<scale X="0.53" Y="0.53" Z="0.53" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.788" G="0.243" B="0.020" />
+			</models>
+			<group> <!-- Fobos (Mars) -->
+				<translate X="10.0" Y="10.5" Z="15.2" />
+        <scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.662" G="0.662" B="0.662" />
+				</models>
+			</group>
+			<group> <!-- Deimos (Mars) -->
+				<translate X="0" Y="-10.5" Z="-13.0" />
+        <scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.984" G="0.965" B="0.901" />
+				</models>
+			</group>
+		</group>
+    <group> <!-- Jupiter -->
+		  <rotate axisX="0" axisY="1" axisZ="0" angle="45"/>
+		  <translate X="245" Y="0.0" Z="0.0" />
+			<scale X="2.0" Y="2.0" Z="2.0" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.984" G="0.808" B="0.573" />
+			</models>
+      <group> <!-- Io (Jupiter) -->
+				<translate X="17.0" Y="0.0" Z="0.0" />
+				<scale X="0.40" Y="0.40" Z="0.340" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.982" G="0.981" B="0.602" />
+				</models>
+			</group>
+			<group> <!-- Europa (Jupiter) -->
+				<translate X="-4.0" Y="-17.5" Z="3.0" />
+				<scale X="0.40" Y="0.40" Z="0.40" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.984" G="0.965" B="0.403" />
+				</models>
+			</group>
+			<group> <!-- Ganímedes (Jupiter) -->
+				<translate X="0.0" Y="18.5" Z="0.0" />
+				<scale X="0.40" Y="0.40" Z="0.40" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.662" G="0.662" B="0.662" />
+				</models>
+			</group>
+			<group> <!-- Calisto (Jupiter) -->
+				<translate X="16.0" Y="15.0" Z="4.0" />
+				<scale X="0.40" Y="0.40" Z="0.40" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.984" G="0.965" B="0.901" />
+				</models>
+			</group>
+		</group>
+		<group> <!-- Saturn -->
+			<translate X="320" Y="0.0" Z="0.0" />
+			<rotate axisX="0" axisY="1" axisZ="1" angle="50" />
+			<scale X="1.50" Y="1.50" Z="1.50" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.835" G="0.694" B="0.467" />
+			</models>
+			<group>
+				<models>
+					<model file="torus_elucidativo.3d" R="0.945" G="0.412" B="0.082" />
+				</models>
+			</group>
+		</group>
+		<group> <!-- Uranus -->
+			<rotate axisX="0" axisY="1" axisZ="0" angle="135"/>
+			<translate X="380" Y="0.0" Z="0.0" />
+			<scale X="0.80" Y="0.80" Z="0.80" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.757" G="0.906" B="0.918" />
+			</models>
+      <group> <!-- Miranda (Urano) -->
+				<translate X="20.0" Y="1.5" Z="1.2" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.762" G="0.762" B="0.762" />
+				</models>
+			</group>
+			<group> <!-- Ariel (Urano) -->
+				<translate X="-13.2" Y="-18.5" Z="-1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.662" G="0.662" B="0.662" />
+				</models>
+			</group>
+			<group> <!-- Umbriel (Urano) -->
+				<translate X="0.5" Y="-1.5" Z="18.2" />
+				<scale X="0.50" Y="0.50" Z="0.50" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.362" G="0.362" B="0.362" />
+				</models>
+			</group>
+			<group> <!-- Titânia (Urano) -->
+				<translate X="0" Y="20.5" Z="1.0" />
+				<scale X="0.45" Y="0.45" Z="0.45" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.862" G="0.862" B="0.862" />
+				</models>
+			</group>
+			<group> <!-- Oberon (Urano) -->
+				<translate X="19.0" Y="-7.5" Z="18.0" />
+				<scale X="0.25" Y="0.25" Z="0.25" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.984" G="0.965" B="0.901" />
+				</models>
+			</group>
+		</group>
+		<group> <!-- Neptune -->
+			<rotate axisX="0" axisY="1" axisZ="0" angle="215"/>
+			<translate X="420" Y="0.0" Z="0.0" />
+			<scale X="0.75" Y="0.75" Z="0.75" />
+			<models>
+				<model file="planet_elucidativo.3d" R="0.251" G="0.416" B="0.988" />
+			</models>
+      <group> <!-- Proteu (Neptuno) -->
+				<translate X="20.5" Y="1.5" Z="1.0" />
+				<scale X="0.30" Y="0.30" Z="0.30" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.250" G="0.250" B="0.250" />
+				</models>
+			</group>
+			<group> <!-- Tritão (Neptnuno) -->
+				<translate X="0" Y="18.5" Z="0.0" />
+				<scale X="0.55" Y="0.55" Z="0.55" />
+				<models>
+					<model file="moon_elucidativo.3d" R="0.250" G="0.250" B="0.250" />
+				</models>
+			</group>
+		</group>
+    <group>
+        <translate X="178" Z="94" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="175" Z="98" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="194" Z="29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="200" Z="29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-50" Z="-193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="41" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-115" Z="166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-169" Z="-101" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="163" Z="112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-110" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-141" Z="143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="181" Z="-76" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-115" Z="158" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="143" Z="-141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-65" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="136" Z="-144" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-174" Z="-90" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="80" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="60" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="10" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-165" Z="-118" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="7" Z="199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="100" Z="-169" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-24" Z="-203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="14" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="201" Z="-16" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="175" Z="88" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="157" Z="-121" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-53" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="25" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="163" Z="-111" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="156" Z="121" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="163" Z="-121" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="169" Z="-106" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-74" Z="182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-188" Z="59" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-184" Z="70" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="176" Z="95" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-120" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="159" Z="-115" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="7" Z="-201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-34" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="197" Z="1" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="127" Z="-160" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-145" Z="-132" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-115" Z="-163" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="136" Z="-152" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-59" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="23" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-122" Z="163" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="44" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="-2" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="15" Z="-199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="155" Z="-127" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-19" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="69" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="48" Z="-199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-12" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-103" Z="166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-44" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="64" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-170" Z="98" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="78" Z="182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-20" Z="-203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-5" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-172" Z="106" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="144" Z="142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="49" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="19" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="0" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="40" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-39" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-179" Z="-93" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-108" Z="-169" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-188" Z="58" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="4" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="189" Z="76" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-126" Z="159" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-98" Z="172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-126" Z="156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="180" Z="-77" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-124" Z="151" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="-67" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-81" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-144" Z="-144" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="35" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="168" Z="-112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="174" Z="98" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-203" Z="24" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="200" Z="15" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-191" Z="40" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="118" Z="163" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="183" Z="68" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="33" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="200" Z="22" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-52" Z="-191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-42" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-154" Z="122" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-123" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="100" Z="-178" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-166" Z="108" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="52" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-156" Z="124" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="179" Z="-90" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-184" Z="-75" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-26" Z="198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="36" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-151" Z="-125" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="174" Z="105" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="107" Z="167" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-31" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="178" Z="100" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="-64" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="185" Z="66" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="31" Z="202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-122" Z="158" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="70" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-203" Z="-13" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="11" Z="202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="180" Z="81" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-138" Z="142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="67" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-177" Z="83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="-42" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-196" Z="-18" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="-54" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="62" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="117" Z="156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="194" Z="44" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-142" Z="-147" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-92" Z="175" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-109" Z="-165" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="177" Z="87" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="179" Z="-97" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="41" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="139" Z="-145" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-116" Z="-160" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="-10" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="176" Z="103" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-175" Z="97" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="-75" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-181" Z="-92" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="46" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-148" Z="-141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="-87" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-114" Z="168" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="98" Z="-170" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-182" Z="92" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="-101" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="77" Z="-181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="15" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="22" Z="-203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-128" Z="150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-12" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="52" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-200" Z="-43" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-18" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="-79" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="79" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="62" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-178" Z="99" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="82" Z="-187" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-5" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-33" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-98" Z="171" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="51" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-168" Z="-101" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-132" Z="-150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="112" Z="-167" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="201" Z="-38" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="27" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-117" Z="-162" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-21" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-31" Z="-200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-143" Z="-143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="187" Z="-67" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-161" Z="-119" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="154" Z="-126" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-105" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-142" Z="146" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="64" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="4" Z="-201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-149" Z="132" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-54" Z="197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-173" Z="-105" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-188" Z="64" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="49" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="155" Z="126" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="132" Z="152" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="174" Z="102" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="-60" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-186" Z="-75" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-167" Z="-107" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="36" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-174" Z="100" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="127" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-107" Z="-168" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="1" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="193" Z="43" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="149" Z="-137" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="168" Z="101" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="97" Z="-173" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-34" Z="-193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-59" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-196" Z="-54" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="-15" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="55" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="168" Z="109" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="86" Z="176" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-79" Z="179" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-130" Z="146" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="174" Z="99" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="38" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="146" Z="134" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="-42" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-136" Z="-143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-54" Z="-192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-199" Z="-36" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="11" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-162" Z="117" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-72" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-124" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-188" Z="67" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="136" Z="-153" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="47" Z="191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-24" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="45" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-158" Z="126" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-191" Z="68" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="100" Z="-170" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="121" Z="162" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="85" Z="181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="25" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="179" Z="84" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="135" Z="-154" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-52" Z="189" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-143" Z="135" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="60" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="163" Z="-115" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="24" Z="-197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-138" Z="-151" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="32" Z="-201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="25" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="181" Z="-91" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-20" Z="-201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="163" Z="112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="183" Z="84" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-92" Z="-180" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-155" Z="128" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="176" Z="-96" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-13" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="-70" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="44" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="112" Z="171" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="182" Z="74" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="37" Z="200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="3" Z="197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="121" Z="162" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="48" Z="-189" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="-68" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="-101" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="117" Z="161" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="127" Z="150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-4" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-203" Z="-14" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-140" Z="-143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="73" Z="-184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="202" Z="34" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-200" Z="5" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="105" Z="170" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-1" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="200" Z="25" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-204" Z="-7" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="98" Z="172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="9" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="24" Z="200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="30" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="149" Z="133" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="132" Z="-152" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="16" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="153" Z="122" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-199" Z="-46" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="-47" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="137" Z="150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="66" Z="186" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="83" Z="-182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="108" Z="-170" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-178" Z="82" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-70" Z="-191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="-99" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-10" Z="198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="191" Z="42" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="150" Z="129" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="135" Z="145" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-144" Z="133" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-52" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="137" Z="148" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="43" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="189" Z="51" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="0" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-98" Z="-179" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-173" Z="-95" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-109" Z="167" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-89" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-6" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-166" Z="-109" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="54" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-48" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-191" Z="71" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="130" Z="156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-182" Z="81" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="-13" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="34" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="54" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-134" Z="150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-188" Z="70" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-188" Z="80" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-150" Z="130" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-52" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="136" Z="-144" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-203" Z="-15" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-37" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="-55" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="-94" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="152" Z="131" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-105" Z="174" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-82" Z="184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="182" Z="-85" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-127" Z="159" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-179" Z="-96" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-34" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="117" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-163" Z="-112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="111" Z="-171" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-167" Z="-109" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-181" Z="79" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="197" Z="29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="177" Z="91" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="-12" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-65" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-178" Z="-83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="95" Z="177" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="157" Z="-125" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="20" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-50" Z="-192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="39" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="194" Z="-38" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="148" Z="-131" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-136" Z="-153" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-73" Z="-182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-131" Z="-146" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-64" Z="193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-89" Z="182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="108" Z="165" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-134" Z="-146" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-162" Z="112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-29" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="77" Z="186" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-142" Z="-143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="157" Z="-124" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="40" Z="191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="45" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="102" Z="173" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="160" Z="119" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-165" Z="-121" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-78" Z="-183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="10" Z="204" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="36" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="-54" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="-12" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="19" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="124" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-105" Z="-168" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-31" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="70" Z="-192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="174" Z="103" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="37" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="63" Z="-187" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-190" Z="-55" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="149" Z="128" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-148" Z="138" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-167" Z="109" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="183" Z="76" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-123" Z="152" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="-64" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="14" Z="-199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="73" Z="188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-79" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="133" Z="156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-115" Z="-166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="146" Z="-141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="-83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="48" Z="-197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="35" Z="199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-123" Z="-152" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-78" Z="-179" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="31" Z="200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="70" Z="-189" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-179" Z="94" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-152" Z="-127" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="28" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="10" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="33" Z="193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="27" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-25" Z="-199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-114" Z="-159" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="7" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="18" Z="-204" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="-62" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-164" Z="114" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-174" Z="90" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-147" Z="-134" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-2" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-170" Z="-106" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="193" Z="-34" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-15" Z="202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="43" Z="199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-95" Z="178" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="185" Z="-74" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="-97" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="-8" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="181" Z="93" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="4" Z="-204" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="-64" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="197" Z="-36" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="75" Z="-187" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="184" Z="-71" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-160" Z="115" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-84" Z="185" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="6" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-200" Z="-7" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-140" Z="141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-151" Z="-127" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-47" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-204" Z="7" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-203" Z="14" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="194" Z="-22" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="178" Z="96" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-197" Z="35" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="25" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="17" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="100" Z="-171" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="191" Z="-53" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="161" Z="-114" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-182" Z="-82" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-41" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="59" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="30" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="157" Z="126" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="59" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="6" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="169" Z="-112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="38" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="24" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="12" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="49" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-177" Z="-85" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="184" Z="-81" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="141" Z="137" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="52" Z="198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="69" Z="-183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-154" Z="-127" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-72" Z="191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-166" Z="105" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="92" Z="173" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-203" Z="-12" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="174" Z="-93" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-103" Z="177" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="14" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="70" Z="186" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="144" Z="-135" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="87" Z="-179" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="158" Z="-122" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="82" Z="184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="170" Z="109" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-200" Z="16" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="25" Z="-201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="135" Z="149" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="180" Z="-95" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="74" Z="-191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="74" Z="-187" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-137" Z="-139" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="-63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="178" Z="86" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-197" Z="32" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="148" Z="-140" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="32" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="-45" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-147" Z="-141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="180" Z="85" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="179" Z="88" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-166" Z="-103" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-150" Z="-130" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="140" Z="136" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="144" Z="141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="-25" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-98" Z="175" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="-33" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-89" Z="-181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="140" Z="136" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="49" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-180" Z="85" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="32" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="7" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-71" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="168" Z="-113" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="165" Z="113" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="87" Z="177" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-197" Z="15" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="25" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="159" Z="-113" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-14" Z="199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="-55" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="180" Z="89" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-101" Z="-167" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-12" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-2" Z="-202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="194" Z="-59" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="2" Z="199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="148" Z="140" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="-7" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="129" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="110" Z="166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-164" Z="119" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="166" Z="-120" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-141" Z="141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="184" Z="82" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="63" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-15" Z="-200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-18" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="44" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="38" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="21" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-190" Z="74" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-54" Z="-192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="5" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="109" Z="167" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="171" Z="112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="185" Z="-76" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-156" Z="123" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="157" Z="121" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="37" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="68" Z="184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="18" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="28" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="70" Z="-191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-28" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="36" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="50" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-172" Z="-106" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-34" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-151" Z="-135" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="172" Z="106" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="45" Z="-193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="202" Z="-13" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-147" Z="137" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-116" Z="-157" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-184" Z="-71" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="32" Z="-197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-174" Z="-108" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-34" Z="200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="172" Z="-96" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="67" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="58" Z="189" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="-8" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-137" Z="-149" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="39" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="185" Z="81" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-68" Z="-187" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-89" Z="-175" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="9" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-57" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="146" Z="138" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="145" Z="-133" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-128" Z="-150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-139" Z="137" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="25" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-37" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="62" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="-55" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-170" Z="-108" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="10" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-36" Z="-193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-157" Z="131" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-121" Z="154" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="182" Z="-83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-45" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="157" Z="117" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-104" Z="166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-57" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-39" Z="-201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="119" Z="157" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-162" Z="-123" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="106" Z="-166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-143" Z="-138" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-151" Z="131" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="197" Z="-8" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-99" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-2" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="47" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="183" Z="83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="48" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="123" Z="160" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="128" Z="-155" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="108" Z="170" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-12" Z="-200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-155" Z="128" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-5" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-167" Z="114" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-168" Z="104" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="86" Z="-185" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="151" Z="130" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="49" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-199" Z="-17" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="188" Z="74" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="136" Z="142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="102" Z="-175" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="84" Z="-184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-85" Z="178" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-42" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="130" Z="-148" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-161" Z="-111" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-184" Z="86" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-145" Z="-142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="75" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-191" Z="-54" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="189" Z="59" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="130" Z="153" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-1" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="201" Z="-29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-17" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="109" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="55" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="202" Z="31" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="73" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-51" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-10" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="131" Z="156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-141" Z="146" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-73" Z="-181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-91" Z="-182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="200" Z="23" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="1" Z="200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="201" Z="38" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-116" Z="158" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="164" Z="-107" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="22" Z="195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-40" Z="191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-168" Z="102" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-80" Z="-184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-36" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="15" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="38" Z="-199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="144" Z="-140" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-21" Z="-199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-8" Z="-200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="147" Z="135" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="48" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-11" Z="197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="155" Z="-119" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="7" Z="203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="202" Z="-31" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-139" Z="-139" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="34" Z="-201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="167" Z="-101" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-50" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-45" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-11" Z="202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-117" Z="164" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="165" Z="110" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="138" Z="-142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-137" Z="149" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="52" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="165" Z="-119" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-78" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="-32" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="40" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="194" Z="41" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-179" Z="-85" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="186" Z="-79" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="130" Z="152" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-202" Z="-1" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="71" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-80" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="53" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="111" Z="164" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-14" Z="203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-200" Z="-8" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-190" Z="-57" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="134" Z="155" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="176" Z="-89" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="133" Z="153" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-136" Z="150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-167" Z="-112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-86" Z="-184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="75" Z="188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-19" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="85" Z="177" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-49" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-51" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="197" Z="-39" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="172" Z="106" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="53" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="18" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-68" Z="-183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-167" Z="109" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="194" Z="60" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="25" Z="-197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="156" Z="-120" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-60" Z="-187" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-132" Z="-146" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-61" Z="193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="93" Z="-181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="192" Z="-42" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="159" Z="129" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-196" Z="-5" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="204" Z="-6" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="-34" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-31" Z="200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-28" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="102" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="122" Z="164" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-197" Z="-14" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="45" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="40" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-157" Z="123" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-162" Z="125" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="27" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-42" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-10" Z="-203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-51" Z="198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-157" Z="117" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="77" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-183" Z="69" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-197" Z="34" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-199" Z="45" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="14" Z="-202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="96" Z="181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-56" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-203" Z="-12" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-22" Z="-203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="177" Z="92" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-165" Z="-106" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="56" Z="197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="110" Z="168" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="191" Z="49" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="136" Z="-143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="47" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="108" Z="171" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-181" Z="79" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="5" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="95" Z="-175" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-139" Z="-145" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-38" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-173" Z="-99" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-37" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-178" Z="81" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="200" Z="38" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="123" Z="155" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-30" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-76" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="13" Z="-195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-127" Z="-156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="28" Z="195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="-28" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="-57" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-177" Z="91" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="193" Z="-63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-137" Z="-147" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="181" Z="86" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="97" Z="-170" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="114" Z="168" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-55" Z="190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-8" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-191" Z="66" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-170" Z="-97" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="182" Z="83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="43" Z="-191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="115" Z="-168" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="56" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-34" Z="193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="176" Z="-84" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-131" Z="148" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="1" Z="203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="14" Z="198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-146" Z="142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-186" Z="83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="-17" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="184" Z="-84" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="179" Z="95" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="-63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="200" Z="-6" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="54" Z="-191" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-17" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="169" Z="-103" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-109" Z="-171" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-151" Z="131" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-116" Z="162" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="149" Z="128" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-77" Z="180" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="22" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="141" Z="139" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-95" Z="176" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="-55" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-34" Z="199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="36" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="186" Z="-70" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-136" Z="142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="166" Z="115" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="99" Z="-169" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="83" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="17" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="188" Z="64" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-109" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="27" Z="-203" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-76" Z="184" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="-1" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-181" Z="80" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-173" Z="98" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-183" Z="-88" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-58" Z="188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-29" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="52" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-15" Z="-202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="173" Z="108" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="191" Z="-52" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="203" Z="-23" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-163" Z="-122" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="195" Z="-45" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-47" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-195" Z="-22" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-53" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="142" Z="-145" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-65" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-14" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="99" Z="170" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="97" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="147" Z="141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="15" Z="204" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-31" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-76" Z="181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-189" Z="58" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="140" Z="-138" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-181" Z="91" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="-66" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="187" Z="72" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="110" Z="-166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-158" Z="121" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-68" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-98" Z="-176" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="145" Z="135" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="51" Z="197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-133" Z="145" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-173" Z="97" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="66" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="126" Z="160" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-198" Z="-16" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-142" Z="142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="149" Z="133" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-196" Z="-20" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="164" Z="-112" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-11" Z="-200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-117" Z="-166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="135" Z="149" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-99" Z="177" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-150" Z="130" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-31" Z="-202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-50" Z="-190" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-120" Z="164" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-184" Z="-72" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="20" Z="200" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-12" Z="195" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-201" Z="-40" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-186" Z="-63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="84" Z="181" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="201" Z="36" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-62" Z="-189" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-30" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="181" Z="78" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-75" Z="186" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="100" Z="-176" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="8" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-192" Z="49" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-133" Z="143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="104" Z="176" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-59" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-99" Z="175" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="139" Z="143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-62" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="184" Z="-82" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="66" Z="186" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-116" Z="-158" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="1" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="181" Z="92" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-172" Z="101" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="180" Z="77" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-133" Z="-143" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-117" Z="156" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-150" Z="-136" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-136" Z="149" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="101" Z="176" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-165" Z="108" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-130" Z="-150" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-81" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-77" Z="-182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-88" Z="180" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="8" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-161" Z="-115" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="202" Z="-21" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="23" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="24" Z="197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-11" Z="-204" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-148" Z="130" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="190" Z="46" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-134" Z="-155" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-60" Z="-194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="109" Z="-173" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="21" Z="-202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-12" Z="199" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="108" Z="-174" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-135" Z="141" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-43" Z="-192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="71" Z="182" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="93" Z="175" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="85" Z="-185" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="187" Z="74" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-180" Z="75" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-140" Z="-144" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-179" Z="-79" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-80" Z="183" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-133" Z="148" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="80" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-196" Z="16" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="64" Z="-192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="64" Z="-193" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-165" Z="-117" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="147" Z="135" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-166" Z="-111" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="102" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="198" Z="-51" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="199" Z="-44" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="74" Z="187" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="33" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-50" Z="-198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="-79" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="134" Z="-151" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-142" Z="142" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-199" Z="33" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-125" Z="-162" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="178" Z="100" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-21" Z="202" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-193" Z="-63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-204" Z="-8" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-146" Z="140" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-191" Z="-67" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-119" Z="166" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-120" Z="-163" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="57" Z="-188" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-185" Z="-66" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-133" Z="-145" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-194" Z="51" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="97" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="30" Z="196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-153" Z="126" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-25" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-51" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="177" Z="-89" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-191" Z="-63" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-204" Z="4" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-83" Z="-178" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-199" Z="39" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-187" Z="84" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="196" Z="-22" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-59" Z="-196" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-162" Z="-109" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-99" Z="172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-180" Z="83" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="186" Z="78" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="9" Z="198" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="183" Z="-76" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="189" Z="-51" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="85" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-66" Z="194" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-30" Z="201" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="92" Z="-172" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="155" Z="-133" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-15" Z="-197" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-105" Z="-167" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-126" Z="160" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="140" Z="148" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="117" Z="163" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="-176" Z="87" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="37" Z="192" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="99" Z="-168" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
+    <group>
+        <translate X="48" Z="189" />
+        <models>
+            <model file="asteroid.3d" R="0.412" G="0.388" B="0.376" />
+        </models>
+    </group>
   </group>
 </scene>
