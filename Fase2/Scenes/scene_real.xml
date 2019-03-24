@@ -92,6 +92,7 @@
 		<group> <!-- Saturn -->
 			<translate X="252.5" Y="0.0" Z="0.0" />
 			<scale X="9.54" Y="9.54" Z="9.54" />
+			<rotate axisY="1" axisZ="1" angle="50" />
 			<models>
 				<model file="planet_real.3d" R="0.835" G="0.694" B="0.467" />
 			</models>
