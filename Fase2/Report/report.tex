@@ -382,9 +382,9 @@ Um exemplo de como invocar esta função é:
 $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
 
  \vspace{0.5cm}
- 
+
  Neste caso iremos os pontos para a figura que serão guardados no ficheiro \textbf{torus.3d}, o raio de cada anel será de \textbf{0.3}, a distância (raio) do centro da figura até à figura será \textbf{1.5}, o número de lados de cada anel será \textbf{20} e finalmente o número de anéis que compõe a figura será \textbf{30}.
- 
+
  \subsubsection{Algoritmo}
 
 
@@ -421,6 +421,52 @@ Outra das partes que sofreu algumas alterações foi a organização do código 
 \newpage
 
 \section{\textit{Scenes}}
+
+Nesta fase do projeto é requerido um modelo estático do sistema solar, com o sol, os planetas e os satélites naturais do mesmo.
+
+  \vspace{0.5cm}
+
+O grupo decidiu proceder à criação de duas cenas do sistema solar:
+
+\begin{enumerate}
+\item Modelo baseado nas diferenças reais entre os raios dos corpos presentes.
+\item Modelo mais elucidativo e perceptível, que despreza parcialmente as diferenças reais entre os corpos presentes.
+\end{enumerate}
+
+  \vspace{0.5cm}
+
+Na execução do programa \textit{Engine} são disponibilizadas essas duas opções, e o utilizador deve escolher a que pretende visualizar. Deve, portanto, inserir o número do modelo que pretende. De seguida, na figura \ref{img:interface}, é exemplificado um possível procedimento.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{interface.png}
+\caption{Exemplo de um possível procedimento na interface.}
+\label{img:interface}
+\end{figure}
+
+
+\newpage
+
+\subsection{Primeiro Modelo}
+
+
+\newpage
+
+\subsection{Segundo Modelo}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{modelo2_1.png}
+\caption{Imagem frontal do segundo modelo.}
+\label{img:modelo2_1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{modelo2_2.png}
+\caption{Imagem lateral do segundo modelo.}
+\label{img:modelo2_2}
+\end{figure}
 
 
 \newpage
