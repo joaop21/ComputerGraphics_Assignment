@@ -190,7 +190,18 @@ O parser é inicializado na função \textbf{parser\_XML}. Esta função tem a p
 
 \section{Estruturas de Dados}
 \label{sec:estruturas}
-Quanto à estrutura de dados, o grupo considerou que a mais adequado seria a de representar o sistema solar como uma árvore, sendo que, analogamente ao primeiro nodo da árvore estaria o Sol e os planetas seriam os \textit{filhos} do Sol nessa árvore. Em consequência, as luas seriam \textit{filhos} dos planetas e \textit{netos} do Sol.  Para esta representação ser efetiva foram criadas varias estruturas que serão apresentadas a seguir neste relatório.
+Quanto à estrutura de dados, o grupo considerou que o mais adequado seria representar o sistema solar como uma Tree, sendo que, analogamente ao primeiro nodo da árvore vai estar o Sol e os planetas vão ser os \textit{filhos} do Sol nessa árvore. Em consequência, as luas vão ser \textit{filhos} dos planetas e \textit{netos} do Sol. Na concepção do Sistema Solar, achamos por bem colocar os asteróides, que serão também \textit{filhos} do Sol, e será tambem colocado o anel de Saturno, que será portanto \textit{filho} deste planeta.
+
+Para esta representação ser efetiva foram criadas varias estruturas que serão também apresentadas a seguir nesta secção.
+
+\vspace{0.3cm}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{tree_struct.png}
+\caption{Visão geral da estrutura principal Tree.}
+\label{img:tree_struct}
+\end{figure}
 
 
 \subsection{Tree}
@@ -244,6 +255,7 @@ A classe Scale contém 3 floats - x,y e z, que são os parâmetros de redimensio
 \label{img:Scale}
 \end{figure}
 
+\newpage
 
 \subsection{Rotation}
 \label{sec:rotation}
@@ -289,7 +301,7 @@ A classe Point, como o nome indica, é um ponto no sistema, ou seja, é composta
 \section{\textit{Render Scene}}
 Para o rendering do projeto, utilizamos uma pesquisa em profundidade na árvore representando  todas as figuras e as suas translações, rotações e escalas.
 
-Assim, a função renderScene(), chama duas funções. A função drawAxis() que representa os 3 eixos de coordenadas na cena e a função drawTree que desenha o Sistema Solar. 
+Assim, a função renderScene(), chama duas funções. A função drawAxis() que representa os 3 eixos de coordenadas na cena e a função drawTree que desenha o Sistema Solar.
 
 Esta função drawTree recebe como pârametro uma árvore (Tree) e o seu algoritmo pode ser explicado assim:
 
