@@ -451,6 +451,68 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
  Neste caso iremos os pontos para a figura que serão guardados no ficheiro \textbf{torus.3d}, o raio de cada anel será de \textbf{0.3}, a distância (raio) do centro da figura até à figura será \textbf{1.5}, o número de lados de cada anel será \textbf{20} e finalmente o número de anéis que compõe a figura será \textbf{30}.
 
  \subsubsection{Algoritmo}
+ 
+ \ttfamily
+\begin{enumerate}
+  \item Definir o avanço de $\phi$ em cada iteração: $$delta\phi = \frac{2\pi}{numero\ rings} $$
+  \item Definir o avanço de $\theta$ em cada iteração: $$delta\theta = \frac{2\pi}{numero\ sides} $$
+  
+  \item Iterar sobre o número de rings:
+  \begin{enumerate}
+    \item Calcular o ângulo phi para o ring atual $\Rightarrow$ \underline{$delta\phi \times ring\ atual$}
+    \item Calcular o ângulo nextPhi para o ring seguinte $\Rightarrow$ \underline{$delta\phi \times ring\ seguinte$}
+    \item Calcular o cosPhi $\Rightarrow$ \underline{$cos(phi)$}
+    \item Calcular o sinPhi $\Rightarrow$ \underline{$sin(phi)$}
+    \item Calcular o cosNextPhi $\Rightarrow$ \underline{$cos(nextPhi)$}
+    \item Calcular o sinNextPhi $\Rightarrow$ \underline{$sin(nextPhi)$}
+
+    \item Iterar sobre o número de sides:
+    \begin{enumerate}
+      \item Calcular o ângulo $\alpha$ para o slice atual $\Rightarrow$ \underline{$\alpha_{atual}$}
+      \item Calcular o ângulo $\alpha$ para o slice seguinte $\Rightarrow$ \underline{$\alpha_{seguinte}$}
+      \item Construir os dois triângulos da stack atual:
+
+      \vspace{0.5cm}
+
+      \underline{Primeiro triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{0.0cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+          \hspace{-0.5cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.0cm} P3 $\Rightarrow$ (rsn $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.5cm}
+
+      \underline{Segundo triângulo:}
+
+      \vspace{0.5cm}
+
+          \hspace{-0.25cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{-0.75cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+
+      \vspace{0.2cm}
+
+          \hspace{0.0cm} P3 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rs $\times$ sin($\alpha_{atual}$))
+
+      \vspace{0.2cm}
+
+    \end{enumerate}
+
+    \end{enumerate}
+
+    \item Fim
+    \end{enumerate}
+    \rmfamily
 
 
 
