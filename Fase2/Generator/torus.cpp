@@ -40,13 +40,13 @@ int figures::generateTorus(float innerRadius, float outerRadius, int nsides, int
             dXZ = outerRadius + innerRadius * cosTheta;
             nextDXZ = outerRadius + innerRadius * cosNextTheta;
 
-            points.push_back(Point(dXZ * sinPhi, innerRadius * sinTheta, dXZ * cosPhi));
-			points.push_back(Point(nextDXZ * sinNextPhi, innerRadius * sinNextTheta, nextDXZ * cosNextPhi));
-			points.push_back(Point(nextDXZ * sinPhi, innerRadius * sinNextTheta, nextDXZ * cosPhi));
+			points.push_back(Point(nextDXZ * cosPhi, innerRadius * sinNextTheta, nextDXZ * sinPhi));
+            points.push_back(Point(dXZ * cosNextPhi, innerRadius * sinTheta, dXZ * sinNextPhi));
+            points.push_back(Point(dXZ * cosPhi, innerRadius * sinTheta, dXZ * sinPhi));
 
-            points.push_back(Point(dXZ * sinPhi, innerRadius * sinTheta, dXZ * cosPhi));
-			points.push_back(Point(dXZ * sinNextPhi, innerRadius * sinTheta, dXZ * cosNextPhi));
-			points.push_back(Point(nextDXZ * sinNextPhi, innerRadius * sinNextTheta, nextDXZ * cosNextPhi));
+            points.push_back(Point(nextDXZ * cosNextPhi, innerRadius * sinNextTheta, nextDXZ * sinNextPhi));
+			points.push_back(Point(dXZ * cosNextPhi, innerRadius * sinTheta, dXZ * sinNextPhi));
+			points.push_back(Point(nextDXZ * cosPhi, innerRadius * sinNextTheta, nextDXZ * sinPhi));
         }
     }
 
