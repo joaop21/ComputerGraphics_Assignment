@@ -456,7 +456,6 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
 \begin{enumerate}
   \item Definir o avanço de $\phi$ em cada iteração: $$delta\phi = \frac{2\pi}{numero\ rings} $$
   \item Definir o avanço de $\theta$ em cada iteração: $$delta\theta = \frac{2\pi}{numero\ sides} $$
-  
   \item Iterar sobre o número de rings:
   \begin{enumerate}
     \item Calcular o ângulo phi para o ring atual $\Rightarrow$ \underline{$delta\phi \times ring\ atual$}
@@ -468,9 +467,22 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
 
     \item Iterar sobre o número de sides:
     \begin{enumerate}
-      \item Calcular o ângulo $\alpha$ para o slice atual $\Rightarrow$ \underline{$\alpha_{atual}$}
-      \item Calcular o ângulo $\alpha$ para o slice seguinte $\Rightarrow$ \underline{$\alpha_{seguinte}$}
-      \item Construir os dois triângulos da stack atual:
+      \item Calcular o ângulo theta para o side atual $\Rightarrow$ \underline{$delta\theta \times side\ atual$}
+      \item Calcular o ângulo nextTheta para o side seguinte $\Rightarrow$ \underline{$delta\theta \times side\ seguinte$}
+      \item Calcular o cosTheta $\Rightarrow$ \underline{$cos(theta)$}
+      \item Calcular o sinTheta $\Rightarrow$ \underline{$sin(theta)$}
+      \item Calcular o cosNextTheta $\Rightarrow$ \underline{$cos(nextTheta)$}
+      \item Calcular o sinNextTheta $\Rightarrow$ \underline{$sin(nextTheta)$}
+      \item Calcular o distancia ao ponto:
+       \hspace{0.5cm} 
+       
+       $\Rightarrow$ \underline{$ dXZ = outerRadius + innerRadius \times cosTheta$}
+      \item Calcular o distancia ao ponto do side seguinte: 
+      \hspace{0.5cm}
+      
+      $\Rightarrow$ \underline{$ nextDXZ = outerRadius + innerRadius * cosNextTheta$}
+      
+      \item Construir os dois triângulos do side atual:
 
       \vspace{0.5cm}
 
@@ -478,15 +490,15 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
 
       \vspace{0.5cm}
 
-          \hspace{0.0cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ sin($\alpha_{atual}$))
+          \hspace{-2.0cm} P1 $\Rightarrow$ ($nextDXZ \times cosPhi , innerRadius \times sinNextTheta , nextDXZ \times sinPhi$)
 
       \vspace{0.2cm}
 
-          \hspace{-0.5cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+          \hspace{-2.0cm} P2 $\Rightarrow$ ($dXZ \times cosNextPhi , innerRadius \times sinTheta , dXZ \times sinNextPhi$)
 
       \vspace{0.2cm}
 
-          \hspace{0.0cm} P3 $\Rightarrow$ (rsn $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{atual}$))
+          \hspace{-2.0cm} P3 $\Rightarrow$ ($dXZ \times cosPhi , innerRadius \times sinTheta , dXZ \times sinPhi$))
 
       \vspace{0.5cm}
 
@@ -494,15 +506,15 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
 
       \vspace{0.5cm}
 
-          \hspace{-0.25cm} P1 $\Rightarrow$ (rs $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{atual}$), rs $\times$ sin($\alpha_{seguinte}$))
+          \hspace{-2.0cm} P1 $\Rightarrow$ ($nextDXZ \times cosNextPhi, innerRadius \times sinNextTheta, nextDXZ \times sinNextPhi$)
 
       \vspace{0.2cm}
 
-          \hspace{-0.75cm} P2 $\Rightarrow$ (rsn $\times$ cos($\alpha_{seguinte}$) , r $\times$ cos($\beta_{seguinte}$), rsn $\times$ sin($\alpha_{seguinte}$))
+          \hspace{-2.0cm} P2 $\Rightarrow$ ($dXZ \times cosNextPhi, innerRadius \times sinTheta, dXZ \times sinNextPhi$)
 
       \vspace{0.2cm}
 
-          \hspace{0.0cm} P3 $\Rightarrow$ (rs $\times$ cos($\alpha_{atual}$) , r $\times$ cos($\beta_{seguinte}$), rs $\times$ sin($\alpha_{atual}$))
+          \hspace{-2.0cm} P3 $\Rightarrow$ ($nextDXZ \times cosPhi, innerRadius \times sinNextTheta, nextDXZ \times sinPhi$)
 
       \vspace{0.2cm}
 
@@ -513,7 +525,15 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
     \item Fim
     \end{enumerate}
     \rmfamily
+    
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{torus_triangulos.png}
+\caption{Triângulos gerados por iteração.}
+\label{img:torus_triangulos}
+\end{figure}
 
+Na figura \ref{img:torus_triangulos} o triângulo que se encontra a \textbf{verde} é o \textbf{primeiro} a ser gerado, baseando-nos no algoritmo apresentado acima. Consequentemente o triângulo que se encontra a \textbf{vermelho} é o \textbf{segundo} a ser gerado.
 
 
 
