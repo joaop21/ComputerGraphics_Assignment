@@ -284,6 +284,50 @@ A classe Point, como o nome indica, é um ponto no sistema, ou seja, é composta
 \newpage
 
 \section{\textit{Render Scene}}
+Para o rendering do projeto, utilizamos uma pesquisa em profundidade na árvore representando  todas as figuras e as suas translações, rotações e escalas.
+
+Assim, a função renderScene(), chama duas funções. A função drawAxis() que representa os 3 eixos de coordenadas na cena e a função drawTree que desenha o Sistema Solar. Esta função drawTree recebe como pârametro uma árvore (Tree) e o seu algoritmo pode ser explicado assim:
+
+
+\ttfamily
+\begin{enumerate}
+ \item Efetua o push inicial  $\Rightarrow$ \textit{glPushMatrix()};
+ \item Verifica se a figura atual tem alguma translação;
+    \begin{enumerate}
+      \item Caso tenha, efetua a translação com a \textit{glTranslatef()};
+    \end{enumerate}
+  \item Verifica se a figura atual tem alguma rotação;
+    \begin{enumerate}
+      \item Caso tenha, efetua a translação com a \textit{glRotatef()};
+    \end{enumerate}
+ \item Verifica se a figura atual tem alguma escala;
+    \begin{enumerate}
+      \item Caso tenha, efetua a translação com a \textit{glScalef()};
+    \end{enumerate}
+ \item Após as transformações geométricas serem feitas, através da \textit{drawFigure(}), é desenhada a figura do nodo atual.
+ \item Para o resto do vector<Tree>, é feito todo este procedimento.
+ \item Finalizando, é efetuado o \textit{glPopMatrix()};
+\end{enumerate}
+
+  \vspace{0.3cm}
+
+ A função \textit{drawFigure()}, que tem como pârametro uma \textbf{Figure}, é responsável por desenhar uma figura e o seu algoritmo pode ser explicado assim:
+
+  \vspace{0.3cm}
+
+\begin{enumerate}	
+ \item Colocar num \textit{vector<Point>} todos os pontos que compõem a figura;
+ \item Colocar numa estrutura Color, a cor da figura;
+ \item Iniciar o desenho com \textit{glBegin(GL\_TRIANGLES)} e com \textit{glColor3f(com os parâmetros que colocamos na estrutura Color0});
+ \item Iterando sobre o vector dos pontos:
+	\begin{enumerate}
+	\item Colocar numa estrutura Point, o ponto actual da iteração (current\_point);
+	\item Através da \textit{glVertex3f(current\_point.x,current\_point.y,current\_point.z)} desenhar o ponto atual;
+	\end{enumerate}
+\item Terminada a iteração, termina o desenho da figura com \textit{glEnd()};
+\end{enumerate}
+
+\rmfamily
 
 \newpage
 
