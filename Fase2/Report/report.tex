@@ -289,7 +289,9 @@ A classe Point, como o nome indica, é um ponto no sistema, ou seja, é composta
 \section{\textit{Render Scene}}
 Para o rendering do projeto, utilizamos uma pesquisa em profundidade na árvore representando  todas as figuras e as suas translações, rotações e escalas.
 
-Assim, a função renderScene(), chama duas funções. A função drawAxis() que representa os 3 eixos de coordenadas na cena e a função drawTree que desenha o Sistema Solar. Esta função drawTree recebe como pârametro uma árvore (Tree) e o seu algoritmo pode ser explicado assim:
+Assim, a função renderScene(), chama duas funções. A função drawAxis() que representa os 3 eixos de coordenadas na cena e a função drawTree que desenha o Sistema Solar. 
+
+Esta função drawTree recebe como pârametro uma árvore (Tree) e o seu algoritmo pode ser explicado assim:
 
 
 \ttfamily
@@ -308,13 +310,17 @@ Assim, a função renderScene(), chama duas funções. A função drawAxis() que
       \item Caso tenha, efetua a translação com a \textit{glScalef()};
     \end{enumerate}
  \item Após as transformações geométricas serem feitas, através da \textit{drawFigure(}), é desenhada a figura do nodo atual.
- \item Para o resto do vector<Tree>, é feito todo este procedimento.
+ \item Para o vector de filhos é invocada recursivamente a função \emph{drawTree}. Desta forma asseguramos a hereditariedade das figuras.
  \item Finalizando, é efetuado o \textit{glPopMatrix()};
 \end{enumerate}
+
+\rmfamily
 
   \vspace{0.3cm}
 
  A função \textit{drawFigure()}, que tem como pârametro uma \textbf{Figure}, é responsável por desenhar uma figura e o seu algoritmo pode ser explicado assim:
+
+\ttfamily
 
   \vspace{0.3cm}
 
