@@ -451,7 +451,7 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
  Neste caso iremos os pontos para a figura que serão guardados no ficheiro \textbf{torus.3d}, o raio de cada anel será de \textbf{0.3}, a distância (raio) do centro da figura até à figura será \textbf{1.5}, o número de lados de cada anel será \textbf{20} e finalmente o número de anéis que compõe a figura será \textbf{30}.
 
  \subsubsection{Algoritmo}
- 
+
  \ttfamily
 \begin{enumerate}
   \item Definir o avanço de $\phi$ em cada iteração: $$delta\phi = \frac{2\pi}{numero\ rings} $$
@@ -465,6 +465,8 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
     \item Calcular o cosNextPhi $\Rightarrow$ \underline{$cos(nextPhi)$}
     \item Calcular o sinNextPhi $\Rightarrow$ \underline{$sin(nextPhi)$}
 
+    \vspace{0.2cm}
+
     \item Iterar sobre o número de sides:
     \begin{enumerate}
       \item Calcular o ângulo theta para o side atual $\Rightarrow$ \underline{$delta\theta \times side\ atual$}
@@ -474,47 +476,54 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
       \item Calcular o cosNextTheta $\Rightarrow$ \underline{$cos(nextTheta)$}
       \item Calcular o sinNextTheta $\Rightarrow$ \underline{$sin(nextTheta)$}
       \item Calcular o distancia ao ponto:
-       \hspace{0.5cm} 
-       
+
+       \vspace{0.2cm}
+
        $\Rightarrow$ \underline{$ dXZ = outerRadius + innerRadius \times cosTheta$}
-      \item Calcular o distancia ao ponto do side seguinte: 
-      \hspace{0.5cm}
-      
-      $\Rightarrow$ \underline{$ nextDXZ = outerRadius + innerRadius * cosNextTheta$}
-      
-      \item Construir os dois triângulos do side atual:
+
+       \vspace{0.5cm}
+
+      \item Calcular o distancia ao ponto do side seguinte:
+
+      \vspace{0.2cm}
+
+      $\Rightarrow$ \underline{$ nextDXZ = outerRadius + innerRadius \times cosNextTheta$}
 
       \vspace{0.5cm}
+
+      \item Construir os dois triângulos do side atual:
+
+      \vspace{0.3cm}
 
       \underline{Primeiro triângulo:}
 
-      \vspace{0.5cm}
+      \vspace{0.3cm}
 
           \hspace{-2.0cm} P1 $\Rightarrow$ ($nextDXZ \times cosPhi , innerRadius \times sinNextTheta , nextDXZ \times sinPhi$)
 
       \vspace{0.2cm}
 
-          \hspace{-2.0cm} P2 $\Rightarrow$ ($dXZ \times cosNextPhi , innerRadius \times sinTheta , dXZ \times sinNextPhi$)
+          \hspace{-1.8cm} P2 $\Rightarrow$ ($dXZ \times cosNextPhi , innerRadius \times sinTheta , dXZ \times sinNextPhi$)
 
       \vspace{0.2cm}
 
-          \hspace{-2.0cm} P3 $\Rightarrow$ ($dXZ \times cosPhi , innerRadius \times sinTheta , dXZ \times sinPhi$))
+          \hspace{-1.5cm} P3 $\Rightarrow$ ($dXZ \times cosPhi , innerRadius \times sinTheta , dXZ \times sinPhi$))
 
-      \vspace{0.5cm}
+      \vspace{0.3cm}
 
       \underline{Segundo triângulo:}
 
-      \vspace{0.5cm}
+      \vspace{0.3cm}
 
-          \hspace{-2.0cm} P1 $\Rightarrow$ ($nextDXZ \times cosNextPhi, innerRadius \times sinNextTheta, nextDXZ \times sinNextPhi$)
-
-      \vspace{0.2cm}
-
-          \hspace{-2.0cm} P2 $\Rightarrow$ ($dXZ \times cosNextPhi, innerRadius \times sinTheta, dXZ \times sinNextPhi$)
+          \hspace{-3.0cm} P1 $\Rightarrow$ ($nextDXZ \times cosNextPhi, innerRadius \times sinNextTheta, nextDXZ \times sinNextPhi$)
 
       \vspace{0.2cm}
 
-          \hspace{-2.0cm} P3 $\Rightarrow$ ($nextDXZ \times cosPhi, innerRadius \times sinNextTheta, nextDXZ \times sinPhi$)
+          \hspace{-2.3cm} P2 $\Rightarrow$ ($dXZ \times cosNextPhi, innerRadius \times sinTheta, dXZ \times sinNextPhi$)
+
+      \vspace{0.2cm}
+
+          \hspace{-2.5cm} P3 $\Rightarrow$ ($nextDXZ \times cosPhi, innerRadius \times sinNextTheta, nextDXZ \times sinPhi$)
 
       \vspace{0.2cm}
 
@@ -525,7 +534,7 @@ $\Rightarrow$ ./Generator torus 0.3 1.5 20 30 torus.3d
     \item Fim
     \end{enumerate}
     \rmfamily
-    
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.3]{torus_triangulos.png}
@@ -539,6 +548,7 @@ Na figura \ref{img:torus_triangulos} o triângulo que se encontra a \textbf{verd
 
 \newpage
 
+
 \section{Upgrades da Fase Anterior}
 
 Em relação à fase anterior houve alguns pontos que foram sujeitos a mudanças e otimizações pelo que estas serão relatadas nesta secção.
@@ -548,7 +558,7 @@ Desta forma decidimos que esta parte deveria ser reescrita utilizando uma aborda
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.9]{camara.png}
+\includegraphics[scale=0.7]{camara.png}
 \caption{Código referente às coordenadas da câmara.}
 \label{img:camara}
 \end{figure}
@@ -557,7 +567,7 @@ Não só a função que calcula as coordenadas para câmara mas também a própr
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.9]{mat_camara.png}
+\includegraphics[scale=0.7]{mat_camara.png}
 \caption{Função que contém a matriz da câmara.}
 \label{img:mat_camara}
 \end{figure}
@@ -586,7 +596,7 @@ Na execução do programa \textit{Engine} são disponibilizadas essas duas opç�
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{interface.png}
+\includegraphics[scale=0.7]{interface.png}
 \caption{Exemplo de um possível procedimento na interface.}
 \label{img:interface}
 \end{figure}
@@ -637,7 +647,7 @@ Na execução do programa \textit{Engine} são disponibilizadas essas duas opç�
 
 Após a conclusão desta fase do projeto, todos os membros do grupo se sentem mais à vontade com transformações geométricas e, consequentemente, com todos os conceitos apreendidos nas aulas que tiveram de ser colocados em prática nesta fase.
 
-A implementação de estruturas mais elaboradas para aproveitar o conceito de hereditariedade de figuras foi algo enriquecedor em termos de programação e melhorou consideravelmente a performance do projeto. 
+A implementação de estruturas mais elaboradas para aproveitar o conceito de hereditariedade de figuras foi algo enriquecedor em termos de programação e melhorou consideravelmente a performance do projeto.
 
 Relativamente ao nível de execução desta fase o grupo, no geral, não sentiu grandes dificuldades.
 
@@ -645,8 +655,6 @@ Em jeito de conclusão e revisão final a esta fase, o grupo espera continuar nu
 
 \section{Bibliografia}
 \label{sec:bibliografia}
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! POR FAZER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 \begin{itemize}
 
@@ -658,7 +666,10 @@ Em jeito de conclusão e revisão final a esta fase, o grupo espera continuar nu
   \begin{itemize}
     \item https://www.123rf.com/photo\_43149668\_stock-vector-diagram-of-solar-system.html
   \end{itemize}
-
+  \item \textbf{Site Astronomia}
+  \begin{itemize}
+    \item http://www.siteastronomia.com/distancia-e-tamanho-dos-planetas-do-sistema-solar
+  \end{itemize}
 
 \end{itemize}
 
