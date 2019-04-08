@@ -60,9 +60,8 @@ namespace geometry{
     */
     class Figure{
         public:
-            Figure(): vbo(-1){}
             string name;
-            int num_triangles, vbo;
+            int num_triangles;
             vector<Point> points;
             Translation translation;
             Rotation rotation;

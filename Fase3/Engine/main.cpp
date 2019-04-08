@@ -18,20 +18,9 @@ using namespace geometry;
 
 Tree tree_struct;
 
-// armazena o nome da figura com um vetor de pontos
-//vector<pair<String,int>> figure_vectors;
-
-
 void draw_figure(Figure fig) {
 
-	/**vector<String,int>::iterator it;
-	for(it = figure_vectors.begin(); it != figure_vectors.end() ; it++)
-		if(fig.name == it.first){
-			fig.vbo = it.second;
-			return;
-		}*/
-
-
+	/**
 	vector<Point> points = fig.points;
 	Color color = fig.color;
 
@@ -42,7 +31,30 @@ void draw_figure(Figure fig) {
 		Point current_point = points[j];
 		glVertex3f(current_point.x, current_point.y, current_point.z);
 	}
-	glEnd();
+	glEnd();*/
+
+	float *v;
+	v = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3);
+	vector<Point>::iterator it;
+	int i = 0;
+	for(it = fig.points.begin() ; it != fig.points.end() ; it++){
+		v[i++] = it->x;
+		v[i++] = it->y;
+		v[i++] = it->z;
+	}
+
+	Color color = fig.color;
+	glColor3f(color.r, color.g, color.b);
+
+	unsigned int t;
+	glGenBuffers(1, &t);
+	glBindBuffer(GL_ARRAY_BUFFER, t);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * fig.num_triangles * 3 * 3, v, GL_STATIC_DRAW);
+
+	glVertexPointer(3, GL_FLOAT, 0, 0);
+	glDrawArrays(GL_TRIANGLES, 0, fig.num_triangles * 3);
+
+	free(v);
 }
 
 void draw_tree(Tree t) {
@@ -227,6 +239,11 @@ int main(int argc, char **argv) {
 //  OpenGL settings
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
+	glEnableClientState(GL_VERTEX_ARRAY);
+
+	#ifndef __APPLE__
+		glewInit();
+	#endif
 
 	spherical2Cartesian();
 
