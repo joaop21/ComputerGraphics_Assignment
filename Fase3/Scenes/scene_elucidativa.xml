@@ -1,4 +1,4 @@
-2<scene>
+<scene>
   <group> <!-- Sun -->
     <rotate axisX="0" axisY="1" axisZ="0" angle="90"/>
 		<models>

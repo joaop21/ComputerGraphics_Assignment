@@ -3,6 +3,7 @@
 #endif
 
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -59,7 +60,9 @@ namespace geometry{
     */
     class Figure{
         public:
-            int num_triangles;
+            Figure(): vbo(-1){}
+            string name;
+            int num_triangles, vbo;
             vector<Point> points;
             Translation translation;
             Rotation rotation;

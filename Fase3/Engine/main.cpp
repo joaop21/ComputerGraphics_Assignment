@@ -18,7 +18,20 @@ using namespace geometry;
 
 Tree tree_struct;
 
+// armazena o nome da figura com um vetor de pontos
+//vector<pair<String,int>> figure_vectors;
+
+
 void draw_figure(Figure fig) {
+
+	/**vector<String,int>::iterator it;
+	for(it = figure_vectors.begin(); it != figure_vectors.end() ; it++)
+		if(fig.name == it.first){
+			fig.vbo = it.second;
+			return;
+		}*/
+
+
 	vector<Point> points = fig.points;
 	Color color = fig.color;
 

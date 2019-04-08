@@ -14,18 +14,35 @@ constexpr unsigned int str2int(const char* str, int h = 0)
     return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
 }
 
+vector<pair<string,pair<int,vector<Point>>>> figure_points;
+
 Figure loadFigure(Figure fig,string current_file){
 
     Figure nf = fig;
+
+    vector<pair<string,pair<int,vector<Point>>>>::iterator it;
+    for(it = figure_points.begin(); it != figure_points.end() ; it++)
+        if(it->first == current_file){
+            nf.points = it->second.second;
+            nf.num_triangles = it->second.first;
+            nf.name = current_file;
+            return nf;
+        }
+
+
 	ifstream file;
 	file.open("../Generated_Models/" + current_file);
 
 	file >> nf.num_triangles;
+    nf.name = current_file;
 	while (!file.eof()) {
 		Point new_point;
 		file >> new_point.x >> new_point.y >> new_point.z;
 		nf.points.push_back(new_point);
 	}
+
+    figure_points.push_back(make_pair(current_file,make_pair(nf.num_triangles,nf.points)));
+
     return nf;
 }
 
