@@ -33,8 +33,12 @@ void draw_figure(Figure fig) {
 	}
 	glEnd();*/
 
+	GLuint t;
+	glGenBuffers(1, &t); // Generate Vertex Buffer Objects
+	glBindBuffer(GL_ARRAY_BUFFER, t); // Bind a named buffer object
+
 	float *v;
-	v = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3);
+	v = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3); // num_triangles x num_vertices x num_coordinates
 	vector<Point>::iterator it;
 	int i = 0;
 	for(it = fig.points.begin() ; it != fig.points.end() ; it++){
@@ -46,13 +50,13 @@ void draw_figure(Figure fig) {
 	Color color = fig.color;
 	glColor3f(color.r, color.g, color.b);
 
-	unsigned int t;
-	glGenBuffers(1, &t);
-	glBindBuffer(GL_ARRAY_BUFFER, t);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * fig.num_triangles * 3 * 3, v, GL_STATIC_DRAW);
 
-	glVertexPointer(3, GL_FLOAT, 0, 0);
-	glDrawArrays(GL_TRIANGLES, 0, fig.num_triangles * 3);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * fig.num_triangles * 3 * 3, v, GL_STATIC_DRAW); // Fill buffer
+					 // (GL_ARRAY_BUFFER, arraySize (in bytes), v, GL_STATIC_DRAW);
+	glVertexPointer(3, GL_FLOAT, 0, 0); // Define an array of vertex data
+							// (GLint size, GLenum type, GLsizei stride, const GLvoid * pointer);
+	glDrawArrays(GL_TRIANGLES, 0, fig.num_triangles * 3); // Render primitives from array data
+					 // (GL_TRIANGLES, first, count);
 
 	free(v);
 }
