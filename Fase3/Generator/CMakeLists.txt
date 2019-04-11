@@ -5,6 +5,6 @@ PROJECT(Generator)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(${PROJECT_NAME} generator.cpp box.cpp plane.cpp cone.cpp sphere.cpp writeFile.cpp asteroids.cpp torus.cpp)
+add_executable(${PROJECT_NAME} generator.cpp box.cpp plane.cpp cone.cpp sphere.cpp writeFile.cpp asteroids.cpp torus.cpp bezierSurface.cpp)
 
 add_definitions(-std=c++11 -Wall )

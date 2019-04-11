@@ -25,6 +25,9 @@ namespace figures{
             float getX(){return x;}
             float getY(){return y;}
             float getZ(){return z;}
+            void setX(float num){x = num;}
+            void setY(float num){y = num;}
+            void setZ(float num){z = num;}
     };
 
     /**
@@ -120,6 +123,8 @@ namespace figures{
     *  @returns Integer que dita se a geração foi um sucesso ou não
     */
     int generateAsteroids(int num_asteroids, int min_radius, int max_radius, std::string file_name);
+
+    int generateBezierSurface(std::string patch_file, int tesselation, std::string file_name);
 
 
     /**

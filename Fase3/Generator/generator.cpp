@@ -64,11 +64,17 @@ int main(int argc, char* argv[]) {
 		int nrings = atoi(argv[5]);
 		string file_name = argv[6];
 		res = generateTorus(innerRadius,outerRadius,nsides,nrings,file_name);
+	}else if(primitive == "bezier"){
+		string patch_file = argv[2];
+		int tessellation = atoi(argv[3]);
+		string file_name = argv[4];
+		res = generateBezierSurface(patch_file,tessellation,file_name);
 	}else{
 		printf("Parâmetros inválidos!!!\n");
 		return 0;
 	}
 
+	// testa se correu tudo bem
 	if(res == 1){
 		printf("Tudo gerado corretamente.\n" );
 		return 1;
