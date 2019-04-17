@@ -24,7 +24,8 @@ namespace geometry{
         public:
             Translation() :empty(true) {}
             bool empty;
-            float x,y,z;
+            float time;
+            vector<Point> points;
     };
 
     /**
@@ -32,9 +33,9 @@ namespace geometry{
     */
     class Rotation{
         public:
-            Rotation() :empty(true) {}
+            Rotation() :empty(true), angle(-1), time(-1) {}
             bool empty;
-            float angle,x,y,z;
+            float angle,x,y,z,time;
     };
 
     /**

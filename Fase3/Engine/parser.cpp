@@ -55,16 +55,26 @@ Tree parseGroup(XMLElement* father){
         switch(str2int(option)){
             case str2int("translate"):
                     t.head_figure.translation.empty = false;
-            		t.head_figure.translation.x = child->FloatAttribute("X");
-            		t.head_figure.translation.y = child->FloatAttribute("Y");
-            		t.head_figure.translation.z = child->FloatAttribute("Z");
+                    t.head_figure.translation.time = child->FloatAttribute("time");
+			        for (XMLElement *pModel = child->FirstChildElement() ; pModel != NULL; pModel = pModel->NextSiblingElement()) {
+                        Point p;
+                        p.x = pModel->FloatAttribute("X");
+                        p.y = pModel->FloatAttribute("Y");
+                        p.z = pModel->FloatAttribute("Z");
+				        t.head_figure.translation.points.push_back(p);
+			        }
                     break;
             case str2int("rotate"):
                     t.head_figure.rotation.empty = false;
-            		t.head_figure.rotation.angle = child->FloatAttribute("angle");
             		t.head_figure.rotation.x = child->FloatAttribute("axisX");
             		t.head_figure.rotation.y = child->FloatAttribute("axisY");
             		t.head_figure.rotation.z = child->FloatAttribute("axisZ");
+                    if (child->FloatAttribute("angle")){
+                        t.head_figure.rotation.angle = child->FloatAttribute("angle");
+                    }
+			        else if (child->FloatAttribute("time")){
+                        t.head_figure.rotation.time = child->FloatAttribute("time");
+                    }
                     break;
             case str2int("scale"):
                     t.head_figure.scale.empty = false;
