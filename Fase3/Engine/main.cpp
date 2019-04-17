@@ -20,7 +20,6 @@ using namespace geometry;
 
 Tree tree_struct;
 float p[POINT_COUNT][3];
-float time_p = 0;
 
 void vector_to_matrix(vector<Point> points){
 	vector<Point>::iterator it;
@@ -146,17 +145,24 @@ void draw_tree(Tree t) {
 	glPushMatrix();
 
 	if (!t.head_figure.translation.empty){
+
 		vector_to_matrix(t.head_figure.translation.points);
 		renderCatmullRomCurve();
 
 		float pos[3], deriv[3];
+		float time_p = glutGet(GLUT_ELAPSED_TIME)/(t.head_figure.translation.time*1000);
 
-		// desenhar o objeto
-		getGlobalCatmullRomPoint(time_p,pos,deriv); // com o t (global t) inicial vou buscar o catmull-rom point
-		glTranslatef(pos[0],pos[1],pos[2]); // faço o translate para essa posicao
+		getGlobalCatmullRomPoint(time_p,pos,deriv);
+		glTranslatef(pos[0],pos[1],pos[2]);
 	}
-	if (!t.head_figure.rotation.empty)
-		glRotatef(t.head_figure.rotation.angle, t.head_figure.rotation.x, t.head_figure.rotation.y, t.head_figure.rotation.z);
+	if (!t.head_figure.rotation.empty){
+		float angle ;
+		if(t.head_figure.rotation.time == -1)
+			angle = t.head_figure.rotation.angle;
+		else angle = glutGet(GLUT_ELAPSED_TIME)*360/(t.head_figure.rotation.time*1000);
+
+		glRotatef(angle, t.head_figure.rotation.x, t.head_figure.rotation.y, t.head_figure.rotation.z);
+	}
 	if (!t.head_figure.scale.empty)
 		glScalef(t.head_figure.scale.x, t.head_figure.scale.y, t.head_figure.scale.z);
 
@@ -244,8 +250,6 @@ void renderScene(void) {
 
 	// End of frame
 	glutSwapBuffers();
-
-	time_p += 0.001;
 }
 
 void processKeys(unsigned char c, int xx, int yy) {

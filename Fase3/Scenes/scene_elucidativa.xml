@@ -1,33 +1,27 @@
 <scene>
-  <group> <!-- Sun -->
-		<models>
+    <group> <!-- Sun -->
+	    <models>
 			<model file="sun_elucidativo.3d" R="0.945" G="0.412" B="0.082" />
 		</models>
-        <group>
-    			<!-- Mercury -->
-    			<rotate angle="0" axisX="0" axisY="0" axisZ="1" />
-    			<group>
-    				<translate time="4.35">
-    					<point X="70" Y="0" Z="0" />
-    					<point X="49.45" Y="0" Z="-49.45" />
-    					<point X="0" Y="0" Z="-70" />
-    					<point X="-49.45" Y="0" Z="-49.45" />
-    					<point X="-70" Y="0" Z="0" />
-    					<point X="-49.45" Y="0" Z="49.45" />
-    					<point X="0" Y="0" Z="70" />
-    					<point X="49.45" Y="0" Z="49.45" />
-    				</translate>
-    				<rotate time="58" axisX="0" axisY="1" axisZ="0" />
-    				<scale X="0.38" Y="0.38" Z="0.38" />
-    				<models>
-    					<model file="planet_elucidativo.3d" R="0.412" G="0.388" B="0.376" />
-    				</models>
-    			</group>
+        <group> <!-- Mercury -->
+    		<translate time="4.35">
+    			<point X="70" Y="0" Z="0" />
+    			<point X="49.45" Y="0" Z="-49.45" />
+    			<point X="0" Y="0" Z="-70" />
+    			<point X="-49.45" Y="0" Z="-49.45" />
+    			<point X="-70" Y="0" Z="0" />
+    			<point X="-49.45" Y="0" Z="49.45" />
+    			<point X="0" Y="0" Z="70" />
+    			<point X="49.45" Y="0" Z="49.45" />
+    		</translate>
+    		<rotate time="58" axisX="0" axisY="0" axisZ="1" />
+    		<scale X="0.38" Y="0.38" Z="0.38" />
+    		<models>
+    			<model file="planet_elucidativo.3d" R="0.412" G="0.388" B="0.376" />
+    		</models>
         </group>
-        <group>
-			<!-- Venus -->
+        <group> <!-- Venus -->
 			<rotate angle="-3.395" axisX="0" axisY="0" axisZ="1" />
-			<group>
 				<translate time="11.2">
 					<point X="100" Y="0" Z="0" />
 					<point X="70.58" Y="0" Z="-70.58" />
@@ -43,7 +37,6 @@
 				<models>
 					<model file="planet_elucidativo.3d" R="0.816" G="0.533" B="0.208" />
 				</models>
-			</group>
         </group>
         <group>
 			<translate time="18.25">
@@ -56,17 +49,14 @@
 				<point X="0" Y="0" Z="140" />
 				<point X="98.88" Y="0" Z="98.88" />
 			</translate>
-			<group>
-				<!-- Earth -->
+			<group> <!-- Earth -->
 				<rotate time="1" axisX="0" axisY="1" axisZ="0" />
 				<models>
 					<model file="planet_elucidativo.3d" R="0.145" G="0.192" B="0.388" />
 				</models>
 			</group>
-			<group>
-				<group>
+			<group> <!-- Moon -->
 					<rotate angle="5.145" axisX="0" axisY="0" axisZ="1" />
-					<!-- Moon -->
 					<translate time="1.35">
 						<point X="20" Y="0" Z="0" />
 						<point X="17" Y="0" Z="-17" />
@@ -81,7 +71,6 @@
 					<models>
 						<model file="moon_elucidativo.3d" R="0.412" G="0.388" B="0.376" />
 					</models>
-				</group>
 			</group>
     </group>
     <group> <!-- MARS -->
