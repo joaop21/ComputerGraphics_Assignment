@@ -378,5 +378,23 @@
 				        </models>
 	        </group>
         </group>
+        <group> <!-- Cometa -->
+          <rotate angle="45" axisX="0" axisY="0" axisZ="-1" />
+          <group>
+                <translate time="10">
+				               <point X="200" Y="0" Z="0" />
+				               <point X="142.86" Y="0" Z="-142.86" />
+				               <point X="0" Y="0" Z="-200" />
+				               <point X="-142.86" Y="0" Z="-142.86" />
+				               <point X="-200" Y="0" Z="0" />
+				               <point X="-142.86" Y="0" Z="142.86" />
+				               <point X="0" Y="0" Z="200" />
+				               <point X="142.86" Y="0" Z="142.86" />
+                </translate>
+                <models>
+                       <model file="cometa.3d" R="1.0" G="0.270" B="0.0" />
+                </models>
+        </group>
+      </group>
     </group>
 </scene>

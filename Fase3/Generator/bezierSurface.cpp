@@ -73,7 +73,7 @@ Point bezierPoint(int patch_number, float u, float v) {
 
 int figures::generateBezierSurface(std::string patch_file, int tessellation, std::string file_name){
 
-    parsePatchFile(patch_file);
+  parsePatchFile(patch_file);
 	std::vector<Point> points;
 
 	for (int patch_number = 0; patch_number < 32; patch_number++) {
@@ -101,7 +101,7 @@ int figures::generateBezierSurface(std::string patch_file, int tessellation, std
     int res = write_in_file(points, file_name);
 
     // free memory allocated in readPatch
-	free(patches);
+	  free(patches);
     free(control_points);
 
     return res;
