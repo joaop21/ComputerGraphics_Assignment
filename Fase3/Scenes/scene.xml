@@ -1,382 +1,381 @@
 <scene>
     <group> <!-- Sun -->
-	    <models>
-			<model file="sun.3d" R="0.945" G="0.412" B="0.082" />
-		</models>
-        <group> <!-- Mercury -->
-            <rotate angle="7" axisX="0" axisY="0" axisZ="1" />
-    		<translate time="4.35">
-    			<point X="70" Y="0" Z="0" />
-    			<point X="49.45" Y="0" Z="-49.45" />
-    			<point X="0" Y="0" Z="-70" />
-    			<point X="-49.45" Y="0" Z="-49.45" />
-    			<point X="-70" Y="0" Z="0" />
-    			<point X="-49.45" Y="0" Z="49.45" />
-    			<point X="0" Y="0" Z="70" />
-    			<point X="49.45" Y="0" Z="49.45" />
-    		</translate>
-    		<rotate time="58" axisX="0" axisY="0" axisZ="1" />
-    		<scale X="0.38" Y="0.38" Z="0.38" />
-    		<models>
-    			<model file="planet.3d" R="0.412" G="0.388" B="0.376" />
-    		</models>
+	       <models>
+			        <model file="sun.3d" R="0.945" G="0.412" B="0.082" />
+		     </models>
+         <group> <!-- Mercury -->
+              <rotate angle="7" axisX="0" axisY="0" axisZ="1" />
+              <group>
+    		            <translate time="4.35">
+    			                <point X="70" Y="0" Z="0" />
+    			                <point X="49.45" Y="0" Z="-49.45" />
+    			                <point X="0" Y="0" Z="-70" />
+    			                <point X="-49.45" Y="0" Z="-49.45" />
+    			                <point X="-70" Y="0" Z="0" />
+    			                <point X="-49.45" Y="0" Z="49.45" />
+    			                <point X="0" Y="0" Z="70" />
+    			                <point X="49.45" Y="0" Z="49.45" />
+    		            </translate>
+    		            <rotate time="58" axisX="0" axisY="0" axisZ="1" />
+    		            <scale X="0.38" Y="0.38" Z="0.38" />
+    		            <models>
+    			                <model file="planet.3d" R="0.412" G="0.388" B="0.376" />
+    		            </models>
+              </group>
         </group>
         <group> <!-- Venus -->
-			<rotate angle="-3.395" axisX="0" axisY="0" axisZ="1" />
-			<translate time="11.2">
-				<point X="100" Y="0" Z="0" />
-				<point X="70.58" Y="0" Z="-70.58" />
-				<point X="0" Y="0" Z="-100" />
-				<point X="-70.58" Y="0" Z="-70.58" />
-				<point X="-100" Y="0" Z="0" />
-				<point X="-70.58" Y="0" Z="70.58" />
-				<point X="0" Y="0" Z="100" />
-				<point X="70.58" Y="0" Z="70.58" />
-			</translate>
-			<rotate time="243" axisX="0" axisY="-1" axisZ="0" />
-			<scale X="0.95" Y="0.95" Z="0.95" />
-			<models>
-				<model file="planet.3d" R="0.816" G="0.533" B="0.208" />
-			</models>
+			        <rotate angle="-3.395" axisX="0" axisY="0" axisZ="1" />
+              <group>
+			              <translate time="11.2">
+				                  <point X="100" Y="0" Z="0" />
+				                  <point X="70.58" Y="0" Z="-70.58" />
+				                  <point X="0" Y="0" Z="-100" />
+				                  <point X="-70.58" Y="0" Z="-70.58" />
+				                  <point X="-100" Y="0" Z="0" />
+				                  <point X="-70.58" Y="0" Z="70.58" />
+				                  <point X="0" Y="0" Z="100" />
+				                  <point X="70.58" Y="0" Z="70.58" />
+			              </translate>
+			              <rotate time="243" axisX="0" axisY="-1" axisZ="0" />
+			              <scale X="0.95" Y="0.95" Z="0.95" />
+			              <models>
+				                  <model file="planet.3d" R="0.816" G="0.533" B="0.208" />
+			              </models>
+              </group>
         </group>
-        <group>
-            <rotate angle="1.85" axisX="1" axisY="0" axisZ="0" />
-			<translate time="18.25">
-				<point X="140" Y="0" Z="0" />
-				<point X="98.88" Y="0" Z="-98.88" />
-				<point X="0" Y="0" Z="-140" />
-				<point X="-98.88" Y="0" Z="-98.88" />
-				<point X="-140" Y="0" Z="0" />
-				<point X="-98.88" Y="0" Z="98.88" />
-				<point X="0" Y="0" Z="140" />
-				<point X="98.88" Y="0" Z="98.88" />
-			</translate>
-			<group> <!-- Earth -->
-				<rotate time="1" axisX="0" axisY="1" axisZ="0" />
-				<models>
-					<model file="planet.3d" R="0.145" G="0.192" B="0.388" />
-				</models>
-			</group>
-			<group> <!-- Moon -->
-					<rotate angle="5.145" axisX="0" axisY="0" axisZ="1" />
-					<translate time="1.35">
-						<point X="20" Y="0" Z="0" />
-						<point X="17" Y="0" Z="-17" />
-						<point X="0" Y="0" Z="-20" />
-						<point X="-17" Y="0" Z="-17" />
-						<point X="-20" Y="0" Z="0" />
-						<point X="-17" Y="0" Z="17" />
-						<point X="0" Y="0" Z="20" />
-						<point X="17" Y="0" Z="17" />
-					</translate>
-					<rotate time="27" axisX="0" axisY="1" axisZ="0" />
-					<models>
-						<model file="moon.3d" R="0.412" G="0.388" B="0.376" />
-					</models>
-			</group>
-    </group>
-    <group> <!-- MARS -->
-        <rotate angle="1.85" axisX="1" axisY="0" axisZ="0" />
-        <translate time="34.3">
-            <point X="180" Y="0" Z="0" />
-            <point X="127.28" Y="0" Z="-127.28" />
-            <point X="0" Y="0" Z="-180" />
-            <point X="-127.28" Y="0" Z="-127.28" />
-            <point X="-180" Y="0" Z="0" />
-            <point X="-127.28" Y="0" Z="127.28" />
-            <point X="0" Y="0" Z="180" />
-            <point X="127.28" Y="0" Z="127.28" />
-        </translate>
-        <group>
-            <rotate time="1" axisX="0" axisY="1" axisZ="0" />
-            <scale X="0.53" Y="0.53" Z="0.53" />
-            <models>
-                <model file="planet.3d" R="0.788" G="0.243" B="0.020" />
-            </models>
-        </group>
-		<group> <!-- Fobos (Mars) -->
-            <translate time="1.35">
-                <point X="20" Y="0" Z="0" />
-                <point X="17" Y="0" Z="-17" />
-                <point X="0" Y="0" Z="-20" />
-                <point X="-17" Y="0" Z="-17" />
-                <point X="-20" Y="0" Z="0" />
-                <point X="-17" Y="0" Z="17" />
-                <point X="0" Y="0" Z="20" />
-                <point X="17" Y="0" Z="17" />
+        <group> <!-- Earth & Moon -->
+			        <translate time="18.25">
+				            <point X="140" Y="0" Z="0" />
+				            <point X="98.88" Y="0" Z="-98.88" />
+				            <point X="0" Y="0" Z="-140" />
+				            <point X="-98.88" Y="0" Z="-98.88" />
+				            <point X="-140" Y="0" Z="0" />
+				            <point X="-98.88" Y="0" Z="98.88" />
+				            <point X="0" Y="0" Z="140" />
+				            <point X="98.88" Y="0" Z="98.88" />
+			        </translate>
+			        <group> <!-- Earth -->
+				            <rotate time="1" axisX="0" axisY="1" axisZ="0" />
+				            <models>
+					                 <model file="planet.3d" R="0.145" G="0.192" B="0.388" />
+				            </models>
+			        </group>
+			        <group> <!-- Moon -->
+					          <rotate angle="5.145" axisX="0" axisY="0" axisZ="1" />
+					          <translate time="1.35">
+						               <point X="20" Y="0" Z="0" />
+						               <point X="14" Y="0" Z="-14" />
+						               <point X="0" Y="0" Z="-20" />
+						               <point X="-14" Y="0" Z="-14" />
+						               <point X="-20" Y="0" Z="0" />
+						               <point X="-14" Y="0" Z="14" />
+						               <point X="0" Y="0" Z="20" />
+						               <point X="14" Y="0" Z="14" />
+					          </translate>
+					          <rotate time="27" axisX="0" axisY="1" axisZ="0" />
+					          <models>
+					          	     <model file="moon.3d" R="0.412" G="0.388" B="0.376" />
+					          </models>
+			        </group>
+       </group>
+       <group> <!-- Mars & Moons -->
+             <rotate angle="1.85" axisX="1" axisY="0" axisZ="0" />
+             <translate time="34.3">
+                    <point X="180" Y="0" Z="0" />
+                    <point X="127.28" Y="0" Z="-127.28" />
+                    <point X="0" Y="0" Z="-180" />
+                    <point X="-127.28" Y="0" Z="-127.28" />
+                    <point X="-180" Y="0" Z="0" />
+                    <point X="-127.28" Y="0" Z="127.28" />
+                    <point X="0" Y="0" Z="180" />
+                    <point X="127.28" Y="0" Z="127.28" />
+             </translate>
+             <group> <!-- Mars -->
+                    <rotate time="1" axisX="0" axisY="1" axisZ="0" />
+                    <scale X="0.53" Y="0.53" Z="0.53" />
+                    <models>
+                           <model file="planet.3d" R="0.788" G="0.243" B="0.020" />
+                    </models>
+             </group>
+		         <group> <!-- Fobos (Mars) -->
+                   <translate time="1.35">
+                          <point X="20" Y="0" Z="0" />
+                          <point X="14" Y="0" Z="-14" />
+                          <point X="0" Y="0" Z="-20" />
+                          <point X="-14" Y="0" Z="-14" />
+                          <point X="-20" Y="0" Z="0" />
+                          <point X="-14" Y="0" Z="14" />
+                          <point X="0" Y="0" Z="20" />
+                          <point X="14" Y="0" Z="14" />
+                   </translate>
+                   <rotate time="0.77" axisX="0" axisY="1" axisZ="0" />
+                   <scale X="0.30" Y="0.30" Z="0.30" />
+			             <models>
+				                  <model file="moon.3d" R="0.662" G="0.662" B="0.662" />
+			             </models>
+		         </group>
+		         <group> <!-- Deimos (Mars) -->
+                   <translate time="0.35">
+                          <point X="22" Y="0" Z="0" />
+                          <point X="15.71" Y="0" Z="-15.71" />
+                          <point X="0" Y="0" Z="-22" />
+                          <point X="-15.71" Y="0" Z="-15.71" />
+                          <point X="-22" Y="0" Z="0" />
+                          <point X="-15.71" Y="0" Z="15.71" />
+                          <point X="0" Y="0" Z="22" />
+                          <point X="15.71" Y="0" Z="15.71" />
+                   </translate>
+                   <rotate time="0.77" axisX="0" axisY="1" axisZ="0" />
+                   <scale X="0.30" Y="0.30" Z="0.30" />
+			             <models>
+				                  <model file="moon.3d" R="0.984" G="0.965" B="0.901" />
+			             </models>
+		         </group>
+	    </group>
+      <group> <!-- Jupiter & Moons -->
+            <rotate angle="1.305" axisX="-1" axisY="0" axisZ="0" />
+            <translate time="100">
+                   <point X="245" Y="0" Z="0" />
+                   <point X="173.10" Y="0" Z="-173.10" />
+                   <point X="0" Y="0" Z="-245" />
+                   <point X="-173.10" Y="0" Z="-173.10" />
+                   <point X="-245" Y="0" Z="0" />
+                   <point X="-173.10" Y="0" Z="173.10" />
+                   <point X="0" Y="0" Z="245" />
+                   <point X="173.10" Y="0" Z="173.10" />
             </translate>
-            <rotate time="0.77" axisX="0" axisY="1" axisZ="0" />
-            <scale X="0.30" Y="0.30" Z="0.30" />
-			<models>
-				<model file="moon.3d" R="0.662" G="0.662" B="0.662" />
-			</models>
-		</group>
-		<group> <!-- Deimos (Mars) -->
-            <translate time="0.35">
-                <point X="22" Y="0" Z="0" />
-                <point X="17" Y="0" Z="-17" />
-                <point X="0" Y="0" Z="-22" />
-                <point X="-17" Y="0" Z="-17" />
-                <point X="-22" Y="0" Z="0" />
-                <point X="-17" Y="0" Z="17" />
-                <point X="0" Y="0" Z="22" />
-                <point X="17" Y="0" Z="17" />
-            </translate>
-            <rotate time="0.77" axisX="0" axisY="1" axisZ="0" />
-            <scale X="0.30" Y="0.30" Z="0.30" />
-			<models>
-				<model file="moon.3d" R="0.984" G="0.965" B="0.901" />
-			</models>
-		</group>
-	</group>
-    <group> <!-- Jupiter -->
-        <rotate angle="1.305" axisX="-1" axisY="0" axisZ="0" />
-          <translate time="100">
-              <point X="245" Y="0" Z="0" />
-              <point X="173.10" Y="0" Z="-173.10" />
-              <point X="0" Y="0" Z="-245" />
-              <point X="-173.10" Y="0" Z="-173.10" />
-              <point X="-245" Y="0" Z="0" />
-              <point X="-173.10" Y="0" Z="173.10" />
-              <point X="0" Y="0" Z="245" />
-              <point X="173.10" Y="0" Z="173.10" />
-          </translate>
-          <group>
-              <!-- Jupiter -->
-              <rotate time="0.375" axisX="0" axisY="1" axisZ="0" />
-              <scale X="2.0" Y="2.0" Z="2.0" />
-              <models>
-                  <model file="planet.3d" R="0.984" G="0.808" B="0.573" />
-              </models>
-          </group>
+            <group> <!-- Jupiter -->
+                  <rotate time="0.375" axisX="0" axisY="1" axisZ="0" />
+                  <scale X="2.0" Y="2.0" Z="2.0" />
+                  <models>
+                         <model file="planet.3d" R="0.984" G="0.808" B="0.573" />
+                  </models>
+            </group>
             <group> <!-- Io (Jupiter) -->
-                <translate time="1.35">
-                    <point X="35" Y="0" Z="0" />
-                    <point X="25" Y="0" Z="-25" />
-                    <point X="0" Y="0" Z="-35" />
-                    <point X="-25" Y="0" Z="-25" />
-                    <point X="-35" Y="0" Z="0" />
-                    <point X="-25" Y="0" Z="25" />
-                    <point X="0" Y="0" Z="35" />
-                    <point X="25" Y="0" Z="25" />
+                  <translate time="1.35">
+                         <point X="35" Y="0" Z="0" />
+                         <point X="25" Y="0" Z="-25" />
+                         <point X="0" Y="0" Z="-35" />
+                         <point X="-25" Y="0" Z="-25" />
+                         <point X="-35" Y="0" Z="0" />
+                         <point X="-25" Y="0" Z="25" />
+                         <point X="0" Y="0" Z="35" />
+                         <point X="25" Y="0" Z="25" />
+                 </translate>
+				         <scale X="0.40" Y="0.40" Z="0.340" />
+				         <models>
+					              <model file="moon.3d" R="0.982" G="0.981" B="0.602" />
+				         </models>
+			      </group>
+			      <group> <!-- Europa (Jupiter) -->
+                  <translate time="1.35">
+                         <point X="38" Y="0" Z="0" />
+                         <point X="27.143" Y="0" Z="-27.143" />
+                         <point X="0" Y="0" Z="-38" />
+                         <point X="-27.143" Y="0" Z="-27.143" />
+                         <point X="-38" Y="0" Z="0" />
+                         <point X="-27.143" Y="0" Z="27.143" />
+                         <point X="0" Y="0" Z="38" />
+                         <point X="27.143" Y="0" Z="27.143" />
+                 </translate>
+				         <scale X="0.40" Y="0.40" Z="0.40" />
+				         <models>
+					              <model file="moon.3d" R="0.984" G="0.965" B="0.403" />
+				         </models>
+			     </group>
+			     <group> <!-- Ganímedes (Jupiter) -->
+                 <translate time="1.35">
+                        <point X="40" Y="0" Z="0" />
+                        <point X="28.57" Y="0" Z="-28.57" />
+                        <point X="0" Y="0" Z="-40" />
+                        <point X="-28.57" Y="0" Z="-28.57" />
+                        <point X="-40" Y="0" Z="0" />
+                        <point X="-28.57" Y="0" Z="28.57" />
+                        <point X="0" Y="0" Z="40" />
+                        <point X="28.57" Y="0" Z="28.57" />
                 </translate>
-				<scale X="0.40" Y="0.40" Z="0.340" />
-				<models>
-					<model file="moon.3d" R="0.982" G="0.981" B="0.602" />
-				</models>
-			</group>
-			<group> <!-- Europa (Jupiter) -->
+				        <scale X="0.40" Y="0.40" Z="0.40" />
+				        <models>
+					             <model file="moon.3d" R="0.662" G="0.662" B="0.662" />
+				        </models>
+			   </group>
+			   <group> <!-- Calisto (Jupiter) -->
                 <translate time="1.35">
-                    <point X="38" Y="0" Z="0" />
-                    <point X="27.143" Y="0" Z="-27.143" />
-                    <point X="0" Y="0" Z="-38" />
-                    <point X="-27.143" Y="0" Z="-27.143" />
-                    <point X="-38" Y="0" Z="0" />
-                    <point X="-27.143" Y="0" Z="27.143" />
-                    <point X="0" Y="0" Z="38" />
-                    <point X="27.143" Y="0" Z="27.143" />
+                       <point X="42" Y="0" Z="0" />
+                       <point X="30" Y="0" Z="-30" />
+                       <point X="0" Y="0" Z="-42" />
+                       <point X="-30" Y="0" Z="-30" />
+                       <point X="-42" Y="0" Z="0" />
+                       <point X="-30" Y="0" Z="30" />
+                       <point X="0" Y="0" Z="42" />
+                       <point X="30" Y="0" Z="30" />
                 </translate>
-				<scale X="0.40" Y="0.40" Z="0.40" />
-				<models>
-					<model file="moon.3d" R="0.984" G="0.965" B="0.403" />
-				</models>
-			</group>
-			<group> <!-- Ganímedes (Jupiter) -->
-                <translate time="1.35">
-                    <point X="40" Y="0" Z="0" />
-                    <point X="28.57" Y="0" Z="-28.57" />
-                    <point X="0" Y="0" Z="-40" />
-                    <point X="-28.57" Y="0" Z="-28.57" />
-                    <point X="-40" Y="0" Z="0" />
-                    <point X="-28.57" Y="0" Z="28.57" />
-                    <point X="0" Y="0" Z="40" />
-                    <point X="28.57" Y="0" Z="28.57" />
-                </translate>
-				<scale X="0.40" Y="0.40" Z="0.40" />
-				<models>
-					<model file="moon.3d" R="0.662" G="0.662" B="0.662" />
-				</models>
-			</group>
-			<group> <!-- Calisto (Jupiter) -->
-                <translate time="1.35">
-                    <point X="42" Y="0" Z="0" />
-                    <point X="30" Y="0" Z="-30" />
-                    <point X="0" Y="0" Z="-42" />
-                    <point X="-30" Y="0" Z="-30" />
-                    <point X="-42" Y="0" Z="0" />
-                    <point X="-30" Y="0" Z="30" />
-                    <point X="0" Y="0" Z="42" />
-                    <point X="30" Y="0" Z="30" />
-                </translate>
-				<scale X="0.40" Y="0.40" Z="0.40" />
-				<models>
-					<model file="moon.3d" R="0.984" G="0.965" B="0.901" />
-				</models>
-			</group>
+				        <scale X="0.40" Y="0.40" Z="0.40" />
+				        <models>
+					             <model file="moon.3d" R="0.984" G="0.965" B="0.901" />
+				        </models>
+			   </group>
 		</group>
-		<group> <!-- Saturn -->
-                <rotate angle="2.485" axisX="0" axisY="0" axisZ="1" />
-				<translate time="250">
-					<point X="320" Y="0" Z="0" />
-					<point X="226.27" Y="0" Z="-226.27" />
-					<point X="0" Y="0" Z="-320" />
-					<point X="-226.27" Y="0" Z="-226.27" />
-					<point X="-320" Y="0" Z="0" />
-					<point X="-226.27" Y="0" Z="226.27" />
-					<point X="0" Y="0" Z="320" />
-					<point X="226.27" Y="0" Z="226.27" />
+		<group> <!-- Saturn & Torus -->
+          <rotate angle="2.485" axisX="0" axisY="0" axisZ="1" />
+				  <translate time="250">
+					       <point X="320" Y="0" Z="0" />
+					       <point X="226.27" Y="0" Z="-226.27" />
+					       <point X="0" Y="0" Z="-320" />
+					       <point X="-226.27" Y="0" Z="-226.27" />
+					       <point X="-320" Y="0" Z="0" />
+					       <point X="-226.27" Y="0" Z="226.27" />
+					       <point X="0" Y="0" Z="320" />
+					       <point X="226.27" Y="0" Z="226.27" />
 				</translate>
 				<rotate axisX="0" axisY="1" axisZ="1" angle="50" />
-				<group>
-					<!-- Saturn -->
-					<rotate time="0.417" axisX="0" axisY="1" axisZ="0" />
-					<scale X="1.2" Y="1.2" Z="1.2" />
-					<models>
-						<model file="planet.3d" R="0.835" G="0.694" B="0.467" />
-					</models>
-                </group>
-			<group>
-				<models>
-					<model file="torus.3d" R="1.000" G="0.890" B="0.800" />
-				</models>
-			</group>
+				<group>	<!-- Saturn -->
+					    <rotate time="0.417" axisX="0" axisY="1" axisZ="0" />
+					    <scale X="1.2" Y="1.2" Z="1.2" />
+					    <models>
+						         <model file="planet.3d" R="0.835" G="0.694" B="0.467" />
+					    </models>
+        </group>
+			  <group>
+				      <models>
+					           <model file="torus.3d" R="1.000" G="0.890" B="0.800" />
+				      </models>
+			  </group>
 		</group>
-		<group> <!-- Uranus -->
-                <rotate angle="99" axisX="0" axisY="0" axisZ="1" />
-				<translate time="750">
-					<point X="380" Y="0" Z="0" />
-					<point X="268.14" Y="0" Z="-268.14" />
-					<point X="0" Y="0" Z="-380" />
-					<point X="-268.14" Y="0" Z="-268.14" />
-					<point X="-380" Y="0" Z="0" />
-					<point X="-268.14" Y="0" Z="268.14" />
-					<point X="0" Y="0" Z="380" />
-					<point X="268.14" Y="0" Z="268.14" />
+		<group> <!-- Uranus & Moons -->
+          <rotate angle="99" axisX="0" axisY="0" axisZ="1" />
+				  <translate time="750">
+					       <point X="380" Y="0" Z="0" />
+					       <point X="268.14" Y="0" Z="-268.14" />
+					       <point X="0" Y="0" Z="-380" />
+					       <point X="-268.14" Y="0" Z="-268.14" />
+					       <point X="-380" Y="0" Z="0" />
+					       <point X="-268.14" Y="0" Z="268.14" />
+					       <point X="0" Y="0" Z="380" />
+					       <point X="268.14" Y="0" Z="268.14" />
 				</translate>
-				<group>
-					<!-- Uranus -->
-					<rotate time="0.718" axisX="0" axisY="-1" axisZ="0" />
-					<scale X="0.8" Y="0.8" Z="0.8" />
-					<models>
-						<model file="planet.3d" R="0.757" G="0.906" B="0.918" />
-					</models>
-                </group>
-             <group> <!-- Miranda (Urano) -->
-                <translate time="1.35">
-                    <point X="38" Y="0" Z="0" />
+				<group> <!-- Uranus -->
+					    <rotate time="0.718" axisX="0" axisY="-1" axisZ="0" />
+					    <scale X="0.8" Y="0.8" Z="0.8" />
+					    <models>
+						          <model file="planet.3d" R="0.757" G="0.906" B="0.918" />
+					     </models>
+        </group>
+        <group> <!-- Miranda (Urano) -->
+              <translate time="1.35">
+                     <point X="42" Y="0" Z="0" />
+                     <point X="30" Y="0" Z="-30" />
+                     <point X="0" Y="0" Z="-42" />
+                     <point X="-30" Y="0" Z="-30" />
+                     <point X="-42" Y="0" Z="0" />
+                     <point X="-30" Y="0" Z="30" />
+                     <point X="0" Y="0" Z="42" />
+                     <point X="30" Y="0" Z="30" />
+              </translate>
+				      <scale X="0.30" Y="0.30" Z="0.30" />
+				      <models>
+					           <model file="moon.3d" R="0.762" G="0.762" B="0.762" />
+				      </models>
+			 </group>
+			 <group> <!-- Ariel (Urano) -->
+             <translate time="1.35">
+                    <point X="42" Y="0" Z="0" />
                     <point X="30" Y="0" Z="-30" />
-                    <point X="0" Y="0" Z="-38" />
+                    <point X="0" Y="0" Z="-42" />
                     <point X="-30" Y="0" Z="-30" />
-                    <point X="-38" Y="0" Z="0" />
+                    <point X="-42" Y="0" Z="0" />
                     <point X="-30" Y="0" Z="30" />
-                    <point X="0" Y="0" Z="38" />
+                    <point X="0" Y="0" Z="42" />
                     <point X="30" Y="0" Z="30" />
-                </translate>
-				<scale X="0.30" Y="0.30" Z="0.30" />
-				<models>
-					<model file="moon.3d" R="0.762" G="0.762" B="0.762" />
-				</models>
-			</group>
-			<group> <!-- Ariel (Urano) -->
-                <translate time="1.35">
-                    <point X="40" Y="0" Z="0" />
-                    <point X="30" Y="0" Z="-30" />
-                    <point X="0" Y="0" Z="-40" />
-                    <point X="-30" Y="0" Z="-30" />
-                    <point X="-40" Y="0" Z="0" />
-                    <point X="-30" Y="0" Z="30" />
-                    <point X="0" Y="0" Z="40" />
-                    <point X="30" Y="0" Z="30" />
-                </translate>
-				<scale X="0.30" Y="0.30" Z="0.30" />
-				<models>
-					<model file="moon.3d" R="0.662" G="0.662" B="0.662" />
-				</models>
+            </translate>
+				    <scale X="0.30" Y="0.30" Z="0.30" />
+				    <models>
+					         <model file="moon.3d" R="0.662" G="0.662" B="0.662" />
+				    </models>
 			</group>
 			<group> <!-- Umbriel (Urano) -->
-                <translate time="1.35">
-                    <point X="42" Y="0" Z="0" />
-                    <point X="30" Y="0" Z="-30" />
-                    <point X="0" Y="0" Z="-42" />
-                    <point X="-30" Y="0" Z="-30" />
-                    <point X="-42" Y="0" Z="0" />
-                    <point X="-30" Y="0" Z="30" />
-                    <point X="0" Y="0" Z="42" />
-                    <point X="30" Y="0" Z="30" />
-                </translate>
-				<scale X="0.50" Y="0.50" Z="0.50" />
-				<models>
-					<model file="moon.3d" R="0.362" G="0.362" B="0.362" />
-				</models>
+            <translate time="1.35">
+                   <point X="42" Y="0" Z="0" />
+                   <point X="30" Y="0" Z="-30" />
+                   <point X="0" Y="0" Z="-42" />
+                   <point X="-30" Y="0" Z="-30" />
+                   <point X="-42" Y="0" Z="0" />
+                   <point X="-30" Y="0" Z="30" />
+                   <point X="0" Y="0" Z="42" />
+                   <point X="30" Y="0" Z="30" />
+            </translate>
+				    <scale X="0.50" Y="0.50" Z="0.50" />
+				    <models>
+					         <model file="moon.3d" R="0.362" G="0.362" B="0.362" />
+				    </models>
 			</group>
 			<group> <!-- Titânia (Urano) -->
-                <translate time="1.35">
-                    <point X="44" Y="0" Z="0" />
-                    <point X="30" Y="0" Z="-30" />
-                    <point X="0" Y="0" Z="-44" />
-                    <point X="-30" Y="0" Z="-30" />
-                    <point X="-44" Y="0" Z="0" />
-                    <point X="-30" Y="0" Z="30" />
-                    <point X="0" Y="0" Z="44" />
-                    <point X="30" Y="0" Z="30" />
-                </translate>
-				<scale X="0.45" Y="0.45" Z="0.45" />
-				<models>
-					<model file="moon.3d" R="0.862" G="0.862" B="0.862" />
-				</models>
+            <translate time="1.35">
+                   <point X="42" Y="0" Z="0" />
+                   <point X="30" Y="0" Z="-30" />
+                   <point X="0" Y="0" Z="-42" />
+                   <point X="-30" Y="0" Z="-30" />
+                   <point X="-42" Y="0" Z="0" />
+                   <point X="-30" Y="0" Z="30" />
+                   <point X="0" Y="0" Z="42" />
+                   <point X="30" Y="0" Z="30" />
+            </translate>
+				    <scale X="0.45" Y="0.45" Z="0.45" />
+				    <models>
+					         <model file="moon.3d" R="0.862" G="0.862" B="0.862" />
+				    </models>
 			</group>
 			<group> <!-- Oberon (Urano) -->
-                <translate time="1.35">
-                    <point X="42" Y="0" Z="0" />
-                    <point X="30" Y="0" Z="-30" />
-                    <point X="0" Y="0" Z="-42" />
-                    <point X="-30" Y="0" Z="-30" />
-                    <point X="-42" Y="0" Z="0" />
-                    <point X="-30" Y="0" Z="30" />
-                    <point X="0" Y="0" Z="42" />
-                    <point X="30" Y="0" Z="30" />
-                </translate>
-				<scale X="0.25" Y="0.25" Z="0.25" />
-				<models>
-					<model file="moon.3d" R="0.984" G="0.965" B="0.901" />
-				</models>
+            <translate time="1.35">
+                   <point X="42" Y="0" Z="0" />
+                   <point X="30" Y="0" Z="-30" />
+                   <point X="0" Y="0" Z="-42" />
+                   <point X="-30" Y="0" Z="-30" />
+                   <point X="-42" Y="0" Z="0" />
+                   <point X="-30" Y="0" Z="30" />
+                   <point X="0" Y="0" Z="42" />
+                   <point X="30" Y="0" Z="30" />
+            </translate>
+				    <scale X="0.25" Y="0.25" Z="0.25" />
+				    <models>
+					         <model file="moon.3d" R="0.984" G="0.965" B="0.901" />
+				    </models>
 			</group>
 		</group>
-		<group> <!-- Neptune -->
-            <rotate angle="1.767" axisX="1" axisY="0" axisZ="0" />
-			<translate time="1500">
-				<point X="420" Y="0" Z="0" />
-				<point X="296.98" Y="0" Z="-296.98" />
-				<point X="0" Y="0" Z="-420" />
-				<point X="-296.98" Y="0" Z="-296.98" />
-				<point X="-420" Y="0" Z="0" />
-				<point X="-296.98" Y="0" Z="296.98" />
-				<point X="0" Y="0" Z="420" />
-				<point X="296.98" Y="0" Z="296.98" />
-			</translate>
-			<group>
-				<!-- Neptune -->
-				<rotate time="0.671" axisX="0" axisY="1" axisZ="0" />
-				<scale X="0.75" Y="0.75" Z="0.75" />
-				<models>
-					<model file="planet.3d" R="0.251" G="0.416" B="0.988" />
-				</models>
-            </group>
-            <group> <!-- Proteu (Neptuno) -->
+		<group> <!-- Neptune & Moons -->
+          <rotate angle="1.767" axisX="1" axisY="0" axisZ="0" />
+			    <translate time="1500">
+				         <point X="420" Y="0" Z="0" />
+				         <point X="296.98" Y="0" Z="-296.98" />
+				         <point X="0" Y="0" Z="-420" />
+				         <point X="-296.98" Y="0" Z="-296.98" />
+				         <point X="-420" Y="0" Z="0" />
+				         <point X="-296.98" Y="0" Z="296.98" />
+				         <point X="0" Y="0" Z="420" />
+				         <point X="296.98" Y="0" Z="296.98" />
+			    </translate>
+			    <group> <!-- Neptune -->
+				        <rotate time="0.671" axisX="0" axisY="1" axisZ="0" />
+				        <scale X="0.75" Y="0.75" Z="0.75" />
+				        <models>
+					             <model file="planet.3d" R="0.251" G="0.416" B="0.988" />
+				        </models>
+          </group>
+          <group> <!-- Proteu (Neptuno) -->
                 <translate time="1.35">
-                    <point X="32" Y="0" Z="0" />
-                    <point X="20" Y="0" Z="-20" />
-                    <point X="0" Y="0" Z="-32" />
-                    <point X="-20" Y="0" Z="-20" />
-                    <point X="-32" Y="0" Z="0" />
-                    <point X="-20" Y="0" Z="20" />
-                    <point X="0" Y="0" Z="32" />
-                    <point X="20" Y="0" Z="20" />
+                       <point X="28" Y="0" Z="0" />
+                       <point X="20" Y="0" Z="-20" />
+                       <point X="0" Y="0" Z="-28" />
+                       <point X="-20" Y="0" Z="-20" />
+                       <point X="-28" Y="0" Z="0" />
+                       <point X="-20" Y="0" Z="20" />
+                       <point X="0" Y="0" Z="28" />
+                       <point X="20" Y="0" Z="20" />
                 </translate>
-				<scale X="0.30" Y="0.30" Z="0.30" />
-				<models>
-					<model file="moon.3d" R="0.250" G="0.250" B="0.250" />
-				</models>
+				        <scale X="0.30" Y="0.30" Z="0.30" />
+				        <models>
+					             <model file="moon.3d" R="0.250" G="0.250" B="0.250" />
+				        </models>
 	        </group>
         </group>
     </group>
