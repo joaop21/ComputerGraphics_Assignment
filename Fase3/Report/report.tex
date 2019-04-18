@@ -44,12 +44,30 @@ Neste relatório é apresentada a terceira fase dum projeto no qual a intenção
 \label{sec:estrutura}
 
 
+\newpage
 
 \section{Parser XML}
 \label{sec:parser}
 
 \subsection{Ficheiro}
 \label{sec:ficheiro}
+
+Devido aos requerimentos desta fase foi necessário alterar o ficheiro XML que provinha da segunda fase. As alterações aconteceram devido, por exemplo, à necessidade de incluir no ficheiro os pontos de controlo que, mais tarde gerado, dariam como resultado a curva de Catmull-Rom.
+
+Importante referir que também nesta fase todos os sub-grupos herdam as transformações geométricas presentes no grupo ao qual pertencem. Nesta fase, estas transformações são: translações, rotações e escalas.
+
+As escalas mantêm o mesmo funcionamento da fase anterior. Por outro lado, as translações e as rotações têm funcionamentos diferentes.
+
+As translações funcionam tendo em conta um conjunto de 8 pontos que define uma curva de Catmull-Rom, e uma compontente \textit{time} que define o tempo que o objeto demora a realizar a curva. No caso das rotações, estas podem estabelecer o ângulo através da componente habitual \textit{angle}, ou através da componente \textit{time}.
+
+Na figura \ref{img:ficheiro_parser} é possível visualizar um excerto do ficheiro XML referente à Terra e à Lua.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.50]{ficheiro_parser.png}
+\caption{Exemplo dum ficheiro usado no Parser.}
+\label{img:ficheiro_parser}
+\end{figure}
 
 \subsection{Funcionamento}
 \label{sec:funcionamento}
