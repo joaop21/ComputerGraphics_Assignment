@@ -36,7 +36,7 @@
 				                  <point X="0" Y="0" Z="100" />
 				                  <point X="70.58" Y="0" Z="70.58" />
 			              </translate>
-			              <rotate time="243" axisX="0" axisY="-1" axisZ="0" />
+			              <rotate time="0.8" axisX="0" axisY="-1" axisZ="0" />
 			              <scale X="0.95" Y="0.95" Z="0.95" />
 			              <models>
 				                  <model file="planet.3d" R="0.816" G="0.533" B="0.208" />
