@@ -98,6 +98,7 @@ void renderCatmullRomCurve() {
 	float pos[3], deriv[3];
 	float tam = 1000; // nº de divisoes que vou querer fazer
 	float deltaT = 1.0/tam; // vai ajudar a estabelecer a "divisao em que estou"
+	glColor3f(0.86f, 0.86f, 0.86f); // grey
 	glBegin(GL_LINE_LOOP);
 
 		// percorro todas as divisoes, e o globalt multiplico pela divisao que estabeleci, desde 0 até 1
