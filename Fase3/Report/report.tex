@@ -97,6 +97,28 @@ Na figura \ref{img:ficheiro_parser} é possível visualizar um excerto do fichei
 \subsection{VBOs}
 \label{sec:vbos}
 
+Nesta fase é requerido que os modelos sejam desenhados com VBOs, ao invês do que acontecia nas fases anteriores.
+
+Para tal, no momento do desenho das figuras é realizado o seguinte processo:
+
+\begin{enumerate}
+  \item Geração de um \textit{Vertex Buffer Objects};
+  \item Especificação do objeto associado ao VBO gerado $\Rightarrow$ \textit{GL\_ARRAY\_BUFFER}
+  \item Alocação de memória para um array de floats \textbf{v} com o espaço necessário para os pontos da figura:
+    \begin{itemize}
+      \item sizeof(float) $\times$ num\_triangles $\times$ 3 (num\_vertices) $\times$ 3 (num\_coordinates)
+    \end{itemize}
+  \item Ciclo de carregamento dos pontos da estrutura de dados para o array de floats:
+    \begin{itemize}
+      \item v[i++] = it->x;
+      \item v[i++] = it->y;
+      \item v[i++] = it->z;
+    \end{itemize}
+  \item Preenchimento do \textit{GL\_ARRAY\_BUFFER} com os pontos do array \textbf{v};
+  \item Transformação num array de vértices;
+  \item Desenho dos triângulos com base no array processado.
+\end{enumerate}
+
 
 
 \section{Scenes}

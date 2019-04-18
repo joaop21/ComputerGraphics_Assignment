@@ -132,7 +132,7 @@ namespace geometry{
 
             void apply_translation(){
 
-                vector_to_matrix(points);
+            vector_to_matrix(points);
         		renderCatmullRomCurve();
 
         		float pos[3], deriv[3];
