@@ -43,6 +43,23 @@ Neste relatório é apresentada a terceira fase dum projeto no qual a intenção
 \section{Estrutura da Pasta do Projeto}
 \label{sec:estrutura}
 
+Para um entendimento mais claro da estrutura do projeto, achamos por bem referenciar a estrutura da pasta do projeto.
+O projeto entregue contêm para além do relatório, 4 pastas como é possível verificar na seguinte figura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.0]{estrutura.png}
+\caption{Estrutura da pasta.}
+\label{img:estrutura}
+\end{figure}
+
+Na pasta \textbf{Engine} residem os ficheiros relativos ao programa \emph{engine}, bem como as bibliotecas (.h) criadas para o efeito. Contém ainda um ficheiro de configuração \emph{cmake} e os ficheiros relativos à biblioteca \emph{tinyxml2}.
+
+Na pasta \textbf{Generator} residem os ficheiros relativos ao programa \emph{generator}. Contém também um ficheiro de configuração \emph{cmake}. Em relação à fase anterior acrescenta a existência de um ficheiro .cpp que irá servir como um parser para o ficheiro \textit{patch} presente na pasta \textbf{Generated\_Models}.
+
+Na pasta \textbf{Generated\_Models} residem os ficheiros que contêm os pontos gerados para cada figura, criados pelo programa \emph{generator}. Relativamente à fase anterior acrescenta a existência de um ficheiro \textit{patch} que irá conter os pontos de controlo.
+
+Na pasta \textbf{Scenes} residem os ficheiros \emph{XML} que contêm as estruturas do sistemas solares desenvolvidos para esta fase do projeto. Construímos dois ficheiros deste tipo, um que contém os raios relativos de cada planeta e do sol baseados na realidade (grande disparidade entre as figuras criadas), e o outro que é mais elucidativo e percetível.
 
 \newpage
 
@@ -72,6 +89,25 @@ Na figura \ref{img:ficheiro_parser} é possível visualizar um excerto do fichei
 \subsection{Funcionamento}
 \label{sec:funcionamento}
 
+Tendo em conta as alterações referidas no ponto anterior modificamos também o funcionamento do \textit{parser}.
+
+\ttfamily
+\begin{enumerate}
+  \item Executa a função "parser\_XML" que abre o ficheiro "scene.xml" e verifica se a leitura foi correta.
+  \item Caso se verifique inicia a função "parseGroup".
+  \item Nesta função alteramos o funcionamento para o caso do elemento \textit{child} seja uma rotação ou uma translação.
+  \item Caso seja uma translação:
+  \begin{enumerate}
+    \item Obtém o valor \textit{time} e atribui-o à figura.
+    \item De seguida itera sobre os 8 pontos definidos para a curva de Catmull-Rom retirando os valores X,Y e Z.
+  \end{enumerate}
+  \item Caso seja uma rotação:
+  \begin{enumerate}
+    \item Obtém os valores X,Y e Z e atribui-os à figura.
+    \item De seguida, dependendo de qual o valor definido (\textit{time} ou \textit{angle}) atribuimo-lo à figura.
+  \end{enumerate}
+  \item Por fim, retorna a árvore criada.
+\end{enumerate}
 
 
 \section{Estruturas de Dados}
