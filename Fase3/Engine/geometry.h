@@ -38,7 +38,6 @@ namespace geometry{
             bool empty;
             float time;
             vector<Point> points;
-
             float p[POINT_COUNT][3];
 
             void vector_to_matrix(vector<Point> points){

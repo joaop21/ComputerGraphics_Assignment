@@ -59,7 +59,7 @@ Na pasta \textbf{Generator} residem os ficheiros relativos ao programa \emph{gen
 
 Na pasta \textbf{Generated\_Models} residem os ficheiros que contêm os pontos gerados para cada figura, criados pelo programa \emph{generator}. Relativamente à fase anterior acrescenta a existência de um ficheiro \textit{patch} que irá conter os pontos de controlo.
 
-Na pasta \textbf{Scenes} residem os ficheiros \emph{XML} que contêm as estruturas do sistemas solares desenvolvidos para esta fase do projeto. Construímos dois ficheiros deste tipo, um que contém os raios relativos de cada planeta e do sol baseados na realidade (grande disparidade entre as figuras criadas), e o outro que é mais elucidativo e percetível.
+Na pasta \textbf{Scenes} reside um ficheiro \emph{XML} que contem a estrutura do sistema solar desenvolvido para esta fase do projeto.
 
 \newpage
 
@@ -104,14 +104,44 @@ Tendo em conta as alterações referidas no ponto anterior modificamos também o
   \item Caso seja uma rotação:
   \begin{enumerate}
     \item Obtém os valores X,Y e Z e atribui-os à figura.
-    \item De seguida, dependendo de qual o valor definido (\textit{time} ou \textit{angle}) atribuimo-lo à figura.
+    \item De seguida, dependendo de qual o valor definido (\textit{time} ou \textit{angle}) atribuímo-lo à figura.
   \end{enumerate}
   \item Por fim, retorna a árvore criada.
 \end{enumerate}
+\rmfamily
 
 
 \section{Estruturas de Dados}
 \label{sec:estruturasdados}
+
+No seguimento da fase anterior, mantivemos a estrutura geral intacta pelo que continuamos a representar o sistema solar lido do ficheiro \textbf{XML} como uma árvore, onde o primeiro nodo representa o Sol e os planetas vão ser os seus \textit{filhos}. Em consequência, as luas vão ser \textit{filhos} dos planetas e \textit{netos} do Sol. Tal estrutura pode ser vista na seguinte figura.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{tree_struct.png}
+\caption{Visão geral da estrutura principal Tree.}
+\label{img:tree_struct}
+\end{figure}
+
+Todas as principais classes necessárias mantiveram-se iguais à fase anterior à exceção de duas, que são respetivamente a \textit{Translation} e a \textit{Rotation}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{translation.png}
+\caption{Estrutura Translation.}
+\label{img:translation}
+\end{figure}
+
+Foi necessário adicionar a variável \textbf{time} que representa o tempo que a translação vai demorar a realizar uma volta ao Sol. Foi também necessário substituir 3 variáveis que eram respetivamente \textbf{x, y, z} e representavam uma translação estática, por um \textbf{vector<Point>} que guarda os pontos de controlo necessários para a realização da curva de Catmull-Rom.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{rotation.png}
+\caption{Estrutura Rotation.}
+\label{img:rotation}
+\end{figure}
+
+Para a classe \textit{Rotation} foi necessário adicionar uma variável \textbf{time} que define o tempo que uma rotação sobre o próprio deve demorar.
 
 
 
@@ -139,6 +169,7 @@ Nesta fase é requerido que os modelos sejam desenhados com VBOs, ao invês do q
 
 Para tal, no momento do desenho das figuras é realizado o seguinte processo:
 
+\ttfamily
 \begin{enumerate}
   \item Geração de um \textit{Vertex Buffer Objects};
   \item Especificação do objeto associado ao VBO gerado $\Rightarrow$ \textit{GL\_ARRAY\_BUFFER}
@@ -156,6 +187,7 @@ Para tal, no momento do desenho das figuras é realizado o seguinte processo:
   \item Transformação num array de vértices;
   \item Desenho dos triângulos com base no array processado.
 \end{enumerate}
+\rmfamily
 
 
 \newpage
@@ -163,7 +195,7 @@ Para tal, no momento do desenho das figuras é realizado o seguinte processo:
 \section{Scenes}
 \label{sec:scenes}
 
-Nesta fase do projeto é requerido um modelo dinâmico do sistema solar, com o sol, os planetas e os satélites naturais do mesmo. Além disso, o sistema solar deve incluir tambem um cometa com uma trajetória definida através duma curva de Catmull-Rom. Este cometa deve ser um teapot criado usando Bezier Patches.
+Nesta fase do projeto é requerido um modelo dinâmico do sistema solar, com o sol, os planetas e os satélites naturais do mesmo. Além disso, o sistema solar deve incluir também um cometa com uma trajetória definida através duma curva de Catmull-Rom. Este cometa deve ser criado tendo por base os pontos de controlo do \textbf{Patch de Bezier} correspondente ao \textit{teapot}. Desta forma o cometa terá, inevitavelmente, a forma dum \textit{teapot}.
 
 De seguida, nas figuras \ref{img:scene_1} e \ref{img:scene_2}, são disponibilizados exemplos estáticos do sistema solar, onde é possível verificar a presença de todos os objetos requisitados.
 
