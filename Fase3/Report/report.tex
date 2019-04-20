@@ -168,14 +168,27 @@ O algoritmo desenvolvido divide-se em 3 partes essenciais. A primeira é o \text
 
 \subsubsection{Parsing do Patch}
 
-Para a fase parsing do patch tivemos em conta o habitual formato destes patchs.
+Para a fase parsing do patch tivemos em conta o habitual formato destes patchs, descrito na seguinte imagem.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.75]{patch_format.png}
+\includegraphics[scale=0.65]{patch_format.png}
 \caption{Exemplo dum formato dum patch.}
 \label{img:bezier_command}
 \end{figure}
+
+O algoritmo utilizado para fazer parsing ao ficheiro foi:
+
+\ttfamily
+\begin{enumerate}
+  \item Abre o ficheiro (patch) passado como parâmetro.
+  \item Lê a primeira linha (number os patches) e cria um array que irá conter cada patch (patches).
+  \item Realiza ciclo de leitura dos patches e armazena-os no array patches.
+  \item Lê linha seguinte aos patches que representa o número de pontos de controlo (number\_control\_points).
+  \item Realiza ciclo de leitura dos pontos, e coloca-los no array control\_points.
+\end{enumerate}
+\rmfamily
+
 
 \subsubsection{Criação da Superfície de Bezier}
 
