@@ -111,6 +111,50 @@ Tendo em conta as alterações referidas no ponto anterior modificamos também o
 \end{enumerate}
 \rmfamily
 
+\subsection{Otimização de Leituras}
+\label{sec:otimização}
+
+Ao longo dos vários testes realizados à cena que representa o sistema solar, reparamos que o tempo desde a invocação do programa \textbf{Engine} até ao aparecimento do sistema solar no ecrã era mais longo do que o comum. Notámos então que aquando do parsing do ficheiro XML, sempre que encontrávamos um nome do ficheiro abríamo-lo e e líamos o seu conteúdo. 
+
+Ora a operação de leitura de ficheiros não é tão eficiente quanto esperada pelo que necessitamos de criar uma estrutura que contivesse o nome do ficheiro, o número de triângulos presentes neste, e ainda o vetor contendo todos os pontos deste.
+
+Desta forma sempre que fosse necessário ler informação dum ficheiro que já tivesse sido lido anteriormente, bastava aceder à estrutura retirar o necessário, poupando assim, operações de leitura em ficheiros desnecessárias.
+
+A estrutura utilizada foi: 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{optimized_struct.png}
+\caption{Estrutura utilizada para armazenar conteúdo de ficheiros.}
+\label{img:optimized_struct}
+\end{figure}
+
+A \textbf{string} usada representa o nome do ficheiro, o \textbf{int} representa o número de triângulos presentes no ficheiro, e o \textbf{vector<Point>} contém os pontos necessários para a figura.
+
+O algoritmo usado, na função \textit{loadFigure} para tratar a nova estrutra foi:
+
+\ttfamily
+\begin{enumerate}
+  \item Verifica se o nome do ficheiro passado como parâmetro existe na estrutura:
+  \begin{enumerate}
+  	\item Se sim:
+	\begin{enumerate}
+		\item Copia o conteúdo lá existente para a nova figura.
+		\item Retorna a figura.
+	\end{enumerate}
+	\item Se não:
+	\begin{enumerate}
+		\item Lê o conteúdo do ficheiro.
+		\item Coloca conteúdo na nova figura.
+		\item Coloca conteúdo na estrutura para poder ser carregado posteriormente por figuras que usem o mesmo ficheiro.
+		\item Retorna a figura.
+	 \end{enumerate}
+  \end{enumerate}
+
+\end{enumerate}
+\rmfamily
+
+
 
 \newpage
 
@@ -153,7 +197,7 @@ Para a classe \textit{Rotation} foi necessário adicionar uma variável \textbf{
 \label{img:figure}
 \end{figure}
 
-Por último à classe \textit{Figure} foi adicionada uma variável \textbf{name} que representa o nome do ficheiro que continha os pontos para que a figura fosse construída. Esta variável foi necessária para distinguir qual das figuras era o cometa (explicado mais à frente), e para uma de otimização no parsing do XML (explicado mais à frente).
+Por último à classe \textit{Figure} foi adicionada uma variável \textbf{name} que representa o nome do ficheiro que continha os pontos para que a figura fosse construída. Esta variável foi necessária para distinguir qual das figuras era o cometa (explicado mais à frente), e para uma de otimização no parsing do XML (explicado anteriormente).
 
 
 \newpage
