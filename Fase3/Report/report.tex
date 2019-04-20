@@ -123,7 +123,7 @@ No seguimento da fase anterior, mantivemos a estrutura geral intacta pelo que co
 \label{img:tree_struct}
 \end{figure}
 
-Todas as principais classes necessárias mantiveram-se iguais à fase anterior à exceção de duas, que são respetivamente a \textit{Translation} e a \textit{Rotation}.
+Todas as principais classes necessárias mantiveram-se iguais à fase anterior à exceção de três, que são respetivamente a \textit{Translation}, a \textit{Rotation} e a \textit{Figure}.
 
 \begin{figure}[H]
 \centering
@@ -142,6 +142,15 @@ Foi necessário adicionar a variável \textbf{time} que representa o tempo que a
 \end{figure}
 
 Para a classe \textit{Rotation} foi necessário adicionar uma variável \textbf{time} que define o tempo que uma rotação sobre o próprio deve demorar.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{figure.png}
+\caption{Estrutura Figure.}
+\label{img:figure}
+\end{figure}
+
+Por último à classe \textit{Figure} foi adicionada uma variável \textbf{name} que representa o nome do ficheiro que continha os pontos para que a figura fosse construída. Esta variável foi necessária para distinguir qual das figuras era o cometa (explicado mais à frente), e para uma de otimização no parsing do XML (explicado mais à frente).
 
 
 
