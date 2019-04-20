@@ -39,6 +39,7 @@ Neste relatório é apresentada a terceira fase dum projeto no qual a intenção
 \label{sec:intro}
 
 
+\newpage
 
 \section{Estrutura da Pasta do Projeto}
 \label{sec:estrutura}
@@ -111,6 +112,8 @@ Tendo em conta as alterações referidas no ponto anterior modificamos também o
 \rmfamily
 
 
+\newpage
+
 \section{Estruturas de Dados}
 \label{sec:estruturasdados}
 
@@ -136,7 +139,7 @@ Foi necessário adicionar a variável \textbf{time} que representa o tempo que a
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.75]{rotation.png}
+\includegraphics[scale=0.65]{rotation.png}
 \caption{Estrutura Rotation.}
 \label{img:rotation}
 \end{figure}
@@ -153,6 +156,7 @@ Para a classe \textit{Rotation} foi necessário adicionar uma variável \textbf{
 Por último à classe \textit{Figure} foi adicionada uma variável \textbf{name} que representa o nome do ficheiro que continha os pontos para que a figura fosse construída. Esta variável foi necessária para distinguir qual das figuras era o cometa (explicado mais à frente), e para uma de otimização no parsing do XML (explicado mais à frente).
 
 
+\newpage
 
 \section{Generator}
 \label{sec:generator}
@@ -181,7 +185,7 @@ Para a fase parsing do patch tivemos em conta o habitual formato destes patchs, 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.65]{patch_format.png}
+\includegraphics[scale=0.60]{patch_format.png}
 \caption{Exemplo dum formato dum patch.}
 \label{img:bezier_command}
 \end{figure}
@@ -216,7 +220,7 @@ O algoritmo utilizado para a criação da superfície foi:
 	\hspace{0.0cm} $$v = \frac{tessellation\_v}{tessellation}$$
 
 	\vspace{0.5cm}
-	
+
 	\begin{enumerate}
 		\item Para todos os níveis de tessellation (tessellation\_u) entre 0 e tessellation, calcula-se:
 		\vspace{0.5cm}
@@ -242,7 +246,7 @@ O algoritmo utilizado para a criação da superfície foi:
          	P3 $\Rightarrow$ (patch\_number, u + $\frac{1}{tessellation}$, v + $\frac{1}{tessellation}$)
 
       		\vspace{0.3cm}
-		
+
 		\underline{Segundo triângulo:}
 
       		\vspace{0.3cm}
@@ -266,6 +270,9 @@ O algoritmo utilizado para a criação da superfície foi:
 \end{enumerate}
 \rmfamily
 
+
+\newpage
+
 \subsubsection{Cálculo dum Ponto}
 
 Para que um ponto da superfície de Bezier seja calculado é necessário que sejam passados como parâmetros, o \textbf{número do patch} em que este se encontra, os pontos calculados anteriormente que se ligam à tessellation, \textbf{u} e \textbf{v}.
@@ -280,15 +287,15 @@ O algoritmo para o cálculo dum ponto foi:
   \hspace{0.0cm} $$B_{i} = t^i (t-1)^{3-i} \binom{3}{i}  , \forall i \in \{0,4\}, t \in \{u,v\}$$
 
   \vspace{0.5cm}
-  
+
   \hspace{-2.8cm}bpu[4] = \{ powf(1-u, 3), 3*u*powf(1-u, 2), 3*powf(u, 2)*(1 - u), powf(u, 3) \};
-  
+
   \vspace{0.5cm}
-  
+
   \hspace{-2.8cm}bpv[4] = \{ powf(1-v, 3), 3*v*powf(1-v, 2), 3*powf(v, 2)*(1 - v), powf(v, 3) \};
-  
+
   \vspace{0.5cm}
-  
+
   \item Para cada índice de bpu:
   \begin{enumerate}
   	\item Para cada índice de bpv:
@@ -304,7 +311,7 @@ O algoritmo para o cálculo dum ponto foi:
 
 
 
-
+\newpage
 
 \section{Engine}
 \label{sec:engine}
@@ -354,14 +361,14 @@ De seguida, nas figuras \ref{img:scene_1} e \ref{img:scene_2}, são disponibiliz
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.32]{scene_1.png}
+\includegraphics[scale=0.26]{scene_1.png}
 \caption{Possível perspetiva da cena.}
 \label{img:scene_1}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{scene_2.png}
+\includegraphics[scale=0.28]{scene_2.png}
 \caption{Possível perspetiva da cena.}
 \label{img:scene_2}
 \end{figure}
