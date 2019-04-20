@@ -52,8 +52,6 @@ namespace geometry{
             	}
             }
 
-            // Build a rotation matrix for the object
-            // Matriz Slide 4 -> vai juntar as componentes (x ou y ou z) dos vetores usados para uma matriz de modo a preparar a rotação
             void buildRotMatrix(float *x, float *y, float *z, float *m) {
 
             	m[0] = -x[0]; m[1] = -x[1]; m[2] = -x[2]; m[3] = 0;
@@ -62,10 +60,6 @@ namespace geometry{
             	m[12] = 0; m[13] = 0; m[14] = 0; m[15] = 1;
             }
 
-            // Produto externo colocado na matriz res
-            // AyBz - AzBy
-            // AzBx - AxBz
-            // AxBy - AyBx
             void cross(float *a, float *b, float *res) {
 
             	res[0] = a[1]*b[2] - a[2]*b[1];
@@ -73,7 +67,6 @@ namespace geometry{
             	res[2] = a[0]*b[1] - a[1]*b[0];
             }
 
-            // Normalizar ... (??)
             void normalize(float *a) {
 
             	float l = sqrt(a[0]*a[0] + a[1] * a[1] + a[2] * a[2]);
@@ -82,7 +75,6 @@ namespace geometry{
             	a[2] = a[2]/l;
             }
 
-            // Tamanho dum vector ... (??)
             float length(float *v) {
 
             	float res = sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
@@ -153,15 +145,14 @@ namespace geometry{
 
             void renderCatmullRomCurve() {
 
-            // desenhar a curva usando segmentos de reta - GL_LINE_LOOP
+
 
             	float pos[3], deriv[3];
-            	float tam = 1000; // nº de divisoes que vou querer fazer
-            	float deltaT = 1.0/tam; // vai ajudar a estabelecer a "divisao em que estou"
+            	float tam = 1000;
+            	float deltaT = 1.0/tam;
             	glColor3f(0.86f, 0.86f, 0.86f); // grey
             	glBegin(GL_LINE_LOOP);
 
-            		// percorro todas as divisoes, e o globalt multiplico pela divisao que estabeleci, desde 0 até 1
             		for(int i=0; i<tam; i++){
             			getGlobalCatmullRomPoint(deltaT*i,pos,deriv);
             			glVertex3f(pos[0],pos[1],pos[2]);
@@ -183,14 +174,12 @@ namespace geometry{
 
             if(name=="cometa.3d"){
 
-              // colocar os vetores da rotação normalizados
               cross(deriv, up, leftCometa);
             	cross(leftCometa, deriv, up);
             	normalize(leftCometa);
             	normalize(up);
             	normalize(deriv);
 
-              // aplicação das rotacoes na matriz para direção orientada à derivada
               buildRotMatrix(deriv, up, leftCometa, m);
             	glMultMatrixf(m);
 
