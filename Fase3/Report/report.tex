@@ -38,6 +38,19 @@ Neste relatório é apresentada a terceira fase dum projeto no qual a intenção
 \section{Introdução}
 \label{sec:intro}
 
+Nesta terceira fase serão implementadas algumas funcionalidades tanto no \textit{Generator} como no \textit{Engine}, sendo estas:
+
+\begin{enumerate}
+\item Ler um ficheiro \textit{patch} que irá conter os pontos de controlo de \textbf{Bezier} e criar o modelo respetivo (cometa).
+\item Aprofundar as \textbf{translações} e as \textbf{rotações} alterando o ficheiro "XML" e o seu \textit{parsing}.
+  \begin{enumerate}
+  \item As \textbf{translações} contendo os pontos de controlo que irão definir uma \textit{Catmull-Rom Cubic Curve} bem como uma variável \textit{time} que representa o tempo (em segundos) que demora a percorrer a curva.
+  \item As \textbf{rotações} poderão ter o seu ângulo substituido por tempo sendo este o tempo que demora a realizar um rotação de 360º.
+  \end{enumerate}
+\item Desenhar os modelos utilizando VBOs aumentado assim a perfomance.
+\end{enumerate}
+
+De seguida iremos apresentar figuras, algoritmos e as suas respetivas explicações de forma a ilustrar a realização das etapas apresentadas acima.
 
 \newpage
 
