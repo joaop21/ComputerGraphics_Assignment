@@ -192,7 +192,108 @@ O algoritmo utilizado para fazer parsing ao ficheiro foi:
 
 \subsubsection{Criação da Superfície de Bezier}
 
-\subsubsection{Cálculo dos Pontos}
+Para criar a superfície de Bezier é preciso ter em conta a função de parsing apresentada anteriormente, e ainda a função de cálculo dum ponto que está presente na subsecção seguinte.
+
+O algoritmo utilizado para a criação da superfície foi:
+
+\ttfamily
+\begin{enumerate}
+  \item Faz parsing do ficheiro (patch).
+  \item Para cada patch existente (patch\_number):
+  \begin{enumerate}
+  	\item Para todos os níveis de tessellation (tessellation\_v) entre 0 e tessellation, calcula-se:
+	\vspace{0.5cm}
+
+	\hspace{0.0cm} $$v = \frac{tessellation\_v}{tessellation}$$
+
+	\vspace{0.5cm}
+	
+	\begin{enumerate}
+		\item Para todos os níveis de tessellation (tessellation\_u) entre 0 e tessellation, calcula-se:
+		\vspace{0.5cm}
+
+		\hspace{0.0cm} $$u = \frac{tessellation\_u}{tessellation}$$
+
+		\vspace{0.5cm}
+		\item Calculam-se os dois triângulos necessários, recorrendo ao algoritmo apresentado na subsecção seguinte (Cálculo dum Ponto):
+		\vspace{0.3cm}
+
+      		\underline{Primeiro triângulo:}
+
+     		\vspace{0.3cm}
+
+          	P1 $\Rightarrow$ (patch\_number, u, v)
+
+      		\vspace{0.2cm}
+
+          	P2 $\Rightarrow$ (patch\_number, u + $\frac{1}{tessellation}$, v)
+
+      		\vspace{0.2cm}
+
+         	P3 $\Rightarrow$ (patch\_number, u + $\frac{1}{tessellation}$, v + $\frac{1}{tessellation}$)
+
+      		\vspace{0.3cm}
+		
+		\underline{Segundo triângulo:}
+
+      		\vspace{0.3cm}
+
+          	P1 $\Rightarrow$ (patch\_number, u + $\frac{1}{tessellation}$, v + $\frac{1}{tessellation}$)
+
+      		\vspace{0.2cm}
+
+          	P2 $\Rightarrow$ (patch\_number, u, v + $\frac{1}{tessellation}$)
+
+      		\vspace{0.2cm}
+
+          	P3 $\Rightarrow$ (patch\_number, u, v)
+
+      		\vspace{0.2cm}
+
+	\end{enumerate}
+  \end{enumerate}
+  \item Escreve resultados em ficheiro.
+  \item Limpa memória.
+\end{enumerate}
+\rmfamily
+
+\subsubsection{Cálculo dum Ponto}
+
+Para que um ponto da superfície de Bezier seja calculado é necessário que sejam passados como parâmetros, o \textbf{número do patch} em que este se encontra, os pontos calculados anteriormente que se ligam à tessellation, \textbf{u} e \textbf{v}.
+
+O algoritmo para o cálculo dum ponto foi:
+
+\ttfamily
+\begin{enumerate}
+  \item Criámos 2 arrays, um para u e outro para v, e em cada índice dos arrays residem \textbf{polinómios de Bernstein} que têm em conta o índice em questão.
+  \vspace{0.5cm}
+
+  \hspace{0.0cm} $$B_{i} = t^i (t-1)^{3-i} \binom{3}{i}  , \forall i \in \{0,4\}, t \in \{u,v\}$$
+
+  \vspace{0.5cm}
+  
+  \hspace{-2.8cm}bpu[4] = \{ powf(1-u, 3), 3*u*powf(1-u, 2), 3*powf(u, 2)*(1 - u), powf(u, 3) \};
+  
+  \vspace{0.5cm}
+  
+  \hspace{-2.8cm}bpv[4] = \{ powf(1-v, 3), 3*v*powf(1-v, 2), 3*powf(v, 2)*(1 - v), powf(v, 3) \};
+  
+  \vspace{0.5cm}
+  
+  \item Para cada índice de bpu:
+  \begin{enumerate}
+  	\item Para cada índice de bpv:
+	\begin{enumerate}
+		\item Calcula o índice do patch a ser usado.
+		\item Calcula o índice do ponto de controlo utilizando o índice calculado anteriormente.
+		\item Para cada coordenada do ponto a ser calculado, adiciona-se a multiplicação do respetivo ponto de controlo com os polinómios de Bernstein correspondentes a u e v.
+	\end{enumerate}
+  \end{enumerate}
+  \item Retorna o ponto a ser usado para a criação da superfície.
+\end{enumerate}
+\rmfamily
+
+
 
 
 
