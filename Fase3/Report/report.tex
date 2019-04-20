@@ -114,13 +114,13 @@ Tendo em conta as alterações referidas no ponto anterior modificamos também o
 \subsection{Otimização de Leituras}
 \label{sec:otimização}
 
-Ao longo dos vários testes realizados à cena que representa o sistema solar, reparamos que o tempo desde a invocação do programa \textbf{Engine} até ao aparecimento do sistema solar no ecrã era mais longo do que o comum. Notámos então que aquando do parsing do ficheiro XML, sempre que encontrávamos um nome do ficheiro abríamo-lo e e líamos o seu conteúdo. 
+Ao longo dos vários testes realizados à cena que representa o sistema solar, reparamos que o tempo desde a invocação do programa \textbf{Engine} até ao aparecimento do sistema solar no ecrã era mais longo do que o comum. Notámos então que aquando do parsing do ficheiro XML, sempre que encontrávamos um nome do ficheiro abríamo-lo e e líamos o seu conteúdo.
 
 Ora a operação de leitura de ficheiros não é tão eficiente quanto esperada pelo que necessitamos de criar uma estrutura que contivesse o nome do ficheiro, o número de triângulos presentes neste, e ainda o vetor contendo todos os pontos deste.
 
 Desta forma sempre que fosse necessário ler informação dum ficheiro que já tivesse sido lido anteriormente, bastava aceder à estrutura retirar o necessário, poupando assim, operações de leitura em ficheiros desnecessárias.
 
-A estrutura utilizada foi: 
+A estrutura utilizada foi:
 
 \begin{figure}[H]
 \centering
@@ -405,14 +405,14 @@ De seguida, nas figuras \ref{img:scene_1} e \ref{img:scene_2}, são disponibiliz
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.26]{scene_1.png}
+\includegraphics[scale=0.3]{scene_1.png}
 \caption{Possível perspetiva da cena.}
 \label{img:scene_1}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.28]{scene_2.png}
+\includegraphics[scale=0.36]{scene_2.png}
 \caption{Possível perspetiva da cena.}
 \label{img:scene_2}
 \end{figure}
