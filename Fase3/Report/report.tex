@@ -148,8 +148,38 @@ Para a classe \textit{Rotation} foi necessário adicionar uma variável \textbf{
 \section{Generator}
 \label{sec:generator}
 
-\subsection{Bezier Patches}
+Para esta fase foi necessária uma evolução no \textbf{Generator}. Este tinha que ser capaz de criar um novo modelo baseado em \textbf{Patches de Bezier}.
+
+Para proceder à realização dum modelo tendo em conta um patch de Bezier é preciso passar como parâmetro o ficheiro que contêm os pontos de controlo  \textbf{(patch)}, o nível de \textbf{tessellation} e por último o \textbf{nome do ficheiro} onde será guardado o resultado.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{bezier_command.png}
+\caption{Exemplo de invocação.}
+\label{img:bezier_command}
+\end{figure}
+
+O resultado que será guardado em ficheiro serão todos os pontos necessários para a criação dos triângulos que posteriormente modelam a superfície cúbica.
+
+\subsection{Algoritmo de geração do modelo}
 \label{sec:bezier}
+
+O algoritmo desenvolvido divide-se em 3 partes essenciais. A primeira é o \textbf{parsing do patch}, a segunda é a \textbf{criação da superfície de Bezier} que necessita da terceira parte que é o \textbf{cálculo dos pontos} da superfície.
+
+\subsubsection{Parsing do Patch}
+
+Para a fase parsing do patch tivemos em conta o habitual formato destes patchs.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.75]{patch_format.png}
+\caption{Exemplo dum formato dum patch.}
+\label{img:bezier_command}
+\end{figure}
+
+\subsubsection{Criação da Superfície de Bezier}
+
+\subsubsection{Cálculo dos Pontos}
 
 
 

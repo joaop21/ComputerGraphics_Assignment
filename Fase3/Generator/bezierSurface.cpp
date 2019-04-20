@@ -11,6 +11,7 @@
 using namespace figures;
 
 int MAX_PATCH_INDEXES = 16;
+int number_patches = 0;
 unsigned int *patches;
 float *control_points;
 
@@ -22,7 +23,7 @@ void parsePatchFile(std::string patch_file){
 	std::string firstLine, line;
 	getline(file, firstLine); // get the first line
 
-	int number_patches = atoi(firstLine.c_str());
+	number_patches = atoi(firstLine.c_str());
 	patches = (unsigned int*) malloc(sizeof(unsigned int) * number_patches * MAX_PATCH_INDEXES);
 
 	/* Save Patches */
@@ -73,10 +74,10 @@ Point bezierPoint(int patch_number, float u, float v) {
 
 int figures::generateBezierSurface(std::string patch_file, int tessellation, std::string file_name){
 
-  parsePatchFile(patch_file);
+    parsePatchFile(patch_file);
 	std::vector<Point> points;
 
-	for (int patch_number = 0; patch_number < 32; patch_number++) {
+	for (int patch_number = 0; patch_number < number_patches; patch_number++) {
 
 		for (int tessellation_v = 0; tessellation_v < tessellation; tessellation_v++) {
 
@@ -101,7 +102,7 @@ int figures::generateBezierSurface(std::string patch_file, int tessellation, std
     int res = write_in_file(points, file_name);
 
     // free memory allocated in readPatch
-	  free(patches);
+	free(patches);
     free(control_points);
 
     return res;
