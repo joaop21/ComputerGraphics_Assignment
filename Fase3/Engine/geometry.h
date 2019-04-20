@@ -56,7 +56,7 @@ namespace geometry{
             // Matriz Slide 4 -> vai juntar as componentes (x ou y ou z) dos vetores usados para uma matriz de modo a preparar a rotação
             void buildRotMatrix(float *x, float *y, float *z, float *m) {
 
-            	m[0] = x[0]; m[1] = x[1]; m[2] = x[2]; m[3] = 0;
+            	m[0] = -x[0]; m[1] = -x[1]; m[2] = -x[2]; m[3] = 0;
             	m[4] = y[0]; m[5] = y[1]; m[6] = y[2]; m[7] = 0;
             	m[8] = z[0]; m[9] = z[1]; m[10] = z[2]; m[11] = 0;
             	m[12] = 0; m[13] = 0; m[14] = 0; m[15] = 1;
