@@ -39,6 +39,8 @@ namespace geometry{
             float time;
             vector<Point> points;
             float p[POINT_COUNT][3];
+            float up[3] = { 0.0,1.0,0.0 };
+            float leftCometa[3];
 
             void vector_to_matrix(vector<Point> points){
             	vector<Point>::iterator it;
@@ -48,6 +50,44 @@ namespace geometry{
             		p[i][1] = it->y;
             		p[i][2] = it->z;
             	}
+            }
+
+            // Build a rotation matrix for the object
+            // Matriz Slide 4 -> vai juntar as componentes (x ou y ou z) dos vetores usados para uma matriz de modo a preparar a rotação
+            void buildRotMatrix(float *x, float *y, float *z, float *m) {
+
+            	m[0] = x[0]; m[1] = x[1]; m[2] = x[2]; m[3] = 0;
+            	m[4] = y[0]; m[5] = y[1]; m[6] = y[2]; m[7] = 0;
+            	m[8] = z[0]; m[9] = z[1]; m[10] = z[2]; m[11] = 0;
+            	m[12] = 0; m[13] = 0; m[14] = 0; m[15] = 1;
+            }
+
+            // Produto externo colocado na matriz res
+            // AyBz - AzBy
+            // AzBx - AxBz
+            // AxBy - AyBx
+            void cross(float *a, float *b, float *res) {
+
+            	res[0] = a[1]*b[2] - a[2]*b[1];
+            	res[1] = a[2]*b[0] - a[0]*b[2];
+            	res[2] = a[0]*b[1] - a[1]*b[0];
+            }
+
+            // Normalizar ... (??)
+            void normalize(float *a) {
+
+            	float l = sqrt(a[0]*a[0] + a[1] * a[1] + a[2] * a[2]);
+            	a[0] = a[0]/l;
+            	a[1] = a[1]/l;
+            	a[2] = a[2]/l;
+            }
+
+            // Tamanho dum vector ... (??)
+            float length(float *v) {
+
+            	float res = sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
+            	return res;
+
             }
 
             void multMatrixVector(float *m, float *v, float *res) {
@@ -61,7 +101,7 @@ namespace geometry{
 
             }
 
-            void getCatmullRomPoint(float t, float *p0, float *p1, float *p2, float *p3, float *pos) {
+            void getCatmullRomPoint(float t, float *p0, float *p1, float *p2, float *p3, float *pos, float *deriv) {
 
             	float m[4][4] = {	{-0.5f,  1.5f, -1.5f,  0.5f},
             						{ 1.0f, -2.5f,  2.0f, -0.5f},
@@ -85,9 +125,18 @@ namespace geometry{
             		pos[1] += tpos[i] * ay[i];
             		pos[2] += tpos[i] * az[i];
             	}
+
+              float tderiv[4] = { 3*t*t, 2*t, 1, 0};
+            	deriv[0] = 0; deriv[1] = 0; deriv[2] = 0;
+            	for(int i=0; i<4; i++){
+            		deriv[0] += tderiv[i] * ax[i];
+            		deriv[1] += tderiv[i] * ay[i];
+            		deriv[2] += tderiv[i] * az[i];
+            	}
+
             }
 
-            void getGlobalCatmullRomPoint(float gt, float *pos) {
+            void getGlobalCatmullRomPoint(float gt, float *pos, float *deriv) {
 
             	float t = gt * POINT_COUNT; // this is the real global t
             	int index = floor(t);  // which segment
@@ -99,14 +148,14 @@ namespace geometry{
             	indices[2] = (indices[1]+1)%POINT_COUNT;
             	indices[3] = (indices[2]+1)%POINT_COUNT;
 
-            	getCatmullRomPoint(t, p[indices[0]], p[indices[1]], p[indices[2]], p[indices[3]], pos);
+            	getCatmullRomPoint(t, p[indices[0]], p[indices[1]], p[indices[2]], p[indices[3]], pos, deriv);
             }
 
             void renderCatmullRomCurve() {
 
             // desenhar a curva usando segmentos de reta - GL_LINE_LOOP
 
-            	float pos[3];
+            	float pos[3], deriv[3];
             	float tam = 1000; // nº de divisoes que vou querer fazer
             	float deltaT = 1.0/tam; // vai ajudar a estabelecer a "divisao em que estou"
             	glColor3f(0.86f, 0.86f, 0.86f); // grey
@@ -114,23 +163,39 @@ namespace geometry{
 
             		// percorro todas as divisoes, e o globalt multiplico pela divisao que estabeleci, desde 0 até 1
             		for(int i=0; i<tam; i++){
-            			getGlobalCatmullRomPoint(deltaT*i,pos);
+            			getGlobalCatmullRomPoint(deltaT*i,pos,deriv);
             			glVertex3f(pos[0],pos[1],pos[2]);
             		}
 
             	glEnd();
             }
 
-            void apply_translation(){
+            void apply_translation(string name){
 
             vector_to_matrix(points);
         		renderCatmullRomCurve();
 
-        		float pos[3], deriv[3];
+        		float pos[3], deriv[3], m[16];
         		float time_p = glutGet(GLUT_ELAPSED_TIME)/(time*1000);
 
-        		getGlobalCatmullRomPoint(time_p,pos);
+        		getGlobalCatmullRomPoint(time_p,pos,deriv);
         		glTranslatef(pos[0],pos[1],pos[2]);
+
+            if(name=="cometa.3d"){
+
+              // colocar os vetores da rotação normalizados
+              cross(deriv, up, leftCometa);
+            	cross(leftCometa, deriv, up);
+            	normalize(leftCometa);
+            	normalize(up);
+            	normalize(deriv);
+
+              // aplicação das rotacoes na matriz para direção orientada à derivada
+              buildRotMatrix(deriv, up, leftCometa, m);
+            	glMultMatrixf(m);
+
+            }
+
             }
     };
 

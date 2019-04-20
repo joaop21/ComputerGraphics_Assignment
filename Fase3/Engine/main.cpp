@@ -53,7 +53,7 @@ void draw_tree(Tree t) {
 	glPushMatrix();
 
 	if (!t.head_figure.translation.empty){
-		t.head_figure.translation.apply_translation();
+		t.head_figure.translation.apply_translation(t.head_figure.name);
 	}
 	if (!t.head_figure.rotation.empty){
 		t.head_figure.rotation.apply_rotation();
