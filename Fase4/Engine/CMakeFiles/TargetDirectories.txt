@@ -1,3 +1,0 @@
-/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Engine/CMakeFiles/rebuild_cache.dir
-/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Engine/CMakeFiles/edit_cache.dir
-/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Engine/CMakeFiles/Engine.dir
