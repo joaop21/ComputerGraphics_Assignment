@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Generator/bezierSurface.cpp
+figures.h
+/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Generator/figures.h
+stdlib.h
+-
+string
+-
+vector
+-
+fstream
+-
+sstream
+-
+math.h
+-
+
+/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Generator/figures.h
+string
+-
+
+/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Generator/writeFile.cpp
+figures.h
+/Users/joao/Desktop/Desktop_iCloud/Universidade/3ºano/2ºsemestre/CG/TP/ComputerGraphics_Assignment/Fase3/Generator/figures.h
+vector
+-
+fstream
+-
+math.h
+-
+
