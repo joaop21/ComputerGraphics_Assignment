@@ -14,16 +14,17 @@ constexpr unsigned int str2int(const char* str, int h = 0)
     return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
 }
 
-vector<pair<string,pair<int,vector<Point>>>> figure_points;
+vector<pair<string,pair<int,pair<vector<Point>,vector<Point>>>>> figure_points;
 
-Figure loadFigure(Figure fig,string current_file){
+Figure loadFigure(Figure fig, string current_file){
 
     Figure nf = fig;
 
-    vector<pair<string,pair<int,vector<Point>>>>::iterator it;
+    vector<pair<string,pair<int,pair<vector<Point>,vector<Point>>>>>::iterator it;
     for(it = figure_points.begin(); it != figure_points.end() ; it++)
         if(it->first == current_file){
-            nf.points = it->second.second;
+            nf.points = it->second.second.first;
+            nf.normals = it->second.second.second;
             nf.num_triangles = it->second.first;
             nf.name = current_file;
             return nf;
@@ -36,12 +37,16 @@ Figure loadFigure(Figure fig,string current_file){
 	file >> nf.num_triangles;
     nf.name = current_file;
 	while (!file.eof()) {
-		Point new_point;
-		file >> new_point.x >> new_point.y >> new_point.z;
-		nf.points.push_back(new_point);
+		Point new_vertex;
+		file >> new_vertex.x >> new_vertex.y >> new_vertex.z;
+		nf.points.push_back(new_vertex);
+
+        Point new_vertex_normal;
+        file >> new_vertex_normal.x >> new_vertex_normal.y >> new_vertex_normal.z;
+        nf.normals.push_back(new_vertex_normal);
 	}
 
-    figure_points.push_back(make_pair(current_file,make_pair(nf.num_triangles,nf.points)));
+    figure_points.push_back(make_pair(current_file,make_pair(nf.num_triangles,make_pair(nf.points,nf.normals))));
 
     return nf;
 }

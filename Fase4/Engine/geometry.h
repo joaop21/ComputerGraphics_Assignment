@@ -229,6 +229,7 @@ namespace geometry{
             string name;
             int num_triangles;
             vector<Point> points;
+            vector<Point> normals;
             Translation translation;
             Rotation rotation;
             Scale scale;

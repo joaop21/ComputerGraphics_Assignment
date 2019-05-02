@@ -28,3 +28,29 @@ int figures::write_in_file(std::vector<Point> points, std::string file_name){
 		return 1;
     } else return 0;
 }
+
+int figures::write_in_file(std::vector<Point> points, std::vector<Point> normals, std::string file_name){
+	// necessário operações sobre ficheiros
+	ofstream file ("../Generated_Models/" + file_name);
+  	if (file.is_open()){
+
+		// no inicio escrevem-se o numero de triangulos existente no ficheiro
+		int num_points = points.size();
+	    file << to_string(num_points / 3) + "\n";
+
+		// escrita dos pontos no ficheiro
+		for(int i = 0 ; i < num_points ; i++){
+			Point vertex = points[i];
+			Point vertex_normal = normals[i];
+			file << to_string(vertex.getX()) + " " +
+					to_string(vertex.getY()) + " " +
+					to_string(vertex.getZ()) + "\n";
+
+			file << to_string(vertex_normal.getX()) + " " +
+					to_string(vertex_normal.getY()) + " " +
+					to_string(vertex_normal.getZ()) + "\n";
+		}
+	    file.close();
+		return 1;
+    } else return 0;
+}

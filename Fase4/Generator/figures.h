@@ -139,4 +139,18 @@ namespace figures{
     */
     int write_in_file(std::vector<Point> points, std::string file_name);
 
+    /**
+    *  @brief Função guarda em ficheiro todos os pontos passados como parâmetro.
+    *
+    *  @param points - Parâmetro que é um vector que contém todos os pontos a serem
+    * gravados em ficheiro.
+    *  @param normals - Parâmetro que é um vector que contém todos as normais a serem
+    * gravados em ficheiro.
+    *  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
+    * pontos e triangulos gerados.
+    *
+    *  @returns Integer que dita se a geração foi um sucesso ou não
+    */
+    int write_in_file(std::vector<Point> points, std::vector<Point> normals, std::string file_name);
+
 }

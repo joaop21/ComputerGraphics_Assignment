@@ -20,32 +20,43 @@ Tree tree_struct;
 
 void draw_figure(Figure fig) {
 
-	GLuint t;
-	glGenBuffers(1, &t); // Generate Vertex Buffer Objects
-	glBindBuffer(GL_ARRAY_BUFFER, t); // Bind a named buffer object
+	GLuint buffers[2];
+	glGenBuffers(2, buffers); // Generate Vertex Buffer Objects
 
-	float *v;
-	v = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3); // num_triangles x num_vertices x num_coordinates
+	float *vertex;
+	float *normal;
+	vertex = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3); // num_triangles x num_vertices x num_coordinates
+	normal = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3); // num_triangles x num_vertices x num_coordinates
 	vector<Point>::iterator it;
 	int i = 0;
 	for(it = fig.points.begin() ; it != fig.points.end() ; it++){
-		v[i++] = it->x;
-		v[i++] = it->y;
-		v[i++] = it->z;
+		vertex[i++] = it->x;
+		vertex[i++] = it->y;
+		vertex[i++] = it->z;
+	}
+
+	i = 0;
+	for(it = fig.normals.begin() ; it != fig.normals.end() ; it++){
+		normal[i++] = it->x;
+		normal[i++] = it->y;
+		normal[i++] = it->z;
 	}
 
 	Color color = fig.color;
 	glColor3f(color.r, color.g, color.b);
 
+	glBindBuffer(GL_ARRAY_BUFFER,buffers[0]);
+	glBufferData(GL_ARRAY_BUFFER,sizeof(float) * fig.num_triangles * 3 * 3, vertex, GL_STATIC_DRAW);
+	glVertexPointer(3,GL_FLOAT,0,0);
 
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * fig.num_triangles * 3 * 3, v, GL_STATIC_DRAW); // Fill buffer
-					 // (GL_ARRAY_BUFFER, arraySize (in bytes), v, GL_STATIC_DRAW);
-	glVertexPointer(3, GL_FLOAT, 0, 0); // Define an array of vertex data
-							// (GLint size, GLenum type, GLsizei stride, const GLvoid * pointer);
-	glDrawArrays(GL_TRIANGLES, 0, fig.num_triangles * 3); // Render primitives from array data
-					 // (GL_TRIANGLES, first, count);
+	glBindBuffer(GL_ARRAY_BUFFER,buffers[1]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * fig.num_triangles * 3 * 3, normal,GL_STATIC_DRAW);
+	glNormalPointer(GL_FLOAT,0,0);
 
-	free(v);
+	glDrawArrays(GL_TRIANGLES, 0, fig.num_triangles * 3 * 3);
+
+	free(vertex);
+	free(normal);
 }
 
 void draw_tree(Tree t) {
@@ -131,6 +142,7 @@ void spherical2Cartesian() {
 void renderScene(void) {
 
 	// clear buffers
+	glClearColor(0.0f,0.0f,0.0f,0.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// set the camera
@@ -138,6 +150,24 @@ void renderScene(void) {
 	gluLookAt(camx+dx, camy+dy, camz+dz,
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
+
+	GLfloat dir0[4] = {41.0f, 0.0f, 0.0f, 1.0f};
+	glLightfv(GL_LIGHT0, GL_POSITION, dir0);
+	/*
+	GLfloat dir1[4] = {0.0, 41.0f ,0.0f, 1.0};
+	glLightfv(GL_LIGHT1, GL_POSITION, dir1);
+
+	GLfloat dir2[4] = {0.0, 0.0 ,41.0f, 1.0};
+	glLightfv(GL_LIGHT2, GL_POSITION, dir2);
+
+	GLfloat dir3[4] = {-41.0, 0.0 ,0.0, 1.0};
+	glLightfv(GL_LIGHT3, GL_POSITION, dir3);
+
+	GLfloat dir4[4] = {0.0, -41.0 ,0.0, 1.0};
+	glLightfv(GL_LIGHT4, GL_POSITION, dir4);
+
+	GLfloat dir5[4] = {0.0, 0.0 , -41.0, 1.0};
+	glLightfv(GL_LIGHT5, GL_POSITION, dir5);*/
 
 	draw_axis();
 
@@ -210,6 +240,49 @@ void processSpecialKeys(int key_code, int xx, int yy) {
 	glutPostRedisplay();
 }
 
+void initGL() {
+
+// OpenGL settings
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
+	glEnable(GL_LIGHT2);
+	glEnable(GL_LIGHT3);
+	glEnable(GL_LIGHT4);
+	glEnable(GL_LIGHT5);
+
+// init
+	spherical2Cartesian();
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_NORMAL_ARRAY);
+
+	GLfloat amb[4] = {0.0f, 0.0f, 0.0f, 1.0f};
+	GLfloat diff[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+
+	// light colors
+	glLightfv(GL_LIGHT0, GL_AMBIENT, amb);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, diff);
+	/*
+	glLightfv(GL_LIGHT1, GL_AMBIENT, amb);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, diff);
+
+	glLightfv(GL_LIGHT2, GL_AMBIENT, amb);
+	glLightfv(GL_LIGHT2, GL_DIFFUSE, diff);
+
+	glLightfv(GL_LIGHT3, GL_AMBIENT, amb);
+	glLightfv(GL_LIGHT3, GL_DIFFUSE, diff);
+
+	glLightfv(GL_LIGHT4, GL_AMBIENT, amb);
+	glLightfv(GL_LIGHT4, GL_DIFFUSE, diff);
+
+	glLightfv(GL_LIGHT5, GL_AMBIENT, amb);
+	glLightfv(GL_LIGHT5, GL_DIFFUSE, diff);*/
+
+	//prepareCilinder(2,1,16);
+}
+
 int main(int argc, char **argv) {
 
 // init GLUT and the window
@@ -240,7 +313,9 @@ int main(int argc, char **argv) {
 		glewInit();
 	#endif
 
-	spherical2Cartesian();
+	//spherical2Cartesian();
+
+	initGL();
 
 // enter GLUT's main cycle
 	glutMainLoop();

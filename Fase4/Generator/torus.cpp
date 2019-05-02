@@ -16,6 +16,7 @@ int figures::generateTorus(float innerRadius, float outerRadius, int nsides, int
     float cosNextPhi, cosNextTheta, sinNextPhi, sinNextTheta;
 
     vector<Point> points;
+    vector<Point> normals;
 
     deltaPhi = 2.0f * M_PI / nrings;
     deltaTheta = 2.0f * M_PI / nsides;
@@ -40,16 +41,28 @@ int figures::generateTorus(float innerRadius, float outerRadius, int nsides, int
             dXZ = outerRadius + innerRadius * cosTheta;
             nextDXZ = outerRadius + innerRadius * cosNextTheta;
 
+            // first triangle
 			points.push_back(Point(nextDXZ * cosPhi, innerRadius * sinNextTheta, nextDXZ * sinPhi));
-            points.push_back(Point(dXZ * cosNextPhi, innerRadius * sinTheta, dXZ * sinNextPhi));
-            points.push_back(Point(dXZ * cosPhi, innerRadius * sinTheta, dXZ * sinPhi));
+            normals.push_back(Point(cosPhi, sinNextTheta, sinPhi));
 
+            points.push_back(Point(dXZ * cosNextPhi, innerRadius * sinTheta, dXZ * sinNextPhi));
+            normals.push_back(Point(cosNextPhi, sinTheta, sinNextPhi));
+
+            points.push_back(Point(dXZ * cosPhi, innerRadius * sinTheta, dXZ * sinPhi));
+            normals.push_back(Point(cosPhi, sinTheta, sinPhi));
+
+            // second triangle
             points.push_back(Point(nextDXZ * cosNextPhi, innerRadius * sinNextTheta, nextDXZ * sinNextPhi));
+            normals.push_back(Point(cosNextPhi, sinNextTheta, sinNextPhi));
+
 			points.push_back(Point(dXZ * cosNextPhi, innerRadius * sinTheta, dXZ * sinNextPhi));
+            normals.push_back(Point(cosNextPhi, sinTheta, sinNextPhi));
+
 			points.push_back(Point(nextDXZ * cosPhi, innerRadius * sinNextTheta, nextDXZ * sinPhi));
+            normals.push_back(Point(cosPhi, sinNextTheta, sinPhi));
         }
     }
 
-    int res = write_in_file(points, file_name);
+    int res = write_in_file(points, normals, file_name);
     return res;
 }
