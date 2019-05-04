@@ -118,7 +118,7 @@ namespace geometry{
             		pos[2] += tpos[i] * az[i];
             	}
 
-              float tderiv[4] = { 3*t*t, 2*t, 1, 0};
+                float tderiv[4] = { 3*t*t, 2*t, 1, 0};
             	deriv[0] = 0; deriv[1] = 0; deriv[2] = 0;
             	for(int i=0; i<4; i++){
             		deriv[0] += tderiv[i] * ax[i];
@@ -161,7 +161,7 @@ namespace geometry{
 
             void apply_translation(string name){
 
-            vector_to_matrix(points);
+                vector_to_matrix(points);
         		renderCatmullRomCurve();
 
         		float pos[3], deriv[3], m[16];
@@ -172,13 +172,13 @@ namespace geometry{
 
             if(name=="cometa.3d"){
 
-              cross(deriv, up, leftCometa);
+                cross(deriv, up, leftCometa);
             	cross(leftCometa, deriv, up);
             	normalize(leftCometa);
             	normalize(up);
             	normalize(deriv);
 
-              buildRotMatrix(deriv, up, leftCometa, m);
+                buildRotMatrix(deriv, up, leftCometa, m);
             	glMultMatrixf(m);
 
             }

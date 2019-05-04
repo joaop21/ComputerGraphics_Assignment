@@ -17,6 +17,9 @@ using namespace std;
 using namespace geometry;
 
 Tree tree_struct;
+float alfa = 0.5f, beta = 0.5f, radius = 500.0f;
+float camx, camy, camz, dx = 0.0, dy = 0.0, dz = 0.0;
+int timebase = 0, frame = 0;
 
 void draw_figure(Figure fig) {
 
@@ -42,8 +45,8 @@ void draw_figure(Figure fig) {
 		normal[i++] = it->z;
 	}
 
-	Color color = fig.color;
-	glColor3f(color.r, color.g, color.b);
+	float color[4] = { fig.color.r, fig.color.g, fig.color.b, 1.0f };
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, color);
 
 	glBindBuffer(GL_ARRAY_BUFFER,buffers[0]);
 	glBufferData(GL_ARRAY_BUFFER,sizeof(float) * fig.num_triangles * 3 * 3, vertex, GL_STATIC_DRAW);
@@ -129,10 +132,6 @@ void changeSize(int w, int h) {
 	glMatrixMode(GL_MODELVIEW);
 }
 
-
-float alfa = 0.5f, beta = 0.5f, radius = 500.0f;
-float camx, camy, camz, dx = 0.0, dy = 0.0, dz = 0.0;
-
 void spherical2Cartesian() {
 	camx = radius * cos(beta) * sin(alfa);
 	camy = radius * sin(beta);
@@ -140,6 +139,10 @@ void spherical2Cartesian() {
 }
 
 void renderScene(void) {
+
+	float fps;
+	int time;
+	char s[64];
 
 	// clear buffers
 	glClearColor(0.0f,0.0f,0.0f,0.0f);
@@ -151,27 +154,37 @@ void renderScene(void) {
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
-	GLfloat dir0[4] = {41.0f, 0.0f, 0.0f, 1.0f};
+	GLfloat dir0[4] = {41.0f, 0.0f, 0.0f, 0.5f};
 	glLightfv(GL_LIGHT0, GL_POSITION, dir0);
-	/*
-	GLfloat dir1[4] = {0.0, 41.0f ,0.0f, 1.0};
+
+	GLfloat dir1[4] = {-41.0f, 0.0f, 0.0f, 0.5f};
 	glLightfv(GL_LIGHT1, GL_POSITION, dir1);
 
-	GLfloat dir2[4] = {0.0, 0.0 ,41.0f, 1.0};
+	GLfloat dir2[4] = {0.0f, 41.0f, 0.0f, 0.5f};
 	glLightfv(GL_LIGHT2, GL_POSITION, dir2);
 
-	GLfloat dir3[4] = {-41.0, 0.0 ,0.0, 1.0};
+	GLfloat dir3[4] = {0.0f, -41.0f, 0.0f, 0.5f};
 	glLightfv(GL_LIGHT3, GL_POSITION, dir3);
 
-	GLfloat dir4[4] = {0.0, -41.0 ,0.0, 1.0};
+	GLfloat dir4[4] = {0.0f, 0.0f, 41.0f, 0.5f};
 	glLightfv(GL_LIGHT4, GL_POSITION, dir4);
 
-	GLfloat dir5[4] = {0.0, 0.0 , -41.0, 1.0};
-	glLightfv(GL_LIGHT5, GL_POSITION, dir5);*/
+	GLfloat dir5[4] = {0.0f, 0.0f, -41.0f, 0.5f};
+	glLightfv(GL_LIGHT5, GL_POSITION, dir5);
 
 	draw_axis();
 
 	draw_tree(tree_struct);
+
+	frame++;
+	time=glutGet(GLUT_ELAPSED_TIME);
+	if (time - timebase > 1000) {
+		fps = frame*1000.0/(time-timebase);
+		timebase = time;
+		frame = 0;
+		sprintf(s, "FPS: %f6.2", fps);
+		glutSetWindowTitle(s);
+	}
 
 	// End of frame
 	glutSwapBuffers();
@@ -259,12 +272,12 @@ void initGL() {
 	glEnableClientState(GL_NORMAL_ARRAY);
 
 	GLfloat amb[4] = {0.0f, 0.0f, 0.0f, 1.0f};
-	GLfloat diff[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+	GLfloat diff[4] = {0.5f, 0.5f, 0.5f, 1.0f};
 
 	// light colors
 	glLightfv(GL_LIGHT0, GL_AMBIENT, amb);
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diff);
-	/*
+
 	glLightfv(GL_LIGHT1, GL_AMBIENT, amb);
 	glLightfv(GL_LIGHT1, GL_DIFFUSE, diff);
 
@@ -278,9 +291,8 @@ void initGL() {
 	glLightfv(GL_LIGHT4, GL_DIFFUSE, diff);
 
 	glLightfv(GL_LIGHT5, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT5, GL_DIFFUSE, diff);*/
+	glLightfv(GL_LIGHT5, GL_DIFFUSE, diff);
 
-	//prepareCilinder(2,1,16);
 }
 
 int main(int argc, char **argv) {
@@ -289,7 +301,7 @@ int main(int argc, char **argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
 	glutInitWindowPosition(100,100);
-	glutInitWindowSize(1200,800);
+	glutInitWindowSize(1600,1000);
 	glutCreateWindow("Engine");
 
 // struct load
@@ -305,15 +317,9 @@ int main(int argc, char **argv) {
 	glutSpecialFunc(processSpecialKeys);
 
 //  OpenGL settings
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-	glEnableClientState(GL_VERTEX_ARRAY);
-
 	#ifndef __APPLE__
 		glewInit();
 	#endif
-
-	//spherical2Cartesian();
 
 	initGL();
 
