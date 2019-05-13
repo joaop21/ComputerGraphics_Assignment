@@ -221,6 +221,20 @@ namespace geometry{
             float r,g,b;
     };
 
+    class Light{
+        public:
+        	GLenum l;
+        	float pos[4], amb[4], diff[4];
+        	float dir[3];
+
+        	void apply(){
+        		glLightfv(l, GL_POSITION, pos);
+        		glLightfv(l, GL_AMBIENT, amb);
+        		glLightfv(l, GL_DIFFUSE, diff);
+        	}
+    };
+
+
     /**
     * @brief classe que define intancias de Figura
     */
@@ -243,6 +257,7 @@ namespace geometry{
         public:
             Figure head_figure;
             vector<Tree> children;
+            vector<Light> lights;
     };
 
 }

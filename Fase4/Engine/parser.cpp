@@ -51,8 +51,50 @@ Figure loadFigure(Figure fig, string current_file){
     return nf;
 }
 
-Tree parseGroup(XMLElement* father){
+vector<Light> parseLights(XMLElement* lgts){
+    XMLElement *lgt = lgts->FirstChildElement();
+    vector<Light> lights;
+
+    for (int i = 0; lgt; lgt = lgt->NextSiblingElement()){
+
+        Light l;
+
+        const char *type = lgt->Attribute("type");
+        l.pos[0] = 0.0f; l.pos[1] = 0.0f; l.pos[2] = 0.0f; l.pos[3] = 1.0f;
+        l.amb[0] = 0.0f; l.amb[1] = 0.0f; l.amb[2] = 0.0f; l.amb[3] = 1.0f;
+        l.diff[0] = 1.0f; l.diff[1] = 1.0f; l.diff[2] = 1.0f; l.diff[3] = 1.0f;
+
+        l.pos[0] = lgt->FloatAttribute("posX");
+        l.pos[1] = lgt->FloatAttribute("posY");
+        l.pos[2] = lgt->FloatAttribute("posZ");
+
+        if(strcmp(type, "POINT") == 0){
+            l.pos[3] = 1.0f;
+        } else if(strcmp(type, "DIRECTIONAL") == 0){
+            l.pos[3] = 0.0f;
+        } else if(strcmp(type, "SPOTLIGHT") == 0){
+            l.pos[3] = 1.0f;
+        }
+
+        l.amb[0] = lgt->FloatAttribute("ambR");
+        l.amb[1] = lgt->FloatAttribute("ambG");
+        l.amb[2] = lgt->FloatAttribute("ambB");
+
+        l.diff[0] = lgt->FloatAttribute("diffR");
+        l.diff[1] = lgt->FloatAttribute("diffG");
+        l.diff[2] = lgt->FloatAttribute("diffB");
+
+        l.l = GL_LIGHT0 + i;
+
+        i++;
+        lights.push_back(l);
+    }
+    return lights;
+}
+
+Tree parseGroup(XMLElement* father, Tree tree){
     Tree t;
+    t.lights = tree.lights;
 
 	for (XMLElement* child = father->FirstChildElement(); child != nullptr; child = child->NextSiblingElement()) {
 		const char* option = child->Value();
@@ -97,7 +139,7 @@ Tree parseGroup(XMLElement* father){
             		}
                     break;
             case str2int("group"):
-                    Tree newTree = parseGroup(child);
+                    Tree newTree = parseGroup(child,t);
                     t.children.push_back(newTree);
                     break;
         }
@@ -124,7 +166,11 @@ Tree parser_XML(){
     XMLElement *pRootgroup = pRoot->FirstChildElement();
     if (pRootgroup == nullptr) return tree;
 
-	tree = parseGroup(pRootgroup);
+    tree.lights = parseLights(pRootgroup);
+
+    pRootgroup = pRootgroup->NextSiblingElement();
+
+	tree = parseGroup(pRootgroup,tree);
 
     return tree;
 

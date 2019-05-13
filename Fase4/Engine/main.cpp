@@ -154,23 +154,9 @@ void renderScene(void) {
 		      dx,dy,dz,
 			  0.0f,1.0f,0.0f);
 
-	GLfloat dir0[4] = {41.0f, 0.0f, 0.0f, 0.5f};
-	glLightfv(GL_LIGHT0, GL_POSITION, dir0);
-
-	GLfloat dir1[4] = {-41.0f, 0.0f, 0.0f, 0.5f};
-	glLightfv(GL_LIGHT1, GL_POSITION, dir1);
-
-	GLfloat dir2[4] = {0.0f, 41.0f, 0.0f, 0.5f};
-	glLightfv(GL_LIGHT2, GL_POSITION, dir2);
-
-	GLfloat dir3[4] = {0.0f, -41.0f, 0.0f, 0.5f};
-	glLightfv(GL_LIGHT3, GL_POSITION, dir3);
-
-	GLfloat dir4[4] = {0.0f, 0.0f, 41.0f, 0.5f};
-	glLightfv(GL_LIGHT4, GL_POSITION, dir4);
-
-	GLfloat dir5[4] = {0.0f, 0.0f, -41.0f, 0.5f};
-	glLightfv(GL_LIGHT5, GL_POSITION, dir5);
+	for(Light l : tree_struct.lights){
+		l.apply();
+	}
 
 	draw_axis();
 
@@ -259,40 +245,17 @@ void initGL() {
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHT1);
-	glEnable(GL_LIGHT2);
-	glEnable(GL_LIGHT3);
-	glEnable(GL_LIGHT4);
-	glEnable(GL_LIGHT5);
+
 
 // init
 	spherical2Cartesian();
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_NORMAL_ARRAY);
 
-	GLfloat amb[4] = {0.0f, 0.0f, 0.0f, 1.0f};
-	GLfloat diff[4] = {0.5f, 0.5f, 0.5f, 1.0f};
 
-	// light colors
-	glLightfv(GL_LIGHT0, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, diff);
-
-	glLightfv(GL_LIGHT1, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT1, GL_DIFFUSE, diff);
-
-	glLightfv(GL_LIGHT2, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT2, GL_DIFFUSE, diff);
-
-	glLightfv(GL_LIGHT3, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT3, GL_DIFFUSE, diff);
-
-	glLightfv(GL_LIGHT4, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT4, GL_DIFFUSE, diff);
-
-	glLightfv(GL_LIGHT5, GL_AMBIENT, amb);
-	glLightfv(GL_LIGHT5, GL_DIFFUSE, diff);
-
+	for(Light lig : tree_struct.lights){
+		glEnable(lig.l);
+	}
 }
 
 int main(int argc, char **argv) {
@@ -302,7 +265,7 @@ int main(int argc, char **argv) {
 	glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
 	glutInitWindowPosition(100,100);
 	glutInitWindowSize(1600,1000);
-	glutCreateWindow("Engine");
+	glutCreateWindow("Solar System");
 
 // struct load
 	tree_struct = parser_XML();

@@ -1,4 +1,10 @@
 <scene>
+    <lights>
+		<light type="POINT" posX="41" posY="0" posZ="0" diffR="10" diffG="10" diffB="10" ambR="0.2" ambG="0.2" ambB="0.2"/>
+		<light type="POINT" posX="-41" posY="0" posZ="0" diffR="10" diffG="10" diffB="10" ambR="0.2" ambG="0.2" ambB="0.2"/>
+        <light type="POINT" posX="0" posY="0" posZ="41" diffR="10" diffG="10" diffB="10" ambR="0.2" ambG="0.2" ambB="0.2"/>
+		<light type="POINT" posX="0" posY="0" posZ="-41" diffR="10" diffG="10" diffB="10" ambR="0.2" ambG="0.2" ambB="0.2"/>
+    </lights>
     <group> <!-- Sun -->
 	       <models>
 			        <model file="sun.3d" R="0.945" G="0.412" B="0.082" />
