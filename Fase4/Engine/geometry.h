@@ -253,6 +253,7 @@ namespace geometry{
             vector<Point> points;
             vector<Point> normals;
             vector<TexturePoint> textures;
+            int textureId;
             Translation translation;
             Rotation rotation;
             Scale scale;

@@ -50,9 +50,13 @@ else (WIN32) #Linux and Mac
 	link_directories(${GLUT_LIBRARY_DIRS})
 	add_definitions(${GLUT_DEFINITIONS})
 
-	find_package(GLEW REQUIRED)
+    find_package(GLEW REQUIRED)
 	include_directories(${GLEW_INCLUDE_DIRS})
 	link_libraries(${GLEW_LIBRARIES})
+
+    find_package(DevIL REQUIRED)
+	link_libraries(${IL_LIBRARIES} )
+	include_directories(ยง{IL_INCLUDE_DIR})
 
 	target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARY})
 	if(NOT GLUT_FOUND)
