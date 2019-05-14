@@ -29,7 +29,7 @@ int figures::write_in_file(std::vector<Point> points, std::string file_name){
     } else return 0;
 }
 
-int figures::write_in_file(std::vector<Point> points, std::vector<Point> normals, std::string file_name){
+int figures::write_in_file(std::vector<Point> points, std::vector<Point> normals, std::vector<TexturePoint> textures, std::string file_name){
 	// necessário operações sobre ficheiros
 	ofstream file ("../Generated_Models/" + file_name);
   	if (file.is_open()){
@@ -42,6 +42,8 @@ int figures::write_in_file(std::vector<Point> points, std::vector<Point> normals
 		for(int i = 0 ; i < num_points ; i++){
 			Point vertex = points[i];
 			Point vertex_normal = normals[i];
+			TexturePoint vertex_texture = textures[i];
+
 			file << to_string(vertex.getX()) + " " +
 					to_string(vertex.getY()) + " " +
 					to_string(vertex.getZ()) + "\n";
@@ -49,6 +51,9 @@ int figures::write_in_file(std::vector<Point> points, std::vector<Point> normals
 			file << to_string(vertex_normal.getX()) + " " +
 					to_string(vertex_normal.getY()) + " " +
 					to_string(vertex_normal.getZ()) + "\n";
+
+			file << to_string(vertex_texture.getX()) + " " +
+					to_string(vertex_texture.getY()) + "\n";
 		}
 	    file.close();
 		return 1;

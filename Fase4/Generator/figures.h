@@ -31,6 +31,21 @@ namespace figures{
     };
 
     /**
+    * @brief classe que define intancias dum Ponto de textura
+    */
+    class TexturePoint{
+        private:
+            float x,y;
+        public:
+            TexturePoint(){ x = 0; y = 0;}
+	        TexturePoint(float a, float b){ x = a ; y = b;}
+	        float getX(){return x;}
+	        float getY(){return y;}
+	        void setX(float value){x = value;}
+            void setY(float value){y = value;}
+    };
+
+    /**
     *  @brief Função que gera o pontos para a realização dos devidos triângulos, e
     * conseguentemente gravação em ficheiro.
     *
@@ -146,11 +161,13 @@ namespace figures{
     * gravados em ficheiro.
     *  @param normals - Parâmetro que é um vector que contém todos as normais a serem
     * gravados em ficheiro.
+    *  @param textures - Parâmetro que é um vector que contém todos as texturas a serem
+    * gravados em ficheiro.
     *  @param file_name - parâmetro que é o nome do ficheiro onde se devem gravar os
     * pontos e triangulos gerados.
     *
     *  @returns Integer que dita se a geração foi um sucesso ou não
     */
-    int write_in_file(std::vector<Point> points, std::vector<Point> normals, std::string file_name);
+    int write_in_file(std::vector<Point> points, std::vector<Point> normals, std::vector<TexturePoint> textures, std::string file_name);
 
 }
