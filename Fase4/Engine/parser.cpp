@@ -14,17 +14,17 @@ constexpr unsigned int str2int(const char* str, int h = 0)
     return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
 }
 
-vector<pair<string,pair<int,pair<vector<Point>,vector<Point>>>>> figure_points;
+vector<pair<string,pair<int,tuple<vector<Point>,vector<Point>,vector<TexturePoint>>>>> figure_points;
 
 Figure loadFigure(Figure fig, string current_file){
 
     Figure nf = fig;
 
-    vector<pair<string,pair<int,pair<vector<Point>,vector<Point>>>>>::iterator it;
+    vector<pair<string,pair<int,tuple<vector<Point>,vector<Point>,vector<TexturePoint>>>>>::iterator it;
     for(it = figure_points.begin(); it != figure_points.end() ; it++)
         if(it->first == current_file){
-            nf.points = it->second.second.first;
-            nf.normals = it->second.second.second;
+            nf.points = get<0>(it->second.second);
+            nf.normals = get<1>(it->second.second);
             nf.num_triangles = it->second.first;
             nf.name = current_file;
             return nf;
@@ -44,9 +44,13 @@ Figure loadFigure(Figure fig, string current_file){
         Point new_vertex_normal;
         file >> new_vertex_normal.x >> new_vertex_normal.y >> new_vertex_normal.z;
         nf.normals.push_back(new_vertex_normal);
+
+        TexturePoint new_vertex_texture;
+        file >> new_vertex_texture.x >> new_vertex_texture.y;
+        nf.textures.push_back(new_vertex_texture);
 	}
 
-    figure_points.push_back(make_pair(current_file,make_pair(nf.num_triangles,make_pair(nf.points,nf.normals))));
+    figure_points.push_back(make_pair(current_file,make_pair(nf.num_triangles,make_tuple(nf.points,nf.normals,nf.textures))));
 
     return nf;
 }

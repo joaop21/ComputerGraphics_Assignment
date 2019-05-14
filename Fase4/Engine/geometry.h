@@ -30,6 +30,14 @@ namespace geometry{
     };
 
     /**
+    * @brief classe que define intancias de Pontos de textura
+    */
+    class TexturePoint{
+        public:
+            float x,y;
+    };
+
+    /**
     * @brief classe que define intancias de Translações
     */
     class Translation{
@@ -244,6 +252,7 @@ namespace geometry{
             int num_triangles;
             vector<Point> points;
             vector<Point> normals;
+            vector<TexturePoint> textures;
             Translation translation;
             Rotation rotation;
             Scale scale;
