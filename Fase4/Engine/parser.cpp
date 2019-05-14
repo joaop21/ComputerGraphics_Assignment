@@ -5,6 +5,8 @@
 #include "parser.h"
 #include "tinyxml2.h"
 
+#include "IL/il.h"
+
 using namespace tinyxml2;
 using namespace std;
 using namespace geometry;
@@ -96,7 +98,7 @@ vector<Light> parseLights(XMLElement* lgts){
     return lights;
 }
 
-/*
+
 int loadTexture(string s) {
 
     unsigned int t,tw,th;
@@ -132,7 +134,7 @@ int loadTexture(string s) {
 
     return texID;
 
-}*/
+}
 
 Tree parseGroup(XMLElement* father, Tree tree){
     Tree t;
