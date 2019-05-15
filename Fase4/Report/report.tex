@@ -177,7 +177,7 @@ Com a iluminação é necessário que esta estrutura tenha capacidade de armazen
 Desta forma apresenta 4 arrays de float que identificam tais parâmetros.
 
 
-
+\newpage
 \section{Iluminação}
 \label{sec:iluminacao}
 
@@ -254,6 +254,66 @@ Na função \textbf{initGL}, as luzes são ativadas através da função \textbf
 
 Desta forma, conseguimos implementar iluminação e todas as suas variáveis no sistema solar.
 
+\newpage
+
+\section{Materiais}
+\label{sec:materiais}
+
+Para que a iluminação funcione de maneira correta é necessário atribuir propriedades materiais aos objetos a iluminar. Para tal foi utilizada a estrutura \textbf{Color} preparada convenientemente para guardar tais parâmetros.
+
+\subsection{Parser XML}
+\label{sec:parserm}
+
+Quando os modelos não são texturas, têm que ter algum tipo de cor e essa especificação ocorre inicialmente na cena em XML, em que os objetos coloridos vêm representados da seguinte forma:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{materiais_xml.png}
+\caption{Exemplo dum objeto colorido}
+\label{img:obj_colorido}
+\end{figure}
+
+\subsubsection{Funcionamento}
+\label{sec:funcionamentot}
+
+Para identificar estes objetos aquando do parsing é simples pois uma vez que não têm textura, o seu parâmetro para a textura é \textbf{0}. Após verificar tal parâmetros fazemos retiramos as propriedades do XML e colocamos na estrutura \textbf{Color}.
+
+\begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+if (m_node->Attribute("ambR")) {
+	t.head_figure.color.ambientColor = (float*)malloc(sizeof(float) * 4);
+         t.head_figure.color.ambientColor[0] = m_node->DoubleAttribute("ambR");
+         t.head_figure.color.ambientColor[1] = m_node->DoubleAttribute("ambG");
+         t.head_figure.color.ambientColor[2] = m_node->DoubleAttribute("ambB");
+         t.head_figure.color.ambientColor[3] = 1.0f;
+} else {
+         t.head_figure.color.ambientColor = nullptr;
+}
+\end{lstlisting}
+
+O código acima demonstra a extração da propriedade \textbf{ambiente} dum material.
+
+\newpage
+\subsection{Engine}
+\label{sec:enginet}
+
+No ciclo de rendering ao desenhar a árvore de objetos, quando é encontrado um objeto que tenha o parâmetro da textura igual a 0 então é porque é um objeto a ser colorido. Desta forma aplicam-se os parâmetros que residem na sua estrutura \textbf{Color}, como apresentado abaixo.
+
+\begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+if(fig.textureId == 0){
+	if (fig.color.ambientColor != NULL)
+		glMaterialfv(GL_FRONT, GL_AMBIENT, fig.color.ambientColor);
+	if (fig.color.diffuseColor != NULL)
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, fig.color.diffuseColor);
+	if (fig.color.emissiveColor != NULL)
+		glMaterialfv(GL_FRONT, GL_EMISSION, fig.color.emissiveColor);
+	if (fig.color.specularColor != NULL)
+		glMaterialfv(GL_FRONT, GL_SPECULAR, fig.color.specularColor);
+}
+\end{lstlisting}
+
+
+
+\newpage
 \section{Texturas}
 \label{sec:texturas}
 
@@ -344,6 +404,7 @@ int loadTexture(string s) {
 
 Após esta função terminar o identificador da textura é guardado na figura correspondente para mais tarde poder ser carregada.
 
+\newpage
 \subsection{Engine}
 \label{sec:enginet}
 
@@ -362,7 +423,7 @@ Finalmente no ciclo de rendering a textura é carregada tendo em conta o identif
 
 A textura é então carregada tendo em conta o identificador anteriormente calculado, que se encontra em \textbf{fig.textureId}, e também o array das coordenadas de textura é carregado tendo em conta o identificador da VBO correspondente armazenado em \textbf{fig.textures}.
 
-
+\newpage
 
 \section{Conclusão}
 \label{sec:conclusao}
