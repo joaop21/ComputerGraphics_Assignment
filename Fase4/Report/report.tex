@@ -104,8 +104,41 @@ Para a iluminação foram criadas duas novas estruturas: \textbf{Color} e \textb
 \section{Texturas}
 \label{sec:texturas}
 
+\subsection{Generator}
+\label{sec:generatort}
+
+No \textbf{Generator} foram alteradas apenas as figuras geométricas que foram necessárias para utilizar no sistema solar, respetivamente a \textbf{sphere} (sol, planetas e luas), o \textbf{torus} (anel de saturno) e por último a \textbf{superfície de bezier} (cometa).
+
+Nesta fase iremos explicar o procedimento realizado para esfera sendo que para as outras figuras geométricas seguiram um raciocínio semelhante.
+
+\subsubsection{Algoritmo}
+\label{sec:algoritmot}
+
+\ttfamily
+\begin{enumerate}
+  \item Define-se o tamanho de partição da imagem consoante as slices e as stacks:
+   	$$deltaS = \frac{1}{slices}$$  $$deltaT = \frac{1}{stacks}$$
+  \item Para cada stack:
+  \begin{enumerate}
+  	\item Define-se a coordenada da stack atual
+	$$ t = (stacks - i) \times deltaT $$
+	\item Para cada slice:
+	\begin{enumerate}
+	 	\item Define-se a coordenada da slice atual
+		$$ s = j \times deltaS $$
+		\item Desenham-se as coordenadas para os 2 triângulos
+	\end{enumerate}
+  \end{enumerate}
+  \item Coordenas são guardadas em ficheiro intercaladas com os pontos e as normais
+\end{enumerate}
+\rmfamily
+
+
 \subsection{Parser XML}
 \label{sec:parsert}
+
+Ao fazer parsing do \textbf{XML} quando se encontra um parâmetro \textbf{"texture"}  o que se faz é aplicar a função \textbf{loadTexture} à imagem passada como parâmetro.
+
 
 \subsubsection{Ficheiro}
 \label{sec:ficheirot}
@@ -116,8 +149,6 @@ Para a iluminação foram criadas duas novas estruturas: \textbf{Color} e \textb
 \subsection{Engine}
 \label{sec:enginet}
 
-\subsection{Generator}
-\label{sec:generatort}
 
 \section{Conclusão}
 \label{sec:conclusao}
