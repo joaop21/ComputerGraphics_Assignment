@@ -38,7 +38,7 @@ numberstyle = \tiny,
 \maketitle
 
 \begin{abstract}
-Neste relatório é apresentada a terceira fase dum projeto no qual a intenção é desenvolver um mecanismo baseado em gráficos 3D e fornecer exemplos de uso que mostrem o seu potencial. Este projeto é desenvolvido no âmbito da unidade curricular de Computação Gráfica.
+Neste relatório é apresentada a quarta fase dum projeto no qual a intenção é desenvolver um mecanismo baseado em gráficos 3D e fornecer exemplos de uso que mostrem o seu potencial. Este projeto é desenvolvido no âmbito da unidade curricular de Computação Gráfica.
 \end{abstract}
 
 \newpage
@@ -95,7 +95,87 @@ De resto, relativamente à fase anterior não podemos apontar qualquer diferenç
 
 No que conta a estruturas de dados há alguns aspetos importantes a abordar.
 
-Para a iluminação foram criadas duas novas estruturas: \textbf{Color} e \textbf{Light}.
+Foram criadas duas novas estruturas \textbf{TexturePoint} e \textbf{Light}.
+
+\begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+	class TexturePoint{
+        	public:
+           		float x,y;
+   	 };
+\end{lstlisting}
+
+Esta estrutura serve unicamente para armazenar coordenadas de textura, uma vez que a estrutura \textbf{Point} tem 3 coordenadas e não serve para armazenar uma estrutura que tenha só duas.
+
+\begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+	class Light{
+        public:
+        	GLenum l;
+        	float pos[4], amb[4], diff[4];
+        	float dir[3];
+
+        	void apply(){
+        		glLightfv(l, GL_POSITION, pos);
+        		glLightfv(l, GL_AMBIENT, amb);
+        		glLightfv(l, GL_DIFFUSE, diff);
+        	}
+    };
+\end{lstlisting}
+
+A estrutura \textbf{Lights} serve para armazenar o número da luz correspondente bem como as suas propriedades.
+
+Contém ainda uma função \textbf{apply()} que ativa os parâmetros da luz em questão.
+
+Para além destas duas estruturas que foram criadas existem outras que foram alteradas como por exemplo a \textbf{Tree}, a \textbf{Figure} e a \textbf{Color}.
+
+ \begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+	class Tree{
+        public:
+            Figure head_figure;
+            vector<Tree> children;
+            vector<Light> lights;
+    };
+\end{lstlisting}
+
+Começando pela \textbf{Tree} foi-lhe adicionado um \textbf{vector<Light>} para que armazenasse as luzes presentes na cena.
+
+
+ \begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+	class Figure{
+        public:
+            Figure(): points(-1){}
+            string name;
+            int num_triangles;
+            int points, normals, textures;
+            GLuint textureId;
+            Translation translation;
+            Rotation rotation;
+            Scale scale;
+            Color color;
+    };
+\end{lstlisting}
+
+A estrutura \textbf{Figure} foi remodelada no aspeto em que saíram os \textbf{vector} existentes que armazenavam todos os pontos e normais, para serem trocados por inteiros que representassem o identificador da VBO correspondente.
+
+Foi ainda adicionado o parâmetro \textbf{textureId} que identifica o identificador da textura correspondente.
+
+ \begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+	class Color{
+        public:
+            Color() : diffuseColor(NULL), specularColor(NULL), emissiveColor(NULL), ambientColor(NULL), empty(true){}
+	        bool empty;
+	        float *diffuseColor,
+		          *specularColor,
+		          *emissiveColor,
+                  *ambientColor;
+    };
+\end{lstlisting}
+
+Por último a estrutura \textbf{Color} foi totalmente remodelada uma vez que anteriormente era usada apenas para dar cor às figuras geométricas e tinha apenas 3 atributos.
+
+Com a iluminação é necessário que esta estrutura tenha capacidade de armazenar todos os parâmetros relacionados com o material do objeto.
+
+Desta forma apresenta 4 arrays de float que identificam tais parâmetros.
+
 
 
 
