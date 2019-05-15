@@ -156,8 +156,8 @@ namespace geometry{
             	float pos[3], deriv[3];
             	float tam = 1000;
             	float deltaT = 1.0/tam;
-            	glColor3f(0.86f, 0.86f, 0.86f); // grey
-            	glBegin(GL_LINE_LOOP);
+            	//glColor3f(1.0f, 1.0f, 1.0f); // grey
+            	//glBegin(GL_LINE_LOOP);
 
             		for(int i=0; i<tam; i++){
             			getGlobalCatmullRomPoint(deltaT*i,pos,deriv);
