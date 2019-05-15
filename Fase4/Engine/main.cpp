@@ -27,43 +27,24 @@ int timebase = 0, frame = 0;
 
 void draw_figure(Figure fig) {
 
-	GLuint buffers[2];
-	glGenBuffers(2, buffers); // Generate Vertex Buffer Objects
+	glBindTexture(GL_TEXTURE_2D, fig.textureId);
 
-	float *vertex;
-	float *normal;
-	vertex = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3); // num_triangles x num_vertices x num_coordinates
-	normal = (float *) malloc(sizeof(float) * fig.num_triangles * 3 * 3); // num_triangles x num_vertices x num_coordinates
-	vector<Point>::iterator it;
-	int i = 0;
-	for(it = fig.points.begin() ; it != fig.points.end() ; it++){
-		vertex[i++] = it->x;
-		vertex[i++] = it->y;
-		vertex[i++] = it->z;
-	}
+	glBindBuffer(GL_ARRAY_BUFFER, fig.points);
+	glVertexPointer(3, GL_FLOAT, 0, 0);
 
-	i = 0;
-	for(it = fig.normals.begin() ; it != fig.normals.end() ; it++){
-		normal[i++] = it->x;
-		normal[i++] = it->y;
-		normal[i++] = it->z;
-	}
+	glBindBuffer(GL_ARRAY_BUFFER, fig.normals);
+	glNormalPointer(GL_FLOAT, 0, 0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, fig.textures);
+	glTexCoordPointer(2, GL_FLOAT, 0, 0);
+
 
 	float color[4] = { fig.color.r, fig.color.g, fig.color.b, 1.0f };
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, color);
 
-	glBindBuffer(GL_ARRAY_BUFFER,buffers[0]);
-	glBufferData(GL_ARRAY_BUFFER,sizeof(float) * fig.num_triangles * 3 * 3, vertex, GL_STATIC_DRAW);
-	glVertexPointer(3,GL_FLOAT,0,0);
-
-	glBindBuffer(GL_ARRAY_BUFFER,buffers[1]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * fig.num_triangles * 3 * 3, normal,GL_STATIC_DRAW);
-	glNormalPointer(GL_FLOAT,0,0);
-
 	glDrawArrays(GL_TRIANGLES, 0, fig.num_triangles * 3 * 3);
 
-	free(vertex);
-	free(normal);
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void draw_tree(Tree t) {
@@ -79,8 +60,9 @@ void draw_tree(Tree t) {
 	if (!t.head_figure.scale.empty)
 		glScalef(t.head_figure.scale.x, t.head_figure.scale.y, t.head_figure.scale.z);
 
-
-	draw_figure(t.head_figure);
+	if(t.head_figure.points != -1){
+		draw_figure(t.head_figure);
+	}
 
 	vector<Tree>::iterator it;
 
@@ -255,7 +237,12 @@ void initGL() {
 	spherical2Cartesian();
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_NORMAL_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
+	glEnable(GL_TEXTURE_2D);
+
+	// struct load
+	tree_struct = parser_XML();
 
 	for(Light lig : tree_struct.lights){
 		glEnable(lig.l);
@@ -271,9 +258,6 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(100,100);
 	glutInitWindowSize(1600,1000);
 	glutCreateWindow("Solar System");
-
-// struct load
-	tree_struct = parser_XML();
 
 // Required callback registry
 	glutDisplayFunc(renderScene);

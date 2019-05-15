@@ -16,17 +16,18 @@ constexpr unsigned int str2int(const char* str, int h = 0)
     return !str[h] ? 5381 : (str2int(str, h+1) * 33) ^ str[h];
 }
 
-vector<pair<string,pair<int,tuple<vector<Point>,vector<Point>,vector<TexturePoint>>>>> figure_points;
+vector<pair<string,pair<int,tuple<int,int,int>>>> figure_points;
 
 Figure loadFigure(Figure fig, string current_file){
 
     Figure nf = fig;
 
-    vector<pair<string,pair<int,tuple<vector<Point>,vector<Point>,vector<TexturePoint>>>>>::iterator it;
+    vector<pair<string,pair<int,tuple<int,int,int>>>>::iterator it;
     for(it = figure_points.begin(); it != figure_points.end() ; it++)
         if(it->first == current_file){
             nf.points = get<0>(it->second.second);
             nf.normals = get<1>(it->second.second);
+            nf.textures = get<2>(it->second.second);
             nf.num_triangles = it->second.first;
             nf.name = current_file;
             return nf;
@@ -38,19 +39,53 @@ Figure loadFigure(Figure fig, string current_file){
 
 	file >> nf.num_triangles;
     nf.name = current_file;
+
+    float *v = (float *)malloc(sizeof(float) * nf.num_triangles * 3 * 3);
+    float *n = (float *)malloc(sizeof(float) * nf.num_triangles * 3 * 3);
+    float *t = (float *)malloc(sizeof(float) * nf.num_triangles * 3 * 2);
+    int i=0, j=0, k=0;
+
 	while (!file.eof()) {
 		Point new_vertex;
 		file >> new_vertex.x >> new_vertex.y >> new_vertex.z;
-		nf.points.push_back(new_vertex);
+        v[i++] = new_vertex.x;
+        v[i++] = new_vertex.y;
+        v[i++] = new_vertex.z;
 
         Point new_vertex_normal;
         file >> new_vertex_normal.x >> new_vertex_normal.y >> new_vertex_normal.z;
-        nf.normals.push_back(new_vertex_normal);
+        n[j++] = new_vertex_normal.x;
+        n[j++] = new_vertex_normal.y;
+        n[j++] = new_vertex_normal.z;
 
         TexturePoint new_vertex_texture;
         file >> new_vertex_texture.x >> new_vertex_texture.y;
-        nf.textures.push_back(new_vertex_texture);
+        t[k++] = new_vertex_texture.x;
+        t[k++] = new_vertex_texture.y;
 	}
+
+
+    unsigned indexV, indexN, indexT;
+
+	glGenBuffers(1, &indexV);
+	glBindBuffer(GL_ARRAY_BUFFER, indexV);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * nf.num_triangles * 3 * 3, v, GL_STATIC_DRAW);
+
+	glGenBuffers(1, &indexN);
+	glBindBuffer(GL_ARRAY_BUFFER, indexN);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * nf.num_triangles * 3 * 3, n, GL_STATIC_DRAW);
+
+	glGenBuffers(1, &indexT);
+	glBindBuffer(GL_ARRAY_BUFFER, indexT);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * nf.num_triangles * 3 * 2, t, GL_STATIC_DRAW);
+
+	free(v);
+	free(n);
+    free(t);
+
+    nf.points = indexV;
+    nf.normals = indexN;
+    nf.textures = indexT;
 
     figure_points.push_back(make_pair(current_file,make_pair(nf.num_triangles,make_tuple(nf.points,nf.normals,nf.textures))));
 
@@ -106,27 +141,23 @@ int loadTexture(string s) {
     unsigned int texID;
 
     ilInit();
-    ilEnable(IL_ORIGIN_SET);
-    ilOriginFunc(IL_ORIGIN_LOWER_LEFT);
+	ilEnable(IL_ORIGIN_SET);
+	ilOriginFunc(IL_ORIGIN_LOWER_LEFT);
     ilGenImages(1,&t);
     ilBindImage(t);
-    ilLoadImage((ILstring) ("../Scenes/" + s).c_str());
+    ilLoadImage((ILstring) s.c_str());
     tw = ilGetInteger(IL_IMAGE_WIDTH);
     th = ilGetInteger(IL_IMAGE_HEIGHT);
     ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
     texData = ilGetData();
-
-    //glEnable(GL_TEXTURE_2D);
 
     glGenTextures(1,&texID);
 
     glBindTexture(GL_TEXTURE_2D,texID);
     glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_WRAP_S,      GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_WRAP_T,      GL_REPEAT);
-
     glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_MAG_FILTER,      GL_LINEAR_MIPMAP_LINEAR);
     glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
     glGenerateMipmap(GL_TEXTURE_2D);
 
@@ -181,10 +212,12 @@ Tree parseGroup(XMLElement* father, Tree tree){
                         t.head_figure.color.g = m_node->FloatAttribute("G");
                         t.head_figure.color.b = m_node->FloatAttribute("B");
 
-                        int texture = 0;
-                        if (m_node->Attribute("texture") != nullptr){
-                            //texture = loadTexture(tex);
+                        GLuint texture = 0;
+                        if(m_node->Attribute("texture") != nullptr){
+                            string tex = m_node->Attribute("texture");
+                            texture = loadTexture(tex);
                         }
+                        t.head_figure.textureId = texture;
             		}
                     break;
             case str2int("group"):

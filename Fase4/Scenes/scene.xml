@@ -7,7 +7,7 @@
     </lights>
     <group> <!-- Sun -->
 	       <models>
-			        <model file="sun.3d" R="0.945" G="0.412" B="0.082" />
+			        <model file="sun.3d" R="0.945" G="0.412" B="0.082" texture="sun.jpg" />
 		     </models>
          <group> <!-- Mercury -->
               <rotate angle="7" axisX="0" axisY="0" axisZ="1" />
@@ -25,7 +25,7 @@
     		            <rotate time="58" axisX="0" axisY="0" axisZ="1" />
     		            <scale X="0.38" Y="0.38" Z="0.38" />
     		            <models>
-    			                <model file="planet.3d" R="0.412" G="0.388" B="0.376" />
+    			                <model file="planet.3d" R="0.412" G="0.388" B="0.376" texture="mercury.jpg" />
     		            </models>
               </group>
         </group>
@@ -45,7 +45,7 @@
 			              <rotate time="0.8" axisX="0" axisY="-1" axisZ="0" />
 			              <scale X="0.95" Y="0.95" Z="0.95" />
 			              <models>
-				                  <model file="planet.3d" R="0.816" G="0.533" B="0.208" />
+				                  <model file="planet.3d" R="0.816" G="0.533" B="0.208" texture="venus.jpg" />
 			              </models>
               </group>
         </group>
@@ -63,7 +63,7 @@
 			        <group> <!-- Earth -->
 				            <rotate time="1" axisX="0" axisY="1" axisZ="0" />
 				            <models>
-					                 <model file="planet.3d" R="0.145" G="0.192" B="0.388" />
+					                 <model file="planet.3d" R="0.145" G="0.192" B="0.388" texture="earth.jpg" />
 				            </models>
 			        </group>
 			        <group> <!-- Moon -->
@@ -80,7 +80,7 @@
 					          </translate>
 					          <rotate time="27" axisX="0" axisY="1" axisZ="0" />
 					          <models>
-					          	     <model file="moon.3d" R="0.412" G="0.388" B="0.376" />
+					          	     <model file="moon.3d" R="0.412" G="0.388" B="0.376" texture="moon.jpg" />
 					          </models>
 			        </group>
        </group>
@@ -100,7 +100,7 @@
                     <rotate time="1" axisX="0" axisY="1" axisZ="0" />
                     <scale X="0.53" Y="0.53" Z="0.53" />
                     <models>
-                           <model file="planet.3d" R="0.788" G="0.243" B="0.020" />
+                           <model file="planet.3d" R="0.788" G="0.243" B="0.020" texture="mars.jpg" />
                     </models>
              </group>
 		         <group> <!-- Fobos (Mars) -->
@@ -117,11 +117,11 @@
                    <rotate time="0.77" axisX="0" axisY="1" axisZ="0" />
                    <scale X="0.30" Y="0.30" Z="0.30" />
 			             <models>
-				                  <model file="moon.3d" R="0.662" G="0.662" B="0.662" />
+				                  <model file="moon.3d" R="0.662" G="0.662" B="0.662" texture="moon.jpg" />
 			             </models>
 		         </group>
 		         <group> <!-- Deimos (Mars) -->
-                   <translate time="0.35">
+                   <translate time="2.35">
                           <point X="22" Y="0" Z="0" />
                           <point X="15.71" Y="0" Z="-15.71" />
                           <point X="0" Y="0" Z="-22" />
@@ -134,7 +134,7 @@
                    <rotate time="0.77" axisX="0" axisY="1" axisZ="0" />
                    <scale X="0.30" Y="0.30" Z="0.30" />
 			             <models>
-				                  <model file="moon.3d" R="0.984" G="0.965" B="0.901" />
+				                  <model file="moon.3d" R="0.984" G="0.965" B="0.901" texture="moon.jpg" />
 			             </models>
 		         </group>
 	    </group>
@@ -154,7 +154,7 @@
                   <rotate time="0.375" axisX="0" axisY="1" axisZ="0" />
                   <scale X="2.0" Y="2.0" Z="2.0" />
                   <models>
-                         <model file="planet.3d" R="0.984" G="0.808" B="0.573" />
+                         <model file="planet.3d" R="0.984" G="0.808" B="0.573" texture="jupiter.jpg" />
                   </models>
             </group>
             <group> <!-- Io (Jupiter) -->
@@ -170,7 +170,7 @@
                  </translate>
 				         <scale X="0.40" Y="0.40" Z="0.340" />
 				         <models>
-					              <model file="moon.3d" R="0.982" G="0.981" B="0.602" />
+					              <model file="moon.3d" R="0.982" G="0.981" B="0.602" texture="moon.jpg" />
 				         </models>
 			      </group>
 			      <group> <!-- Europa (Jupiter) -->
@@ -186,7 +186,7 @@
                  </translate>
 				         <scale X="0.40" Y="0.40" Z="0.40" />
 				         <models>
-					              <model file="moon.3d" R="0.984" G="0.965" B="0.403" />
+					              <model file="moon.3d" R="0.984" G="0.965" B="0.403" texture="moon.jpg" />
 				         </models>
 			     </group>
 			     <group> <!-- Ganímedes (Jupiter) -->
@@ -202,7 +202,7 @@
                 </translate>
 				        <scale X="0.40" Y="0.40" Z="0.40" />
 				        <models>
-					             <model file="moon.3d" R="0.662" G="0.662" B="0.662" />
+					             <model file="moon.3d" R="0.662" G="0.662" B="0.662" texture="moon.jpg" />
 				        </models>
 			   </group>
 			   <group> <!-- Calisto (Jupiter) -->
@@ -218,7 +218,7 @@
                 </translate>
 				        <scale X="0.40" Y="0.40" Z="0.40" />
 				        <models>
-					             <model file="moon.3d" R="0.984" G="0.965" B="0.901" />
+					             <model file="moon.3d" R="0.984" G="0.965" B="0.901" texture="moon.jpg" />
 				        </models>
 			   </group>
 		</group>
@@ -239,12 +239,12 @@
 					    <rotate time="0.417" axisX="0" axisY="1" axisZ="0" />
 					    <scale X="1.2" Y="1.2" Z="1.2" />
 					    <models>
-						         <model file="planet.3d" R="0.835" G="0.694" B="0.467" />
+						         <model file="planet.3d" R="0.835" G="0.694" B="0.467" texture="saturn.jpg" />
 					    </models>
         </group>
 			  <group>
 				      <models>
-					           <model file="torus.3d" R="1.000" G="0.890" B="0.800" />
+					           <model file="torus.3d" R="1.000" G="0.890" B="0.800" texture="saturn_ring.png" />
 				      </models>
 			  </group>
 		</group>
@@ -264,7 +264,7 @@
 					    <rotate time="0.718" axisX="0" axisY="-1" axisZ="0" />
 					    <scale X="0.8" Y="0.8" Z="0.8" />
 					    <models>
-						          <model file="planet.3d" R="0.757" G="0.906" B="0.918" />
+						          <model file="planet.3d" R="0.757" G="0.906" B="0.918" texture="uranus.jpg" />
 					     </models>
         </group>
         <group> <!-- Miranda (Urano) -->
@@ -280,11 +280,11 @@
               </translate>
 				      <scale X="0.30" Y="0.30" Z="0.30" />
 				      <models>
-					           <model file="moon.3d" R="0.762" G="0.762" B="0.762" />
+					           <model file="moon.3d" R="0.762" G="0.762" B="0.762" texture="moon.jpg" />
 				      </models>
 			 </group>
 			 <group> <!-- Ariel (Urano) -->
-             <translate time="1.35">
+             <translate time="3.35">
                     <point X="42" Y="0" Z="0" />
                     <point X="30" Y="0" Z="-30" />
                     <point X="0" Y="0" Z="-42" />
@@ -296,11 +296,11 @@
             </translate>
 				    <scale X="0.30" Y="0.30" Z="0.30" />
 				    <models>
-					         <model file="moon.3d" R="0.662" G="0.662" B="0.662" />
+					         <model file="moon.3d" R="0.662" G="0.662" B="0.662" texture="moon.jpg" />
 				    </models>
 			</group>
 			<group> <!-- Umbriel (Urano) -->
-            <translate time="1.35">
+            <translate time="2.35">
                    <point X="42" Y="0" Z="0" />
                    <point X="30" Y="0" Z="-30" />
                    <point X="0" Y="0" Z="-42" />
@@ -312,7 +312,7 @@
             </translate>
 				    <scale X="0.50" Y="0.50" Z="0.50" />
 				    <models>
-					         <model file="moon.3d" R="0.362" G="0.362" B="0.362" />
+					         <model file="moon.3d" R="0.362" G="0.362" B="0.362" texture="moon.jpg" />
 				    </models>
 			</group>
 			<group> <!-- Titânia (Urano) -->
@@ -328,7 +328,7 @@
             </translate>
 				    <scale X="0.45" Y="0.45" Z="0.45" />
 				    <models>
-					         <model file="moon.3d" R="0.862" G="0.862" B="0.862" />
+					         <model file="moon.3d" R="0.862" G="0.862" B="0.862" texture="moon.jpg" />
 				    </models>
 			</group>
 			<group> <!-- Oberon (Urano) -->
@@ -344,7 +344,7 @@
             </translate>
 				    <scale X="0.25" Y="0.25" Z="0.25" />
 				    <models>
-					         <model file="moon.3d" R="0.984" G="0.965" B="0.901" />
+					         <model file="moon.3d" R="0.984" G="0.965" B="0.901" texture="moon.jpg" />
 				    </models>
 			</group>
 		</group>
@@ -364,7 +364,7 @@
 				        <rotate time="0.671" axisX="0" axisY="1" axisZ="0" />
 				        <scale X="0.75" Y="0.75" Z="0.75" />
 				        <models>
-					             <model file="planet.3d" R="0.251" G="0.416" B="0.988" />
+					             <model file="planet.3d" R="0.251" G="0.416" B="0.988" texture="neptune.jpg" />
 				        </models>
           </group>
           <group> <!-- Proteu (Neptuno) -->
@@ -380,7 +380,7 @@
                 </translate>
 				        <scale X="0.30" Y="0.30" Z="0.30" />
 				        <models>
-					             <model file="moon.3d" R="0.250" G="0.250" B="0.250" />
+					             <model file="moon.3d" R="0.250" G="0.250" B="0.250" texture="moon.jpg" />
 				        </models>
 	        </group>
         </group>

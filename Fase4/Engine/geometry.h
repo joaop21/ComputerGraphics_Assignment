@@ -248,12 +248,11 @@ namespace geometry{
     */
     class Figure{
         public:
+            Figure(): points(-1){}
             string name;
             int num_triangles;
-            vector<Point> points;
-            vector<Point> normals;
-            vector<TexturePoint> textures;
-            int textureId;
+            int points, normals, textures;
+            GLuint textureId;
             Translation translation;
             Rotation rotation;
             Scale scale;
