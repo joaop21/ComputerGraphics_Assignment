@@ -76,6 +76,8 @@ int figures::generateBezierSurface(std::string patch_file, int tessellation, std
 
     parsePatchFile(patch_file);
 	std::vector<Point> points;
+    std::vector<Point> normals;
+    std::vector<TexturePoint> textures;
 
 	for (int patch_number = 0; patch_number < number_patches; patch_number++) {
 
@@ -91,15 +93,31 @@ int figures::generateBezierSurface(std::string patch_file, int tessellation, std
 				points.push_back(bezierPoint(patch_number, (u + (1.0f / tessellation)), v));
 				points.push_back(bezierPoint(patch_number, (u + (1.0f / tessellation)), (v + (1.0f / tessellation))));
 
+                normals.push_back(bezierPoint(patch_number, u, v));
+                normals.push_back(bezierPoint(patch_number, (u + (1.0f / tessellation)), v));
+				normals.push_back(bezierPoint(patch_number, (u + (1.0f / tessellation)), (v + (1.0f / tessellation))));
+
+                textures.push_back(TexturePoint(u, v));
+				textures.push_back(TexturePoint(u + (1.0f / tessellation), (v + (1.0f / tessellation))));
+                textures.push_back(TexturePoint(u + (1.0f / tessellation), v));
+
 				/* second triangle */
 				points.push_back(bezierPoint(patch_number, (u + (1.0f / tessellation)), (v + (1.0f / tessellation))));
 				points.push_back(bezierPoint(patch_number, u, (v + (1.0f / tessellation))));
 				points.push_back(bezierPoint(patch_number, u, v));
+
+                normals.push_back(bezierPoint(patch_number, (u + (1.0f / tessellation)), (v + (1.0f / tessellation))));
+				normals.push_back(bezierPoint(patch_number, u, (v + (1.0f / tessellation))));
+				normals.push_back(bezierPoint(patch_number, u, v));
+
+                textures.push_back(TexturePoint(u + (1.0f / tessellation), (v + (1.0f / tessellation))));
+				textures.push_back(TexturePoint(u, v));
+                textures.push_back(TexturePoint(u, (v + (1.0f / tessellation))));
 			}
 		}
     }
 
-    int res = write_in_file(points, file_name);
+    int res = write_in_file(points, normals, textures,file_name);
 
     // free memory allocated in readPatch
 	free(patches);

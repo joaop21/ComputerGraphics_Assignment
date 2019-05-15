@@ -27,6 +27,18 @@ int timebase = 0, frame = 0;
 
 void draw_figure(Figure fig) {
 
+
+	if(fig.textureId == 0){
+		if (fig.color.ambientColor != NULL)
+			glMaterialfv(GL_FRONT, GL_AMBIENT, fig.color.ambientColor);
+		if (fig.color.diffuseColor != NULL)
+			glMaterialfv(GL_FRONT, GL_DIFFUSE, fig.color.diffuseColor);
+		if (fig.color.emissiveColor != NULL)
+			glMaterialfv(GL_FRONT, GL_EMISSION, fig.color.emissiveColor);
+		if (fig.color.specularColor != NULL)
+			glMaterialfv(GL_FRONT, GL_SPECULAR, fig.color.specularColor);
+	}
+
 	glBindTexture(GL_TEXTURE_2D, fig.textureId);
 
 	glBindBuffer(GL_ARRAY_BUFFER, fig.points);
@@ -38,13 +50,20 @@ void draw_figure(Figure fig) {
 	glBindBuffer(GL_ARRAY_BUFFER, fig.textures);
 	glTexCoordPointer(2, GL_FLOAT, 0, 0);
 
-
-	float color[4] = { fig.color.r, fig.color.g, fig.color.b, 1.0f };
-	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, color);
-
 	glDrawArrays(GL_TRIANGLES, 0, fig.num_triangles * 3 * 3);
 
+	// Reset
 	glBindTexture(GL_TEXTURE_2D, 0);
+
+	float amb[4] = {0.1f, 0.1f, 0.1f, 1.0f};
+    float dif[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+    float spec[4] = {0.0f, 0.0f, 0.0f, 1.0f};
+    float emi[4] = {0.0f, 0.0f, 0.0f, 1.0f};
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, dif);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
+	glMaterialfv(GL_FRONT, GL_EMISSION, emi);
 }
 
 void draw_tree(Tree t) {
@@ -70,27 +89,6 @@ void draw_tree(Tree t) {
 		draw_tree(*it);
 
 	glPopMatrix();
-}
-
-void draw_axis(){
-
-	glColor3f(0.0f, 1.0f, 0.0f); // green
-	glBegin(GL_LINE_STRIP); // yy axis
-	glVertex3f(0.0f, 1000.0f, 0.0f);
-	glVertex3f(0.0f, -1000.0f, 0.0f);
-	glEnd();
-
-	glColor3f(0.0f, 0.0f, 1.0f); //blue
-	glBegin(GL_LINE_STRIP); // zz axis
-	glVertex3f(0.0f, 0.0f, 1000.0f);
-	glVertex3f(0.0f, 0.0f, -1000.0f);
-	glEnd();
-
-	glColor3f(1.0f, 0.0f, 0.0f); // red
-	glBegin(GL_LINE_STRIP); // xx axis
-	glVertex3f(1000.0f, 0.0f, 0.0f);
-	glVertex3f(-1000.0f, 0.0f, 0.0f);
-	glEnd();
 }
 
 void changeSize(int w, int h) {
@@ -144,7 +142,15 @@ void renderScene(void) {
 		l.apply();
 	}
 
-	draw_axis();
+	float amb[4] = {0.1f, 0.1f, 0.1f, 1.0f};
+    float dif[4] = {0.8f, 0.8f, 0.8f, 1.0f};
+    float spec[4] = {0.0f, 0.0f, 0.0f, 1.0f};
+    float emi[4] = {0.0f, 0.0f, 0.0f, 1.0f};
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, amb);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, dif);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, spec);
+	glMaterialfv(GL_FRONT, GL_EMISSION, emi);
 
 	draw_tree(tree_struct);
 

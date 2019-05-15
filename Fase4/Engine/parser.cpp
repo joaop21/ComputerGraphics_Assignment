@@ -110,7 +110,7 @@ vector<Light> parseLights(XMLElement* lgts){
         l.pos[2] = lgt->FloatAttribute("posZ");
 
         if(strcmp(type, "POINT") == 0){
-            l.pos[3] = 1.0f;
+            l.pos[3] = 0.55f;
         } else if(strcmp(type, "DIRECTIONAL") == 0){
             l.pos[3] = 0.0f;
         } else if(strcmp(type, "SPOTLIGHT") == 0){
@@ -208,9 +208,6 @@ Tree parseGroup(XMLElement* father, Tree tree){
             		for(XMLElement* m_node = child->FirstChildElement("model"); m_node != NULL; m_node = m_node->NextSiblingElement()){
             			string file_name = m_node->Attribute("file");
             			t.head_figure = loadFigure(t.head_figure,file_name);
-                        t.head_figure.color.r = m_node->FloatAttribute("R");
-                        t.head_figure.color.g = m_node->FloatAttribute("G");
-                        t.head_figure.color.b = m_node->FloatAttribute("B");
 
                         GLuint texture = 0;
                         if(m_node->Attribute("texture") != nullptr){
@@ -218,6 +215,55 @@ Tree parseGroup(XMLElement* father, Tree tree){
                             texture = loadTexture(tex);
                         }
                         t.head_figure.textureId = texture;
+
+                        if(t.head_figure.textureId == 0){
+                            float white[4] = { 1,1,1,1 };
+            				float black[4] = { 0,0,0,0 };
+
+            				if (m_node->Attribute("ambR")) {
+            					t.head_figure.color.ambientColor = (float*)malloc(sizeof(float) * 4);
+            					t.head_figure.color.ambientColor[0] = m_node->DoubleAttribute("ambR");
+            					t.head_figure.color.ambientColor[1] = m_node->DoubleAttribute("ambG");
+            					t.head_figure.color.ambientColor[2] = m_node->DoubleAttribute("ambB");
+            					t.head_figure.color.ambientColor[3] = 1.0f;
+            				}
+            				else {
+            					t.head_figure.color.ambientColor = nullptr;
+            				}
+
+            				if (m_node->Attribute("specR")) {
+            					t.head_figure.color.specularColor = (float*)malloc(sizeof(float) * 4);
+            					t.head_figure.color.specularColor[0] = m_node->DoubleAttribute("specR");
+            					t.head_figure.color.specularColor[1] = m_node->DoubleAttribute("specG");
+            					t.head_figure.color.specularColor[2] = m_node->DoubleAttribute("specB");
+            					t.head_figure.color.specularColor[3] = 1.0f;
+            				}
+            				else {
+            					t.head_figure.color.specularColor = nullptr;
+            				}
+
+            				if (m_node->Attribute("diffR")) {
+            					t.head_figure.color.diffuseColor = (float*)malloc(sizeof(float) * 4);
+            					t.head_figure.color.diffuseColor[0] = m_node->DoubleAttribute("diffR");
+            					t.head_figure.color.diffuseColor[1] = m_node->DoubleAttribute("diffG");
+            					t.head_figure.color.diffuseColor[2] = m_node->DoubleAttribute("diffB");
+            					t.head_figure.color.diffuseColor[3] = 1.0f;
+            				}
+            				else {
+            					t.head_figure.color.diffuseColor = nullptr;
+            				}
+
+            				if (m_node->Attribute("emissR")) {
+            					t.head_figure.color.emissiveColor = (float*)malloc(sizeof(float) * 4);
+            					t.head_figure.color.emissiveColor[0] = m_node->DoubleAttribute("emissR");
+            					t.head_figure.color.emissiveColor[1] = m_node->DoubleAttribute("emissR");
+            					t.head_figure.color.emissiveColor[2] = m_node->DoubleAttribute("emissR");
+            					t.head_figure.color.emissiveColor[3] = 1.0f;
+            				}
+            				else {
+            					t.head_figure.color.emissiveColor = nullptr;
+                            }
+                        }
             		}
                     break;
             case str2int("group"):

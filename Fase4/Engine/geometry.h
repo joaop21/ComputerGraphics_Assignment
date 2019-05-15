@@ -226,7 +226,12 @@ namespace geometry{
     */
     class Color{
         public:
-            float r,g,b;
+            Color() : diffuseColor(NULL), specularColor(NULL), emissiveColor(NULL), ambientColor(NULL), empty(true){}
+	        bool empty;
+	        float *diffuseColor,
+		          *specularColor,
+		          *emissiveColor,
+                  *ambientColor;
     };
 
     class Light{
