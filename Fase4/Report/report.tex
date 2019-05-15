@@ -11,6 +11,20 @@
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{mathtools}
+\usepackage{courier} %% Sets font for listing as Courier.
+\usepackage{listings, xcolor}
+\lstset{
+tabsize = 4, %% Sets tab space width.
+showstringspaces = false, %% Prevents space marking in strings, string is defined as the text that is generally printed directly to the console.
+numbers = left, %% Displays line numbers on the left.
+commentstyle = \color{green}, %% Sets comment color.
+keywordstyle = \color{blue}, %% Sets  keyword color.
+stringstyle = \color{red}, %% Sets  string color.
+rulecolor = \color{black}, %% Sets frame color to avoid being affected by text color.
+basicstyle = \small \ttfamily , %% Sets listing font and size.
+breaklines = true, %% Enables line breaking.
+numberstyle = \tiny,
+}
 \renewcommand{\familydefault}{\sfdefault}
 
 
@@ -70,7 +84,9 @@ O projeto entregue contêm para além do relatório, 4 pastas como é possível 
 \label{img:estrutura}
 \end{figure}
 
-Relativamente à fase anterior não podemos apontar qualquer diferença sendo que não foi acrescentado qualquer ficheiro ou pasta à estrutura do projeto isto porque a quarta e última fase apenas envolve a realização de alterações no código dos ficheiros já existentes.
+Na pasta \textbf{Scenes} foram inseridas as imagens necessárias para as texturas.
+
+De resto, relativamente à fase anterior não podemos apontar qualquer diferença sendo que não foi acrescentado qualquer ficheiro ou pasta à estrutura do projeto isto porque a quarta e última fase apenas envolve a realização de alterações no código dos ficheiros já existentes.
 
 \newpage
 
@@ -137,17 +153,78 @@ Nesta fase iremos explicar o procedimento realizado para esfera sendo que para a
 \subsection{Parser XML}
 \label{sec:parsert}
 
-Ao fazer parsing do \textbf{XML} quando se encontra um parâmetro \textbf{"texture"}  o que se faz é aplicar a função \textbf{loadTexture} à imagem passada como parâmetro.
-
-
 \subsubsection{Ficheiro}
 \label{sec:ficheirot}
+
+Uma textura é dada pelo nome duma imagem da seguinte forma em XML:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{xml_textura.png}
+\caption{Textura para a Terra}
+\label{img:textura_terra}
+\end{figure}
+
 
 \subsubsection{Funcionamento}
 \label{sec:funcionamentot}
 
+Ao fazer parsing do \textbf{XML} quando se encontra um parâmetro \textbf{"texture"}, o que se faz é aplicar a função \textbf{loadTexture} à imagem passada como parâmetro.
+
+A função \textbf{loadTexture} tem como finalidade carregar a textura duma imagem (neste caso em 2D) e retornar uma um identificador dessa textura.
+
+\begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+int loadTexture(string s) {
+    unsigned int t,tw,th;
+    unsigned char *texData;
+    unsigned int texID;
+
+    ilInit();
+    ilEnable(IL_ORIGIN_SET);
+    ilOriginFunc(IL_ORIGIN_LOWER_LEFT);
+    ilGenImages(1,&t);
+    ilBindImage(t);
+    ilLoadImage((ILstring) s.c_str());
+    tw = ilGetInteger(IL_IMAGE_WIDTH);
+    th = ilGetInteger(IL_IMAGE_HEIGHT);
+    ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
+    texData = ilGetData();
+    glGenTextures(1,&texID);
+
+    glBindTexture(GL_TEXTURE_2D,texID);
+    glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_WRAP_S,      GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_WRAP_T,      GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_MAG_FILTER,      GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D,  GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, 0);
+
+    return texID;
+
+}
+\end{lstlisting}
+
+Após esta função terminar o identificador da textura é guardado na figura correspondente para mais tarde poder ser carregada.
+
 \subsection{Engine}
 \label{sec:enginet}
+
+Finalmente no ciclo de rendering a textura é carregada tendo em conta o identificador previamente carregado na tarefa de parsing, da seguinte forma:
+
+\begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
+	glBindTexture(GL_TEXTURE_2D, fig.textureId);
+	
+	.
+	.
+	. 
+	
+	glBindBuffer(GL_ARRAY_BUFFER, fig.textures);
+	glTexCoordPointer(2, GL_FLOAT, 0, 0);
+\end{lstlisting}
+
+A textura é então carregada tendo em conta o identificador anteriormente calculado, que se encontra em \textbf{fig.textureId}, e também o array das coordenadas de textura é carregado tendo em conta o identificador da VBO correspondente armazenado em \textbf{fig.textures}. 
+
 
 
 \section{Conclusão}

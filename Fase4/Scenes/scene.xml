@@ -50,7 +50,7 @@
               </group>
         </group>
         <group> <!-- Earth & Moon -->
-			        <translate time="18.25">
+			        <translate time="50.25">
 				            <point X="140" Y="0" Z="0" />
 				            <point X="98.88" Y="0" Z="-98.88" />
 				            <point X="0" Y="0" Z="-140" />
@@ -61,7 +61,7 @@
 				            <point X="98.88" Y="0" Z="98.88" />
 			        </translate>
 			        <group> <!-- Earth -->
-				            <rotate time="1" axisX="0" axisY="1" axisZ="0" />
+				            <rotate time="10" axisX="0" axisY="1" axisZ="0" />
 				            <models>
 					                 <model file="planet.3d" texture="earth.jpg" />
 				            </models>
