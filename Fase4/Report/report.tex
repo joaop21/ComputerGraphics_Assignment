@@ -178,9 +178,26 @@ Desta forma apresenta 4 arrays de float que identificam tais parâmetros.
 
 
 
-
 \section{Iluminação}
 \label{sec:iluminacao}
+
+\subsection{Generator}
+\label{sec:generatori}
+
+Nesta fase, para o funcionamento dos pontos de luz, foi necessário estabelecer as normais dos vértices que formam os triângulos, tanto no caso da esfera (sol, planetas e luas), como no caso do torus (anel de saturno) e da superfície de bezier (cometa). Como os vértices têm coordenadas diferentes, estes possuem também normais diferentes. Quando todas as normais estão disponíveis, a intensidade para cada uma delas é calculada.
+
+O cálculo das normais é realizado tendo em conta os valores dos vértices já definidos. Tendo em conta que os valores das componentes das normais possuem valores entre 0 e 1, estes são calculados reajustando os valores das componentes dos vértices para valores entre 0 e 1. Tal acontece pois a ideia deste método é a normal possuir a direção do vértice.
+
+Todo o restante cálculo dos vértices já tinha sido produzido.
+
+Na figura \ref{img:vertice_normal} é possível visualizar um exemplo de um reajustamento entre um vértice e uma normal.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.60]{vertice_normal.png}
+\caption{Exemplo de vértice e respetiva normal.}
+\label{img:vertice_normal}
+\end{figure}
 
 \subsection{Parser XML}
 \label{sec:parseri}
@@ -188,14 +205,54 @@ Desta forma apresenta 4 arrays de float que identificam tais parâmetros.
 \subsubsection{Ficheiro}
 \label{sec:ficheiroi}
 
+Devido aos requerimentos desta fase foi necessário alterar o ficheiro XML que provinha da terceira fase. As alterações aconteceram devido à necessidade de incluir no ficheiro os pontos de iluminação.
+
+Importante referir que também nesta fase todos os sub-grupos herdam as transformações geométricas presentes no grupo ao qual pertencem. As transformações são: translações, rotações e escalas. O funcionamento é igual à fase anterior.
+
+A definição dos pontos de iluminação baseia-se no tipo de luz, na posição, e nas componentes difusa e ambiente.
+
+Na figura \ref{img:ficheiro_parser_iluminacao} é possível visualizar os quatro pontos de iluminação que estão incluidos na cena.
+
+Os pontos foram colocados próximos do sol nos eixo Ox e Oz, tanto do lado positivo como do lado negativo. Desta forma, é dada a ideia do sol iluminar todos os planetas e luas.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{ficheiro_parser_iluminacao.png}
+\caption{Pontos de iluminação presentes na cena.}
+\label{img:ficheiro_parser_iluminacao}
+\end{figure}
+
 \subsubsection{Funcionamento}
 \label{sec:funcionamentoi}
+
+Tendo em conta as alterações referidas no ponto anterior, foi necessário acrescentar ao \textit{parser} a capacidade de processar os pontos de luz. Tal ocorre da seguinte forma:
+
+\ttfamily
+\begin{enumerate}
+  \item Executa a função "parser\_Lights" que vai colocar na estrutura de dados as luzes.
+  \item Para cada ponto de luz:
+  \begin{enumerate}
+    \item Obtém o valor do tipo de luz.
+		\begin{enumerate}
+			\item Consoante o tipo, altera a direção da luz (último parâmetro).
+		\end{enumerate}
+		\item Obtém o valor da posição.
+		\item Obtém o valor da componente ambiente.
+		\item Obtém o valor da componente difusa.
+		\end{enumerate}
+  	\item Retorna as luzes, que vão ser colocadas na estrutura.
+\end{enumerate}
+\rmfamily
+
 
 \subsection{Engine}
 \label{sec:enginei}
 
-\subsection{Generator}
-\label{sec:generatori}
+No ciclo de rendering, os parâmetros das luzes são estabelecidos através da função \textbf{glLightfv}, nas três componentes: Posição, Ambiente e Difusa.
+
+Na função \textbf{initGL}, as luzes são ativadas através da função \textbf{glEnable}.
+
+Desta forma, conseguimos implementar iluminação e todas as suas variáveis no sistema solar.
 
 \section{Texturas}
 \label{sec:texturas}
@@ -294,16 +351,16 @@ Finalmente no ciclo de rendering a textura é carregada tendo em conta o identif
 
 \begin{lstlisting}[language = C++ , frame = trBL , firstnumber = 1 , escapeinside={(*@}{@*)}]
 	glBindTexture(GL_TEXTURE_2D, fig.textureId);
-	
+
 	.
 	.
-	. 
-	
+	.
+
 	glBindBuffer(GL_ARRAY_BUFFER, fig.textures);
 	glTexCoordPointer(2, GL_FLOAT, 0, 0);
 \end{lstlisting}
 
-A textura é então carregada tendo em conta o identificador anteriormente calculado, que se encontra em \textbf{fig.textureId}, e também o array das coordenadas de textura é carregado tendo em conta o identificador da VBO correspondente armazenado em \textbf{fig.textures}. 
+A textura é então carregada tendo em conta o identificador anteriormente calculado, que se encontra em \textbf{fig.textureId}, e também o array das coordenadas de textura é carregado tendo em conta o identificador da VBO correspondente armazenado em \textbf{fig.textures}.
 
 
 
